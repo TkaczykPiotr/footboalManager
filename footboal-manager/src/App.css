@@ -1,5 +1,29 @@
 .App {
   text-align: center;
+  background: url(./img/GradientBackground3.png);
+  background-size: cover;
+  position: fixed;
+  width: 205vh;
+  height: 100vh;
+
+
+
+
+}
+
+.Panel{
+  background-color: #5d9bcf;
+  width: 50vh;
+  height: 50vh;
+  text-align: center;
+  padding-top: 10vh;
+  margin-top: 20vh;
+  margin-left: 75vh;
+  border-radius: 10%;
+}
+
+.Home{
+float: left;
 }
 
 .App-logo {
