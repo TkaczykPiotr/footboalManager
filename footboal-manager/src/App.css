@@ -5,16 +5,10 @@
   position: fixed;
   width: 205vh;
   height: 100vh;
-
-
-
-
 }
 
 .Panel{
-  background-color: #5d9bcf;
-  width: 50vh;
-  height: 50vh;
+  width: 60vh;
   text-align: center;
   padding-top: 10vh;
   margin-top: 20vh;
@@ -24,7 +18,11 @@
 
 .Home{
 float: left;
+
 }
+
+
+
 
 .App-logo {
   height: 40vmin;

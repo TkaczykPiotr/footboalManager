@@ -1,27 +1,41 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import BackdropFilter from "react-backdrop-filter";
 
 function Home() {
+       const [name, setName] = useState();
+       const [team, setTeam] = useState();
 
+       function setLocalStorage(){
+                let user = {
+                name: name,
+                team: team
+                }
+            localStorage.setItem("user", JSON.stringify(user));
+       }
 
 
   return (
 
  <div className="Panel">
-        <form>
-        <h2>Create Profile</h2>
+  <BackdropFilter className="bluredForm" filter={"blur(20px) sepia(50%)"} style={{borderRadius: '10%'}}
+  canvasFallback={true}  html2canvasOpts={{allowTaint: true}}>
+    <br/>
+
+        <form style={{width: "200px", margin: "0 auto"}}>
+        <h2  style={{color: '#fff'}}>Create Profile</h2>
           <div className="form-group">
-            <label >Name</label>
+            <label style={{color: '#fff'}}>Name</label>
             <br/>
-            <input type="text" className="form-control"  placeholder="user" />
+            <input type="text" name="name" className="form-control"  placeholder="user" onChange={(e) => setName(e.target.value)}/>
           </div>
           <br/>
           <div className="form-group">
-            <label >Select Team</label>
+            <label style={{color: '#fff'}}>Select Team</label>
             <br/>
-            <select className="form-control">
+            <select className="form-control" onChange={(e) => setTeam(e.target.value)}>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -29,15 +43,18 @@ function Home() {
             </select>
           </div>
         </form>
+
         <br/>
         <br/>
         <nav> <Link to={"/main"} className="navbar-brand">
-          <button type="button" className="btn btn-primary" style={{width: '20vh'}} >Play</button>
+          <button type="button" onClick={setLocalStorage() } className="btn btn-primary" style={{width: '20vh'}} >Play</button>
         </Link></nav>
-
-
+        <br/>
+        <br/>
+  </BackdropFilter>
 
    </div>
+
   );
 }
 
