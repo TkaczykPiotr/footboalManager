@@ -41,11 +41,12 @@ function Team() {
                    </IconContext.Provider>
                     <div className="MainBox" >
                         <div className="PlayerBox">
-                        <HorizontalScroll>
+                        <HorizontalScroll style={{marginRight: '5%'}}>
+
                                   {PlayerData.filter(t => t.idTeam==team)
                                    .map(item =>
-                                   <div key={item.id} style={child}>
 
+                                  <div className="position-static"  key={item.id} style={child} >
                                    <div className="CardPlayer">
                                    <img className="ImgCardPlayer" src={item.image}/>
                                    <div style={{float: 'left'}}>
@@ -54,12 +55,13 @@ function Team() {
                                     <h4>{item.number}</h4>
                                     <h4>{item.position}</h4>
                                     </h3>
-                                    <button>take</button>
+
                                     </div>
                                     </div>
                                     </div>
 
                                  )}
+
                               </HorizontalScroll>
                         </div>
 

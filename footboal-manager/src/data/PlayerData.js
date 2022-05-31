@@ -44,7 +44,7 @@ export const PlayerData = [
    cost: '450 000',
    number: 24,
    position: 'centre-back',
-   image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+   image: 'https://img.a.transfermarkt.technology/portrait/big/466794-1629107322.jpg?lm=1'
   },
   {
      id: 6,
