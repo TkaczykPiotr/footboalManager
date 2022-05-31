@@ -2,15 +2,19 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SidebarData } from '../data/SidebarData';
 import { TeamData } from '../data/TeamData';
+import { PlayerData } from '../data/PlayerData';
 import '../css/Navbar.css';
 import { IconContext } from 'react-icons';
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import HorizontalScroll from "react-scroll-horizontal";
+
 
 
 function Team() {
           const [team, setTeam] = useState(JSON.parse(localStorage.getItem('user')).team);
           const [sidebar, setSidebar] = useState(true);
+          const child = { width: `20em`, height: `100%` };
 
 
           //setTeam(JSON.parse(localStorage.getItem('user')).team);
@@ -37,9 +41,30 @@ function Team() {
                    </IconContext.Provider>
                     <div className="MainBox" >
                         <div className="PlayerBox">
+                        <HorizontalScroll>
+                                  {PlayerData.filter(t => t.idTeam==team)
+                                   .map(item =>
+                                   <div key={item.id} style={child}>
+
+                                   <div className="CardPlayer">
+                                   <img className="ImgCardPlayer" src={item.image}/>
+                                   <div style={{float: 'left'}}>
+                                    <h3 >{item.name}
+                                    <h4>{item.cost} euro</h4>
+                                    <h4>{item.number}</h4>
+                                    <h4>{item.position}</h4>
+                                    </h3>
+                                    <button>take</button>
+                                    </div>
+                                    </div>
+                                    </div>
+
+                                 )}
+                              </HorizontalScroll>
                         </div>
 
                         <div className="Field">
+                        <div className="circle"></div>
                         </div>
 
                         <div className="RightBoxTeam">
