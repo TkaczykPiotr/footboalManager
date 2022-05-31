@@ -9,17 +9,18 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 
 function Team() {
+          const [team, setTeam] = useState(JSON.parse(localStorage.getItem('user')).team);
           const [sidebar, setSidebar] = useState(true);
-          const showSidebar = () => setSidebar(!sidebar);
 
 
+          //setTeam(JSON.parse(localStorage.getItem('user')).team);
 
 
   return (
      <>
               <IconContext.Provider value={{ color: '#fff' }}>
                      <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-                       <ul className='nav-menu-items' onClick={showSidebar}>
+                       <ul className='nav-menu-items' >
                        <br/>
                          {SidebarData.map((item, index) => {
                            return (
@@ -35,17 +36,19 @@ function Team() {
                      </nav>
                    </IconContext.Provider>
                     <div className="MainBox" >
-                    <h2>Hello {JSON.parse(localStorage.getItem('user')).name}</h2>
-                    <h2>{JSON.parse(localStorage.getItem('user')).team}</h2>
-                    {TeamData.map((item, index) => {
-                            return (
-                            <h3 key={index} className={item.name}>
-                            <h3>{item.city}</h3>
-                            <h3>{item.budget}</h3>
-                            <h3>{item.numberOfPlayer}</h3>
-                            </h3>
-                            );
-                        })}
+                        <div className="PlayerBox">
+                        </div>
+
+                        <div className="Field">
+                        </div>
+
+                        <div className="RightBoxTeam">
+                        </div>
+
+                        <div className="BotBoxTeam">
+                         </div>
+
+
                     </div>
 
        </>
@@ -53,3 +56,15 @@ function Team() {
 }
 
 export default Team;
+
+//<h2>Hello {JSON.parse(localStorage.getItem('user')).name}</h2>
+//                    <h2>{JSON.parse(localStorage.getItem('user')).team}</h2>
+//                    <h2>{team}</h2>
+//                    {TeamData.filter(t => t.id==team)
+//                    .map(item =>
+//                            <ul key={item.id}>{item.name}
+//                            <h3>{item.city}</h3>
+//                            <h3>{item.budget}</h3>
+//                            <h3>{item.numberOfPlayer}</h3>
+//                            </ul>
+//                        )}

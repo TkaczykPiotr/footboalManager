@@ -9,15 +9,13 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function Statistic() {
           const [sidebar, setSidebar] = useState(true);
-          const showSidebar = () => setSidebar(!sidebar);
-
 
 
   return (
      <>
               <IconContext.Provider value={{ color: '#fff' }}>
                      <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-                       <ul className='nav-menu-items' onClick={showSidebar}>
+                       <ul className='nav-menu-items' >
                        <br/>
                          {SidebarData.map((item, index) => {
                            return (

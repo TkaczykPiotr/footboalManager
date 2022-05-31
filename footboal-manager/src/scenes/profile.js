@@ -9,7 +9,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function Profile() {
           const [sidebar, setSidebar] = useState(true);
-          const showSidebar = () => setSidebar(!sidebar);
+
 
 
 
@@ -17,7 +17,7 @@ function Profile() {
      <>
               <IconContext.Provider value={{ color: '#fff' }}>
                      <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-                       <ul className='nav-menu-items' onClick={showSidebar}>
+                       <ul className='nav-menu-items'>
                        <br/>
                          {SidebarData.map((item, index) => {
                            return (

@@ -26,8 +26,49 @@ margin-left: 250px;
 height: 100vh;
 }
 
+.LeftBoxMain{
+    float: left;
+    margin: 2%;
+    background: #487a82;
+    width: 45%;
+    height: 100vh;
+}
+.RightBoxMain{
+    float: left;
+    margin: 2%;
+    background: #487a82;
+    width: 45%;
+    height: 100vh;
+}
 
+.PlayerBox{
 
+ margin: 1%;
+ background: #fff;
+ height: 20%;
+
+}
+
+.Field{
+ float: left;
+ background: url(./img/playSoccer.jpg);
+ margin: 1%;
+ width: 799px;
+ height: 499px;
+
+}
+.RightBoxTeam{
+ margin-left: 820px;
+ margin-top: 2%;
+ margin-right: 1%;
+ background: #c23;
+ height: 499px;
+}
+.BotBoxTeam{
+margin: 1%;
+ background: #ff76;
+ height: 20vh;
+}
 
 .App-logo {
   height: 40vmin;
