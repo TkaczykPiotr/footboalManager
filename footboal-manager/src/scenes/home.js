@@ -36,9 +36,9 @@ function Home() {
             <label style={{color: '#fff'}}>Select Team</label>
             <br/>
             <select className="form-control" onChange={(e) => setTeam(e.target.value)}>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
+              <option value={1}>Barcelona</option>
+              <option value={2}>Real Madrid</option>
+              <option value={3}>Atletico Madrid</option>
               <option>4</option>
             </select>
           </div>

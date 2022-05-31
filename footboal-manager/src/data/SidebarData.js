@@ -18,25 +18,25 @@ export const SidebarData = [
   },
   {
     title: 'Team',
-    path: '/reports',
+    path: '/team',
     icon: <IoIcons.IoMdPeople />,
     cName: 'nav-text'
   },
   {
     title: 'Profile',
-    path: '/products',
+    path: '/profile',
     icon: <CgIcons.CgProfile />,
     cName: 'nav-text'
   },
   {
     title: 'Liga',
-    path: '/team',
+    path: '/liga',
      icon: <IoIcons.IoMdFootball />,
     cName: 'nav-text'
   },
   {
     title: 'Statistic',
-    path: '/messages',
+    path: '/statistic',
     icon: <IoIcons.IoIosStats />,
     cName: 'nav-text'
   },

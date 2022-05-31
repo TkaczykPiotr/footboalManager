@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 
-function Main() {
+function Profile() {
           const [sidebar, setSidebar] = useState(true);
           const showSidebar = () => setSidebar(!sidebar);
 
@@ -41,4 +41,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Profile;
