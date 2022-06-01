@@ -90,13 +90,13 @@ height: 20vh;
 .circle {
 
   display: flex;
-  margin-left: 30%;
   width: 75px;
   height: 75px;
   background-color: #ffc107;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
+
 
 }
 

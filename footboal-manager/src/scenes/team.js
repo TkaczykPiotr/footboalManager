@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { SidebarData } from '../data/SidebarData';
 import { TeamData } from '../data/TeamData';
 import { PlayerData } from '../data/PlayerData';
-import { SystemPlayer } from '../data/SystemPlayer';
 import '../css/Navbar.css';
 import { IconContext } from 'react-icons';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -17,8 +16,10 @@ function Team() {
 
           const [team, setTeam] = useState(JSON.parse(localStorage.getItem('user')).team);
           const [player, setPlayer] = useState(JSON.parse(localStorage.getItem('playerData')));
-          const [system, setSystem] = useState(JSON.parse(localStorage.getItem('system')));
+          const [system, setSystem] = useState(JSON.parse(localStorage.getItem('system442')));
           const [copySuccess, setCopySuccess] = useState('');
+          const [selectedValue, setSelectedValue] = useState(1);
+
 
           const [sidebar, setSidebar] = useState(true);
 
@@ -32,12 +33,34 @@ function Team() {
             };
 
             const onPaste = (numberl)  =>{
-
              system.map(t => t.number == numberl && (t.number = copySuccess));
              setSystem([...system], system);
-
-
             }
+
+            const swapSystem = e =>{
+            setSelectedValue(e.target.value);
+            if(e.target.value==1){
+            setSystem(JSON.parse(localStorage.getItem('system442')));
+            }
+            if(e.target.value==2){
+            setSystem(JSON.parse(localStorage.getItem('system343')));
+            }
+            if(e.target.value==3){
+            setSystem(JSON.parse(localStorage.getItem('system532')));
+            }
+            }
+
+            const saveSystem = () =>{
+             if(selectedValue==1){
+              localStorage.setItem("system442", JSON.stringify(system));
+            }
+            if(selectedValue==2){
+           localStorage.setItem("system343", JSON.stringify(system));
+            }
+            if(selectedValue==3){
+             localStorage.setItem("system532", JSON.stringify(system));
+             }
+             }
 
 
 
@@ -86,16 +109,13 @@ function Team() {
                                    .map(item =>
                                    <div key={item.id} className="CardPlayer" style={child} onClick={() => copyToClipBoard(item.number)}>
                                    <img className="ImgCardPlayer" src={item.image} alt="player"/>
-                                   <div style={{float: 'left'}}>
-                                    <h3 >{item.name}
-                                    <button className="circle">{item.number}</button>
-                                    <h4>{item.position}</h4>
+                                   <div style={{float: 'left',margin:'0 auto'}}>
+                                    <h3 style={{color: '#fff' }}>{item.name}
+                                    <button className="circle" style={{margin:'0 auto'}}>{item.number}</button>
+
                                     </h3>
-
-
                                     </div>
                                     </div>
-
                                  )}
                                  </HorizontalScroll>
 
@@ -109,12 +129,14 @@ function Team() {
                         <div >
                                 <label style={{color: '#fff'}} >Set System</label>
                                 <br/>
-                                    <select style={{width: '50%'}}>
+                                    <select defaultValue={selectedValue} style={{width: '50%'}} onChange={swapSystem}>
                                       <option value={1}>4-4-2</option>
                                       <option value={2}>3-4-3</option>
                                       <option value={3}>5-3-1</option>
                                       <option>4</option>
+
                                     </select>
+                                    <button type="button" className="btn btn-primary" onClick={() => saveSystem()}>Save</button>
 
                             </div>
                         </div>
