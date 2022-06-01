@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import BackdropFilter from "react-backdrop-filter";
+import { SystemPlayer } from '../data/SystemPlayer';
+import { PlayerData } from '../data/PlayerData';
 
 function Home() {
        const [name, setName] = useState();
        const [team, setTeam] = useState();
+
 
        function setLocalStorage(){
                 let user = {
@@ -14,6 +17,10 @@ function Home() {
                 team: team
                 }
             localStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem("system", JSON.stringify(SystemPlayer));
+            localStorage.setItem("playerData", JSON.stringify(PlayerData));
+
+
        }
 
 

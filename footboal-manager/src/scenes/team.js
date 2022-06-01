@@ -9,29 +9,54 @@ import { IconContext } from 'react-icons';
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import HorizontalScroll from "react-scroll-horizontal";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 
 
 function Team() {
 
           const [team, setTeam] = useState(JSON.parse(localStorage.getItem('user')).team);
+          const [player, setPlayer] = useState(JSON.parse(localStorage.getItem('playerData')));
+          const [system, setSystem] = useState(JSON.parse(localStorage.getItem('system')));
+          const [copySuccess, setCopySuccess] = useState('');
+
           const [sidebar, setSidebar] = useState(true);
-          const [system, setSystem] = useState();
+
           const child = { width: `21em`, height: `100%` };
           const itemRows = [];
-          for(let i of SystemPlayer){
-          const grid = [
-          <div className="fields">
-          {i.visible && (
-          <div className="circleField"><h5>{i.number}</h5></div>)}
-          </div>
-          ];
-           itemRows.push(grid);
 
-          }
+
+           const copyToClipBoard = (copyMe)  => {
+               navigator.clipboard.writeText(copyMe);
+                setCopySuccess(copyMe);
+            };
+
+            const onPaste = (numberl)  =>{
+
+             system.map(t => t.number == numberl && (t.number = copySuccess));
+             setSystem([...system], system);
+
+
+            }
+
+
+
+
 
 
           //setTeam(JSON.parse(localStorage.getItem('user')).team);
+
+
+          for(let i of Object.values(system)){
+                    const grid = [
+                    <div className="fields" key={i}>
+                    {i.visible && (
+                    <button className="circleField" onClick={() => onPaste(i.number)}>{i.number}</button>)}
+                    </div>
+                    ];
+                     itemRows.push(grid);
+                    }
+
 
 
   return (
@@ -57,16 +82,13 @@ function Team() {
                         <div className="PlayerBox">
 
                         <HorizontalScroll>
-
-                                  {PlayerData.filter(t => t.idTeam==team)
+                                  {player.filter(t => t.idTeam==team)
                                    .map(item =>
-
-
-                                   <div key={item.id} className="CardPlayer" style={child}>
-                                   <img className="ImgCardPlayer" src={item.image}/>
+                                   <div key={item.id} className="CardPlayer" style={child} onClick={() => copyToClipBoard(item.number)}>
+                                   <img className="ImgCardPlayer" src={item.image} alt="player"/>
                                    <div style={{float: 'left'}}>
                                     <h3 >{item.name}
-                                    <h4 className="circle"><h5>{item.number}</h5></h4>
+                                    <button className="circle">{item.number}</button>
                                     <h4>{item.position}</h4>
                                     </h3>
 
@@ -87,7 +109,7 @@ function Team() {
                         <div >
                                 <label style={{color: '#fff'}} >Set System</label>
                                 <br/>
-                                    <select style={{width: '50%'}}  onChange={(e) => setSystem(e.target.value)}>
+                                    <select style={{width: '50%'}}>
                                       <option value={1}>4-4-2</option>
                                       <option value={2}>3-4-3</option>
                                       <option value={3}>5-3-1</option>

@@ -189,32 +189,5 @@ export const PlayerData = [
   number: 25,
   position: 'central-forward',
   image: 'https://img.a.transfermarkt.technology/portrait/big/58864-1545407105.jpg?lm=1'
- },
-  {
-  id: 220,
-  idTeam: 1,
-  name: null,
-  cost: null,
-  number: null,
-  position: null,
-  image: null
- },
-   {
-   id: 221,
-   idTeam: 1,
-   name: 'none',
-   cost: '0',
-   number: 0,
-   position: '0',
-   image: ''
-  },
-     {
-     id:223,
-     idTeam: 1,
-     name: 'none',
-     cost: '0',
-     number: 0,
-     position: '0',
-     image: ''
-    }
+ }
 ];

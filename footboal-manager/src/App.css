@@ -100,6 +100,10 @@ height: 20vh;
 
 }
 
+.circle:hover {
+  background-color: #1a83ff;
+}
+
 .circleField {
   display: flex;
   width: 50px;
@@ -108,6 +112,10 @@ height: 20vh;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
+}
+
+.circleField:hover {
+ background-color: #6ae68b;
 }
 
 .App-logo {

@@ -18,6 +18,7 @@ function Main() {
 
   return (
      <>
+
               <IconContext.Provider value={{ color: '#fff' }}>
                      <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                        <ul className='nav-menu-items' >
