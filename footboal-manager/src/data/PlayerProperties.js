@@ -5,31 +5,34 @@ export const PlayerProperties = [
     id: 1,
     idTeam: 1,
     pac: 60,
-    pas: 70,
+    pas: 53,
     sho: 35,
-    dri: 15,
-    def: 89,
-    psy: 70
+    dri: 32,
+    def: 12,
+    psy: 43,
+    max: 100
   },
   {
     id: 2,
     idTeam: 1,
     pac: 60,
-    pas: 70,
-    sho: 35,
-    dri: 15,
-    def: 89,
-    psy: 70
+    pas: 43,
+    sho: 43,
+    dri: 44,
+    def: 32,
+    psy: 74,
+    max: 100
   },
   {
     id: 3,
     idTeam: 1,
-    pac: 60,
-    pas: 70,
-    sho: 35,
-    dri: 15,
-    def: 89,
-    psy: 70
+    pac: 23,
+    pas: 98,
+    sho: 32,
+    dri: 34,
+    def: 25,
+    psy: 66,
+    max: 100
   },
   {
     id: 4,
@@ -39,7 +42,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
   },
   {
    id: 5,
@@ -49,7 +53,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
   },
   {
      id: 6,
@@ -59,7 +64,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
   },
   {
    id: 7,
@@ -69,7 +75,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
    },
   {
    id: 8,
@@ -79,7 +86,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
    },
   {
    id: 9,
@@ -89,7 +97,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
   },
   {
   id: 10,
@@ -99,7 +108,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
   },
   {
     id: 11,
@@ -109,7 +119,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
   },
   {
     id: 12,
@@ -119,7 +130,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
   },
   {
     id: 13,
@@ -129,7 +141,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
     },
   {
   id: 14,
@@ -139,7 +152,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
  },
  {
    id: 15,
@@ -149,7 +163,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
   },
   {
     id: 16,
@@ -159,7 +174,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
    },
   {
      id: 17,
@@ -169,7 +185,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
     },
   {
    id: 18,
@@ -179,7 +196,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
   },
  {
   id: 19,
@@ -189,7 +207,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
   },
   {
    id: 20,
@@ -199,7 +218,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
     },
   {
   id: 21,
@@ -209,7 +229,8 @@ export const PlayerProperties = [
     sho: 35,
     dri: 15,
     def: 89,
-    psy: 70
+    psy: 70,
+    max: 100
  }
 
 ];

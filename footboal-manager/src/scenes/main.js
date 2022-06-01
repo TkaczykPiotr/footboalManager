@@ -47,6 +47,7 @@ function Main() {
                          <h3 style={{color: '#fff'}}>City: {item.city} </h3>
                         <h3 style={{color: '#fff'}}>Budged: {item.budget} Euro</h3>
                        <h3 style={{color: '#fff'}}>Number of Player: {item.numberOfPlayer}</h3>
+                        <img className="ImgCardPlayer" src={item.imageHerb} alt="herb"/>
                     </h3>
                    )}
 

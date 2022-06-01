@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SidebarData } from '../data/SidebarData';
 import { TeamData } from '../data/TeamData';
 import { PlayerData } from '../data/PlayerData';
+import { PlayerProperties } from '../data/PlayerProperties';
+import  PlayerChartData  from '../data/PlayerChartData';
 import '../css/Navbar.css';
 import { IconContext } from 'react-icons';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -19,6 +21,110 @@ function Team() {
           const [system, setSystem] = useState(JSON.parse(localStorage.getItem('system442')));
           const [copySuccess, setCopySuccess] = useState('');
           const [selectedValue, setSelectedValue] = useState(1);
+          const [playerId, setPlayerId] = useState(1);
+
+
+
+          const [playerPropertiesData, setPlayerPropertiesData] =  useState({
+          labels: player.filter(t => t.id===playerId).map((data) => data.name),
+          datasets: [
+          {
+           label: "pace",
+           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.pac),
+           backgroundColor: ["rgba(75,192,192,1)"],
+           borderColor: "black",
+           borderWidth: 2,
+           },
+           {
+           label: "passing",
+           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.pas),
+           backgroundColor: ["rgba(32,43,165,16)"],
+           borderColor: "black",
+           borderWidth: 2,
+           },
+           {
+           label: "shotting",
+           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.sho),
+           backgroundColor: ["rgba(172,142,135,32)"],
+           borderColor: "black",
+           borderWidth: 2,
+           },
+           {
+           label: "dribbling",
+           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.dri),
+           backgroundColor: ["rgba(75,123,165,1)"],
+           borderColor: "black",
+           borderWidth: 2,
+           },
+           {
+           label: "defending",
+           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.def),
+           backgroundColor: ["#50AF95"],
+           borderColor: "black",
+           borderWidth: 2,
+           },
+           {
+           label: "physical",
+           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.psy),
+           backgroundColor: ["#ecf0f1"],
+           borderColor: "black",
+           borderWidth: 2,
+           },
+           ],});
+
+          useEffect(() => {
+              setPlayerPropertiesData({
+
+                                                labels: player.filter(t => t.id===playerId).map((data) => data.name),
+                                                datasets: [
+                                                {
+                                                label: "pace",
+                                                data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.pac),
+                                                backgroundColor: ["rgba(75,192,192,1)"],
+                                                borderColor: "black",
+                                                borderWidth: 2,
+                                                },
+                                                {
+                                                label: "passing",
+                                                data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.pas),
+                                                backgroundColor: ["rgba(32,43,165,16)"],
+                                                borderColor: "black",
+                                                borderWidth: 2,
+                                                },
+                                                {
+                                                label: "shotting",
+                                                data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.sho),
+                                                backgroundColor: ["rgba(172,142,135,32)"],
+                                                borderColor: "black",
+                                                borderWidth: 2,
+                                                },
+                                                {
+                                                label: "dribbling",
+                                                data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.dri),
+                                                backgroundColor: ["rgba(75,123,165,1)"],
+                                                borderColor: "black",
+                                                borderWidth: 2,
+                                                },
+                                                {
+                                                label: "defending",
+                                                data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.def),
+                                                backgroundColor: ["#50AF95"],
+                                                borderColor: "black",
+                                                borderWidth: 2,
+                                                },
+                                                {
+                                                label: "physical",
+                                                data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.psy),
+                                                backgroundColor: ["#ecf0f1"],
+                                                borderColor: "black",
+                                                borderWidth: 2,
+                                                },
+
+                                                ],
+                                                });
+                console.log("1ddd");
+                console.log(playerPropertiesData);
+              }, [playerId]);
 
 
           const [sidebar, setSidebar] = useState(true);
@@ -31,6 +137,13 @@ function Team() {
                navigator.clipboard.writeText(copyMe);
                 setCopySuccess(copyMe);
             };
+
+           const takeId = (id)  => {
+                    setPlayerId(id);
+
+                    console.log(id);
+                    console.log(playerId);
+                    };
 
             const onPaste = (numberl)  =>{
              system.map(t => t.number == numberl && (t.number = copySuccess));
@@ -107,11 +220,11 @@ function Team() {
                         <HorizontalScroll>
                                   {player.filter(t => t.idTeam==team)
                                    .map(item =>
-                                   <div key={item.id} className="CardPlayer" style={child} onClick={() => copyToClipBoard(item.number)}>
+                                   <div key={item.id} className="CardPlayer" style={child} onClick={() => takeId(item.id)}>
                                    <img className="ImgCardPlayer" src={item.image} alt="player"/>
                                    <div style={{float: 'left',margin:'0 auto'}}>
                                     <h3 style={{color: '#fff' }}>{item.name}
-                                    <button className="circle" style={{margin:'0 auto'}}>{item.number}</button>
+                                    <button className="circle" style={{margin:'0 auto'}} onClick={() => copyToClipBoard(item.number)}>{item.number}</button>
 
                                     </h3>
                                     </div>
@@ -126,22 +239,44 @@ function Team() {
                         </div>
 
                         <div className="RightBoxTeam">
-                        <div >
+                        <div>
                                 <label style={{color: '#fff'}} >Set System</label>
                                 <br/>
                                     <select defaultValue={selectedValue} style={{width: '50%'}} onChange={swapSystem}>
                                       <option value={1}>4-4-2</option>
                                       <option value={2}>3-4-3</option>
                                       <option value={3}>5-3-1</option>
-                                      <option>4</option>
 
                                     </select>
-                                    <button type="button" className="btn btn-primary" onClick={() => saveSystem()}>Save</button>
+
+                                    <button type="button" className="btn btn-primary" style={{marginLeft: '2%'}} onClick={() => saveSystem()}>Save</button>
 
                             </div>
+                            <br/>
+                            <br/>
+                        <div style={{float:'left', width: '30%', height: '60%'}}>
+                        {player.filter(t => t.id==playerId)
+                         .map(item =>
+                         <div  >
+                         <img className="ImgCardPlayer" src={item.image} alt="player"/>
+                         <div key={item.id} style={{float: 'left',margin:'0 auto'}}>
+                         <h3 style={{color: '#fff' }}>Position: {item.position}
+                         <h4 style={{color: '#fff' }}>Cost: {item.cost} Euro</h4>
+                          </h3>
+                           </div>
+                         </div>
+                         )}
+
+
+                        </div>
+                        <div style={{marginLeft: '2%',float:'left', width: '60%', height: '60%', background: '#fff', borderRadius: '10%'}}>
+                        <PlayerChartData chartData={playerPropertiesData} />
                         </div>
 
-                        <div className="BotBoxTeam">
+                        </div>
+
+                        <div className="BotBoxTeam" >
+
                          </div>
 
 
