@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { SidebarData } from '../data/SidebarData';
 import { TeamData } from '../data/TeamData';
 import { PlayerData } from '../data/PlayerData';
+import { SystemPlayer } from '../data/SystemPlayer';
 import '../css/Navbar.css';
 import { IconContext } from 'react-icons';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -12,9 +13,22 @@ import HorizontalScroll from "react-scroll-horizontal";
 
 
 function Team() {
+
           const [team, setTeam] = useState(JSON.parse(localStorage.getItem('user')).team);
           const [sidebar, setSidebar] = useState(true);
-          const child = { width: `20em`, height: `100%` };
+          const [system, setSystem] = useState();
+          const child = { width: `21em`, height: `100%` };
+          const itemRows = [];
+          for(let i of SystemPlayer){
+          const grid = [
+          <div className="fields">
+          {i.visible && (
+          <div className="circleField"><h5>{i.number}</h5></div>)}
+          </div>
+          ];
+           itemRows.push(grid);
+
+          }
 
 
           //setTeam(JSON.parse(localStorage.getItem('user')).team);
@@ -41,35 +55,46 @@ function Team() {
                    </IconContext.Provider>
                     <div className="MainBox" >
                         <div className="PlayerBox">
-                        <HorizontalScroll style={{marginRight: '5%'}}>
+
+                        <HorizontalScroll>
 
                                   {PlayerData.filter(t => t.idTeam==team)
                                    .map(item =>
 
-                                  <div className="position-static"  key={item.id} style={child} >
-                                   <div className="CardPlayer">
+
+                                   <div key={item.id} className="CardPlayer" style={child}>
                                    <img className="ImgCardPlayer" src={item.image}/>
                                    <div style={{float: 'left'}}>
                                     <h3 >{item.name}
-                                    <h4>{item.cost} euro</h4>
-                                    <h4>{item.number}</h4>
+                                    <h4 className="circle"><h5>{item.number}</h5></h4>
                                     <h4>{item.position}</h4>
                                     </h3>
 
-                                    </div>
+
                                     </div>
                                     </div>
 
                                  )}
+                                 </HorizontalScroll>
 
-                              </HorizontalScroll>
                         </div>
 
                         <div className="Field">
-                        <div className="circle"></div>
+                        {itemRows}
                         </div>
 
                         <div className="RightBoxTeam">
+                        <div >
+                                <label style={{color: '#fff'}} >Set System</label>
+                                <br/>
+                                    <select style={{width: '50%'}}  onChange={(e) => setSystem(e.target.value)}>
+                                      <option value={1}>4-4-2</option>
+                                      <option value={2}>3-4-3</option>
+                                      <option value={3}>5-3-1</option>
+                                      <option>4</option>
+                                    </select>
+
+                            </div>
                         </div>
 
                         <div className="BotBoxTeam">
@@ -94,4 +119,7 @@ export default Team;
 //                            <h3>{item.budget}</h3>
 //                            <h3>{item.numberOfPlayer}</h3>
 //                            </ul>
-//                        )}
+//            )}
+
+// <HorizontalScroll style={{marginRight: '5%'}}>
+// </HorizontalScroll>

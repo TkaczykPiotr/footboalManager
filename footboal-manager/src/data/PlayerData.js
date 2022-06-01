@@ -26,7 +26,7 @@ export const PlayerData = [
     cost: '150 000',
     number: 18,
     position: 'left-back',
-    image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+    image: 'https://img.a.transfermarkt.technology/portrait/big/69751-1653039085.jpg?lm=1'
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ export const PlayerData = [
      cost: '450 000',
      number: 3,
      position: 'centre-back',
-     image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+     image: 'https://img.a.transfermarkt.technology/portrait/big/18944-1629107097.jpg?lm=1'
   },
   {
    id: 7,
@@ -62,7 +62,7 @@ export const PlayerData = [
    cost: '150 000',
    number: 2,
    position: 'right-back',
-   image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+   image: 'https://img.a.transfermarkt.technology/portrait/big/361104-1581956984.jpg?lm=1'
    },
   {
    id: 8,
@@ -71,7 +71,7 @@ export const PlayerData = [
    cost: '250 000',
    number: 8,
    position: 'right-back',
-   image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+   image: 'https://img.a.transfermarkt.technology/portrait/big/15951-1635327520.jpg?lm=1'
    },
   {
    id: 9,
@@ -80,7 +80,7 @@ export const PlayerData = [
    cost: '600 000',
    number: 5,
    position: 'defensive-midfield',
-   image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+   image: 'https://img.a.transfermarkt.technology/portrait/big/65230-1453896822.jpg?lm=1'
   },
   {
   id: 10,
@@ -89,7 +89,7 @@ export const PlayerData = [
   cost: '1 600 000',
   number: 16,
   position: 'central-midfield',
-  image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+  image: 'https://img.a.transfermarkt.technology/portrait/big/683840-1620304992.jpg?lm=1'
   },
   {
     id: 11,
@@ -98,7 +98,7 @@ export const PlayerData = [
     cost: '2 600 000',
     number: 21,
     position: 'central-midfield',
-    image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+    image: 'https://img.a.transfermarkt.technology/portrait/big/326330-1599987876.jpg?lm=1'
   },
   {
     id: 12,
@@ -107,7 +107,7 @@ export const PlayerData = [
     cost: '950 000',
     number: 30,
     position: 'central-midfield',
-    image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+    image: 'https://img.a.transfermarkt.technology/portrait/big/646740-1653039221.jpg?lm=1'
   },
   {
     id: 13,
@@ -116,7 +116,7 @@ export const PlayerData = [
     cost: '800 000',
     number: 14,
     position: 'central-midfield',
-    image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+    image: 'https://img.a.transfermarkt.technology/portrait/big/466805-1629106819.jpg?lm=1'
     },
   {
   id: 14,
@@ -125,7 +125,7 @@ export const PlayerData = [
   cost: '480 000',
   number: 20,
   position: 'central-midfield',
-  image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+  image: 'https://img.a.transfermarkt.technology/portrait/big/85370-1489053148.jpg?lm=1'
  },
  {
    id: 15,
@@ -134,7 +134,7 @@ export const PlayerData = [
    cost: '380 000',
    number: 6,
    position: 'central-midfield',
-   image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+   image: 'https://img.a.transfermarkt.technology/portrait/big/331511-1540212821.jpg?lm=1'
   },
   {
     id: 16,
@@ -143,7 +143,7 @@ export const PlayerData = [
     cost: '1 380 000',
     number: 10,
     position: 'left-winger',
-    image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+    image: 'https://img.a.transfermarkt.technology/portrait/big/466810-1560761660.jpg?lm=1'
    },
   {
      id: 17,
@@ -152,7 +152,7 @@ export const PlayerData = [
      cost: '1 350 000',
      number: 19,
      position: 'left-winger',
-     image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+     image: 'https://img.a.transfermarkt.technology/portrait/big/398184-1620308050.jpg?lm=1'
     },
   {
    id: 18,
@@ -161,7 +161,7 @@ export const PlayerData = [
    cost: '1 150 000',
    number: 7,
    position: 'right-winger',
-   image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+   image: 'https://img.a.transfermarkt.technology/portrait/big/288230-1637951239.jpg?lm=1'
   },
  {
   id: 19,
@@ -170,7 +170,7 @@ export const PlayerData = [
   cost: '850 000',
   number: 11,
   position: 'right-winger',
-  image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+  image: 'https://img.a.transfermarkt.technology/portrait/big/204103-1570000875.jpg?lm=1'
   },
   {
    id: 20,
@@ -179,7 +179,7 @@ export const PlayerData = [
    cost: '1 850 000',
    number: 9,
    position: 'central-forward',
-   image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
+   image: 'https://img.a.transfermarkt.technology/portrait/big/167850-1597927069.jpg?lm=1'
     },
   {
   id: 21,
@@ -188,7 +188,33 @@ export const PlayerData = [
   cost: '950 000',
   number: 25,
   position: 'central-forward',
-  image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
- }
-
+  image: 'https://img.a.transfermarkt.technology/portrait/big/58864-1545407105.jpg?lm=1'
+ },
+  {
+  id: 220,
+  idTeam: 1,
+  name: null,
+  cost: null,
+  number: null,
+  position: null,
+  image: null
+ },
+   {
+   id: 221,
+   idTeam: 1,
+   name: 'none',
+   cost: '0',
+   number: 0,
+   position: '0',
+   image: ''
+  },
+     {
+     id:223,
+     idTeam: 1,
+     name: 'none',
+     cost: '0',
+     number: 0,
+     position: '0',
+     image: ''
+    }
 ];
