@@ -7,6 +7,7 @@ import Team from "./scenes/team.js"
 import Profile from "./scenes/profile.js"
 import Liga from "./scenes/liga.js"
 import Statistic from "./scenes/statistic.js"
+import GamePlay from "./scenes/gameplay.js"
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/liga" element={<Liga />} />
         <Route path="/statistic" element={<Statistic />} />
+        <Route path="/gameplay" element={<GamePlay />} />
       </Routes>
 
 

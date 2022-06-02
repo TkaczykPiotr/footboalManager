@@ -7,15 +7,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 
-function Statistic() {
+function GamePlay() {
           const [sidebar, setSidebar] = useState(true);
+
+
 
 
   return (
      <>
+     <div>
               <IconContext.Provider value={{ color: '#fff' }}>
                      <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-                       <ul className='nav-menu-items' >
+                       <ul className='nav-menu-items'>
                        <br/>
                          {SidebarData.map((item, index) => {
                            return (
@@ -31,12 +34,14 @@ function Statistic() {
                      </nav>
                    </IconContext.Provider>
                     <div className="MainBox" >
+                    <h2>Hello {JSON.parse(localStorage.getItem('user')).name}</h2>
+                    <span>gfdgdf</span>
+                    </div>
 
 
-                     </div>
-
+        </div>
        </>
   );
 }
 
-export default Statistic;
+export default GamePlay;

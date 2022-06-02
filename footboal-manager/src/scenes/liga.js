@@ -33,8 +33,35 @@ function Liga() {
                      </nav>
                    </IconContext.Provider>
                     <div className="MainBox" >
-                    <h2>Hello {JSON.parse(localStorage.getItem('user')).name}</h2>
-                    <span>gfdgdf</span>
+                    <div style={{background: '#afccc2', borderRadius: '10px' , marginBottom: '20%'}}>
+                                     <h2 className="text-center">Tables</h2>
+                                        <br></br>
+                                          <div className = "row" style={{width: '1200px', marginLeft:'10%'}} >
+                                          <table className = "table table-striped table-bordered" style={{borderColor: 'black'}}>
+                                          <thead>
+                                           <tr>
+                                           <th> Lp.</th>
+                                   <th> Team</th>
+                                   <th> Matches</th>
+                                   <th> Win</th>
+                                   <th> Draw</th>
+                                   <th> Loose</th>
+                                   <th> Goal</th>
+                                  <th> Points</th>
+
+                                    </tr>
+                                  </thead>
+                                 <tbody>
+                                  {
+                                   <tr>
+                                     <td>i</td>
+                                     <td>dsa</td>
+                                   </tr>
+                                   }
+                                   </tbody>
+                               </table>
+                            </div>
+                        </div>
                     </div>
 
        </>

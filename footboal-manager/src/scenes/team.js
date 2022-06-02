@@ -45,7 +45,7 @@ function Team() {
            {
            label: "shotting",
            data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.sho),
-           backgroundColor: ["rgba(172,142,135,32)"],
+           backgroundColor: ["#bf1b2e"],
            borderColor: "black",
            borderWidth: 2,
            },
@@ -66,7 +66,7 @@ function Team() {
            {
            label: "physical",
            data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.psy),
-           backgroundColor: ["#ecf0f1"],
+           backgroundColor: ["#80530a"],
            borderColor: "black",
            borderWidth: 2,
            },
@@ -94,7 +94,7 @@ function Team() {
                                                 {
                                                 label: "shotting",
                                                 data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.sho),
-                                                backgroundColor: ["rgba(172,142,135,32)"],
+                                                backgroundColor: ["#bf1b2e"],
                                                 borderColor: "black",
                                                 borderWidth: 2,
                                                 },
@@ -115,15 +115,13 @@ function Team() {
                                                 {
                                                 label: "physical",
                                                 data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.psy),
-                                                backgroundColor: ["#ecf0f1"],
+                                                backgroundColor: ["#80530a"],
                                                 borderColor: "black",
                                                 borderWidth: 2,
                                                 },
 
                                                 ],
                                                 });
-                console.log("1ddd");
-                console.log(playerPropertiesData);
               }, [playerId]);
 
 
@@ -140,9 +138,6 @@ function Team() {
 
            const takeId = (id)  => {
                     setPlayerId(id);
-
-                    console.log(id);
-                    console.log(playerId);
                     };
 
             const onPaste = (numberl)  =>{
