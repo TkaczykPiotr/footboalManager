@@ -6,6 +6,9 @@ import BackdropFilter from "react-backdrop-filter";
 import { SystemPlayer532, SystemPlayer442, SystemPlayer343 } from '../data/SystemPlayer';
 import { PlayerData } from '../data/PlayerData';
 import { TablesTeam } from '../data/TablesTeam';
+import { MatchesData } from '../data/MatchesData';
+import { PlayerProperties } from '../data/PlayerProperties';
+
 
 function Home() {
        const [name, setName] = useState('user');
@@ -17,12 +20,16 @@ function Home() {
                 name: name,
                 team: team
                 }
+
             localStorage.setItem("user", JSON.stringify(user));
             localStorage.setItem("system442", JSON.stringify(SystemPlayer442));
             localStorage.setItem("system343", JSON.stringify(SystemPlayer343));
             localStorage.setItem("system532", JSON.stringify(SystemPlayer532));
             localStorage.setItem("playerData", JSON.stringify(PlayerData));
             localStorage.setItem("table", JSON.stringify(TablesTeam));
+            localStorage.setItem("matchesData", JSON.stringify(MatchesData));
+            localStorage.setItem("playerPro", JSON.stringify(PlayerProperties));
+            localStorage.setItem("round", JSON.stringify(1));
 
 
        }

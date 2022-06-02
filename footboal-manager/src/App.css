@@ -58,11 +58,13 @@ height: 100vh;
 
 }
 .RightBoxTeam{
+
  margin-left: 820px;
  margin-top: 2%;
  margin-right: 1%;
  background: #487a82;
  height: 499px;
+
 }
 .BotBoxTeam{
 margin: 1%;
@@ -117,6 +119,13 @@ height: 20vh;
 
 .circleField:hover {
  background-color: #6ae68b;
+}
+
+
+.InfoTopBox{
+margin: 1%;
+height: 20vh;
+background: #6c757d;
 }
 
 .App-logo {

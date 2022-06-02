@@ -7,11 +7,6 @@ function PlayerChartData({chartData}){
 
 return (
 <Bar data={chartData} />
-
-
-
-
 )
 }
-
 export default PlayerChartData;
