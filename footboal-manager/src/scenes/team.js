@@ -26,7 +26,7 @@ function Team() {
 
 
           const [playerPropertiesData, setPlayerPropertiesData] =  useState({
-          labels: player.filter(t => t.id===playerId).map((data) => data.name),
+          labels: player.filter(t => t.id===playerId && t.idTeam==JSON.parse(localStorage.getItem('user')).team).map((data) => data.name),
           datasets: [
           {
            label: "pace",
@@ -75,7 +75,7 @@ function Team() {
           useEffect(() => {
               setPlayerPropertiesData({
 
-                                                labels: player.filter(t => t.id===playerId).map((data) => data.name),
+                                                labels: player.filter(t => t.id===playerId && t.idTeam==JSON.parse(localStorage.getItem('user')).team).map((data) => data.name),
                                                 datasets: [
                                                 {
                                                 label: "pace",
@@ -250,7 +250,7 @@ function Team() {
                             <br/>
                             <br/>
                         <div style={{float:'left', width: '30%', height: '60%'}}>
-                        {player.filter(t => t.id==playerId)
+                        {player.filter(t => t.id==playerId && t.idTeam==JSON.parse(localStorage.getItem('user')).team)
                          .map(item =>
                          <div  >
                          <img className="ImgCardPlayer" src={item.image} alt="player"/>
@@ -271,6 +271,7 @@ function Team() {
                         </div>
 
                         <div className="BotBoxTeam" >
+
 
                          </div>
 

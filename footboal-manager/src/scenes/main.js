@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SidebarData } from '../data/SidebarData';
 import { TeamData } from '../data/TeamData';
+import ModalExit from '../modal/modalExit';
 import '../css/Navbar.css';
 import BackdropFilter from "react-backdrop-filter";
 import { IconContext } from 'react-icons';
@@ -11,6 +12,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function Main() {
           const [sidebar, setSidebar] = useState(true);
+
 
           const [team, setTeam] = useState(JSON.parse(localStorage.getItem('user')).team);
 
@@ -25,8 +27,8 @@ function Main() {
                        <br/>
                          {SidebarData.map((item, index) => {
                            return (
-                             <li key={index} className={item.cName}>
-                               <Link to={item.path}>
+                             <li key={index} className={item.cName} >
+                               <Link to={item.path}  >
                                  {item.icon}
                                  <span>{item.title}</span>
                                </Link>
@@ -37,6 +39,7 @@ function Main() {
                      </nav>
                    </IconContext.Provider>
                     <div className="MainBox" >
+
 
                         <div className="LeftBoxMain">
 

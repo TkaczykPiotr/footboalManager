@@ -8,7 +8,7 @@ import Profile from "./scenes/profile.js"
 import Liga from "./scenes/liga.js"
 import Statistic from "./scenes/statistic.js"
 import GamePlay from "./scenes/gameplay.js"
-
+import ExitModal from "./modal/modalExit.js"
 
 function App() {
 
@@ -23,6 +23,7 @@ function App() {
         <Route path="/liga" element={<Liga />} />
         <Route path="/statistic" element={<Statistic />} />
         <Route path="/gameplay" element={<GamePlay />} />
+        <Route path="/exitModal" element={<ExitModal />} />
       </Routes>
 
 

@@ -7,8 +7,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 
+
 function Liga() {
           const [sidebar, setSidebar] = useState(true);
+          const [table, setTable] = useState(JSON.parse(localStorage.getItem('table')));
 
 
 
@@ -53,11 +55,19 @@ function Liga() {
                                   </thead>
                                  <tbody>
                                   {
-                                   <tr>
-                                     <td>i</td>
-                                     <td>dsa</td>
+                                  table.map((item, index)=>
+                                   <tr key={index}>
+                                     <td>{index+1}</td>
+                                     <td>{item.name}</td>
+                                     <td>{item.win}</td>
+                                     <td>{item.matches}</td>
+                                     <td>{item.draw}</td>
+                                     <td>{item.loose}</td>
+                                     <td>{item.goalScored}:{item.goalLoose}</td>
+                                     <td>{item.points}</td>
+
                                    </tr>
-                                   }
+                                   )}
                                    </tbody>
                                </table>
                             </div>

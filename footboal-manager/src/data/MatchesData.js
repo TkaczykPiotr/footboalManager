@@ -5,36 +5,107 @@ export const MatchesData = [
     id: 1,
     round: 1,
     idHomeTeam: 1,
-    idAwayTeam: 2
+    idAwayTeam: 2,
+    scoreH: 0,
+    scoreW: 0,
+    possession: 0,
+    shotAtGoal: 0,
+    accurateShots: 0,
+    fouls: 0,
+    freeKicks: 0,
+    yellowCards: 0,
+    corners: 0,
+    offsides: 0,
+    changes: 0
+
 },
 {
     id: 2,
     round: 1,
     idHomeTeam: 3,
-    idAwayTeam: 4
+    idAwayTeam: 4,
+    scoreH: 0,
+    scoreW: 0,
+    possession: 0,
+    shotAtGoal: 0,
+    accurateShots: 0,
+    fouls: 0,
+    freeKicks: 0,
+    yellowCards: 0,
+    corners: 0,
+    offsides: 0,
+    changes: 0
+
 },
 {
     id: 3,
     round: 2,
     idHomeTeam: 1,
-    idAwayTeam: 3
+    idAwayTeam: 3,
+    scoreH: 0,
+    scoreW: 0,
+    possession: 0,
+    shotAtGoal: 0,
+    accurateShots: 0,
+    fouls: 0,
+    freeKicks: 0,
+    yellowCards: 0,
+    corners: 0,
+    offsides: 0,
+    changes: 0
+
 },
 {
     id: 4,
     round: 2,
     idHomeTeam: 2,
-    idAwayTeam: 4
+    idAwayTeam: 4,
+    scoreH: 0,
+    scoreW: 0,
+    possession: 0,
+    shotAtGoal: 0,
+    accurateShots: 0,
+    fouls: 0,
+    freeKicks: 0,
+    yellowCards: 0,
+    corners: 0,
+    offsides: 0,
+    changes: 0
+
 },
 {
     id: 5,
     round: 3,
     idHomeTeam: 1,
-    idAwayTeam: 4
+    idAwayTeam: 4,
+    scoreH: 0,
+    scoreW: 0,
+    possession: 0,
+    shotAtGoal: 0,
+    accurateShots: 0,
+    fouls: 0,
+    freeKicks: 0,
+    yellowCards: 0,
+    corners: 0,
+    offsides: 0,
+    changes: 0
+
 },
 {
     id: 6,
     round: 3,
     idHomeTeam: 2,
-    idAwayTeam: 3
+    idAwayTeam: 3,
+    scoreH: 0,
+    scoreW: 0,
+    possession: 0,
+    shotAtGoal: 0,
+    accurateShots: 0,
+    fouls: 0,
+    freeKicks: 0,
+    yellowCards: 0,
+    corners: 0,
+    offsides: 0,
+    changes: 0
 },
 ];

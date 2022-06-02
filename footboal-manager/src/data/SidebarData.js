@@ -6,7 +6,7 @@ import * as ImIcons from 'react-icons/im';
 export const SidebarData = [
  {
     title: 'Exit',
-    path: '/',
+    path: '/exitModal',
     icon: <ImIcons.ImExit />,
     cName: 'nav-text'
   },
@@ -49,7 +49,7 @@ export const SidebarData = [
     {
       title: 'Play',
       path: '/gameplay',
-      icon: <IoIcons.IoMdHelpCircle />,
+      icon: <AiIcons.AiOutlinePlayCircle />,
       cName: 'nav-text'
     }
 ];

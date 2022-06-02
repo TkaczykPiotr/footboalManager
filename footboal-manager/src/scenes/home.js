@@ -5,10 +5,11 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import BackdropFilter from "react-backdrop-filter";
 import { SystemPlayer532, SystemPlayer442, SystemPlayer343 } from '../data/SystemPlayer';
 import { PlayerData } from '../data/PlayerData';
+import { TablesTeam } from '../data/TablesTeam';
 
 function Home() {
-       const [name, setName] = useState();
-       const [team, setTeam] = useState();
+       const [name, setName] = useState('user');
+       const [team, setTeam] = useState(1);
 
 
        function setLocalStorage(){
@@ -21,6 +22,7 @@ function Home() {
             localStorage.setItem("system343", JSON.stringify(SystemPlayer343));
             localStorage.setItem("system532", JSON.stringify(SystemPlayer532));
             localStorage.setItem("playerData", JSON.stringify(PlayerData));
+            localStorage.setItem("table", JSON.stringify(TablesTeam));
 
 
        }
@@ -48,7 +50,7 @@ function Home() {
               <option value={1}>Barcelona</option>
               <option value={2}>Real Madrid</option>
               <option value={3}>Atletico Madrid</option>
-              <option>4</option>
+              <option value={4}>Sevilla</option>
             </select>
           </div>
         </form>
