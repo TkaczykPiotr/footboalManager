@@ -4,6 +4,7 @@ export const PlayerProperties = [
  {
      id: 1,
      idTeam: 1,
+     play: true,
      pac: 22,
      pas: 73,
      sho: 40,
@@ -15,6 +16,7 @@ export const PlayerProperties = [
    {
      id: 2,
      idTeam: 1,
+     play: false,
      pac: 30,
      pas: 76,
      sho: 46,
@@ -26,6 +28,7 @@ export const PlayerProperties = [
    {
      id: 3,
      idTeam: 1,
+      play: true,
      pac: 73,
      pas: 58,
      sho: 66,
@@ -37,6 +40,7 @@ export const PlayerProperties = [
    {
      id: 4,
      idTeam: 1,
+     play: false,
      pac: 67,
      pas: 60,
      sho: 65,
@@ -48,6 +52,7 @@ export const PlayerProperties = [
    {
     id: 5,
     idTeam: 1,
+     play: true,
      pac: 82,
      pas: 70,
      sho: 45,
@@ -59,6 +64,7 @@ export const PlayerProperties = [
    {
       id: 6,
       idTeam: 1,
+      play: false,
       pac: 80,
      pas: 76,
      sho: 43,
@@ -70,6 +76,7 @@ export const PlayerProperties = [
    {
     id: 7,
     idTeam: 1,
+    play: false,
      pac: 67,
      pas: 70,
      sho: 42,
@@ -81,6 +88,7 @@ export const PlayerProperties = [
    {
     id: 8,
     idTeam: 1,
+    play: false,
      pac: 66,
      pas: 74,
      sho: 55,
@@ -92,6 +100,7 @@ export const PlayerProperties = [
    {
     id: 9,
     idTeam: 1,
+    play: false,
      pac: 60,
      pas: 70,
      sho: 35,
@@ -103,6 +112,7 @@ export const PlayerProperties = [
    {
    id: 10,
    idTeam: 1,
+   play: false,
      pac: 72,
      pas: 93,
      sho: 35,
@@ -114,6 +124,7 @@ export const PlayerProperties = [
    {
      id: 11,
      idTeam: 1,
+     play: false,
      pac: 60,
      pas: 70,
      sho: 35,
@@ -125,6 +136,7 @@ export const PlayerProperties = [
    {
      id: 12,
      idTeam: 1,
+     play: false,
      pac: 72,
      pas: 70,
      sho: 65,
@@ -136,6 +148,7 @@ export const PlayerProperties = [
    {
      id: 13,
      idTeam: 1,
+     play: false,
      pac: 65,
      pas: 70,
      sho: 45,
@@ -147,6 +160,7 @@ export const PlayerProperties = [
    {
    id: 14,
    idTeam: 1,
+   play: false,
      pac: 57,
      pas: 73,
      sho: 48,
@@ -158,6 +172,7 @@ export const PlayerProperties = [
   {
     id: 15,
     idTeam: 1,
+    play: false,
      pac: 74,
      pas: 70,
      sho: 35,
@@ -169,6 +184,7 @@ export const PlayerProperties = [
    {
      id: 16,
      idTeam: 1,
+     play: false,
      pac: 68,
      pas: 75,
      sho: 35,
@@ -180,6 +196,7 @@ export const PlayerProperties = [
    {
       id: 17,
       idTeam: 1,
+      play: false,
      pac: 83,
      pas: 79,
      sho: 77,
@@ -191,6 +208,7 @@ export const PlayerProperties = [
    {
     id: 18,
     idTeam: 1,
+    play: false,
      pac: 66,
      pas: 78,
      sho: 83,
@@ -202,6 +220,7 @@ export const PlayerProperties = [
   {
    id: 19,
    idTeam: 1,
+   play: false,
      pac: 92,
      pas: 83,
      sho: 87,
@@ -213,6 +232,7 @@ export const PlayerProperties = [
    {
     id: 20,
     idTeam: 1,
+    play: false,
      pac: 67,
      pas: 70,
      sho: 92,
@@ -224,6 +244,7 @@ export const PlayerProperties = [
    {
    id: 21,
    idTeam: 1,
+   play: false,
      pac: 65,
      pas: 74,
      sho: 93,
@@ -235,6 +256,7 @@ export const PlayerProperties = [
    {
     id: 22,
     idTeam: 2,
+    play: false,
      pac: 55,
      pas: 64,
      sho: 54,
@@ -246,6 +268,7 @@ export const PlayerProperties = [
    {
     id: 23,
     idTeam: 2,
+    play: false,
      pac: 47,
      pas: 60,
      sho: 52,
@@ -257,6 +280,7 @@ export const PlayerProperties = [
    {
     id: 24,
     idTeam: 2,
+     play: true,
      pac: 85,
      pas: 62,
      sho: 50,
@@ -268,6 +292,7 @@ export const PlayerProperties = [
    {
     id: 25,
     idTeam: 2,
+    play: false,
      pac: 87,
      pas: 73,
      sho: 52,
@@ -279,6 +304,7 @@ export const PlayerProperties = [
    {
     id: 26,
     idTeam: 2,
+     play: true,
      pac: 77,
      pas: 70,
      sho: 42,
@@ -290,6 +316,7 @@ export const PlayerProperties = [
    {
     id: 27,
     idTeam: 2,
+     play: true,
      pac: 77,
      pas: 83,
      sho: 52,
@@ -301,6 +328,7 @@ export const PlayerProperties = [
    {
     id: 28,
     idTeam: 2,
+    play: false,
      pac: 78,
      pas: 76,
      sho: 54,
@@ -312,6 +340,7 @@ export const PlayerProperties = [
    {
     id: 29,
     idTeam: 2,
+    play: false,
      pac: 77,
      pas: 73,
      sho: 45,
@@ -323,6 +352,7 @@ export const PlayerProperties = [
    {
     id: 30,
     idTeam: 2,
+    play: false,
      pac: 87,
      pas: 78,
      sho: 50,
@@ -334,6 +364,7 @@ export const PlayerProperties = [
    {
     id: 31,
     idTeam: 2,
+    play: false,
      pac: 87,
      pas: 90,
      sho: 82,
@@ -345,6 +376,7 @@ export const PlayerProperties = [
    {
     id: 32,
     idTeam: 2,
+    play: false,
      pac: 57,
      pas: 70,
      sho: 92,
@@ -356,6 +388,7 @@ export const PlayerProperties = [
    {
     id: 33,
     idTeam: 2,
+    play: false,
      pac: 57,
      pas: 90,
      sho: 82,
@@ -367,6 +400,7 @@ export const PlayerProperties = [
    {
     id: 34,
     idTeam: 2,
+    play: false,
      pac: 67,
      pas: 80,
      sho: 72,
@@ -378,6 +412,7 @@ export const PlayerProperties = [
    {
     id: 35,
     idTeam: 2,
+    play: false,
      pac: 67,
      pas: 90,
      sho: 82,
@@ -389,6 +424,7 @@ export const PlayerProperties = [
    {
     id: 36,
     idTeam: 2,
+    play: false,
      pac: 87,
      pas: 80,
      sho: 92,
@@ -400,6 +436,7 @@ export const PlayerProperties = [
    {
     id: 37,
     idTeam: 2,
+    play: false,
      pac: 87,
      pas: 80,
      sho: 52,
@@ -411,6 +448,7 @@ export const PlayerProperties = [
    {
     id: 38,
     idTeam: 2,
+    play: false,
      pac: 77,
      pas: 80,
      sho: 72,
@@ -422,6 +460,7 @@ export const PlayerProperties = [
    {
     id: 39,
     idTeam: 2,
+    play: false,
      pac: 77,
      pas: 90,
      sho: 72,
@@ -433,6 +472,7 @@ export const PlayerProperties = [
    {
     id: 40,
     idTeam: 2,
+    play: false,
      pac: 87,
      pas: 80,
      sho: 62,
@@ -444,6 +484,7 @@ export const PlayerProperties = [
    {
     id: 41,
     idTeam: 2,
+    play: false,
      pac: 77,
      pas: 80,
      sho: 92,
@@ -455,6 +496,7 @@ export const PlayerProperties = [
    {
     id: 42,
     idTeam: 2,
+    play: false,
      pac: 87,
      pas: 90,
      sho: 72,
@@ -466,6 +508,7 @@ export const PlayerProperties = [
    {
     id: 43,
     idTeam: 3,
+    play: false,
      pac: 57,
      pas: 80,
      sho: 50,
@@ -477,6 +520,7 @@ export const PlayerProperties = [
    {
     id: 44,
     idTeam: 3,
+    play: false,
      pac: 77,
      pas: 83,
      sho: 52,
@@ -488,6 +532,7 @@ export const PlayerProperties = [
    {
     id: 45,
     idTeam: 3,
+    play: false,
      pac: 74,
      pas: 56,
      sho: 52,
@@ -499,6 +544,7 @@ export const PlayerProperties = [
    {
     id: 46,
     idTeam: 3,
+    play: false,
      pac: 72,
      pas: 70,
      sho: 50,
@@ -510,6 +556,7 @@ export const PlayerProperties = [
    {
     id: 47,
     idTeam: 3,
+    play: false,
      pac: 62,
      pas: 80,
      sho: 52,
@@ -521,6 +568,7 @@ export const PlayerProperties = [
    {
     id: 48,
     idTeam: 3,
+    play: false,
      pac: 86,
      pas: 70,
      sho: 51,
@@ -532,6 +580,7 @@ export const PlayerProperties = [
    {
     id: 49,
     idTeam: 3,
+    play: false,
      pac: 87,
      pas: 80,
      sho: 45,
@@ -543,6 +592,7 @@ export const PlayerProperties = [
    {
     id: 50,
     idTeam: 3,
+    play: false,
      pac: 77,
      pas: 83,
      sho: 52,
@@ -554,6 +604,7 @@ export const PlayerProperties = [
    {
     id: 51,
     idTeam: 3,
+    play: false,
      pac: 75,
      pas: 70,
      sho: 48,
@@ -565,6 +616,7 @@ export const PlayerProperties = [
    {
     id: 52,
     idTeam: 3,
+    play: false,
      pac: 77,
      pas: 80,
      sho: 72,
@@ -576,6 +628,7 @@ export const PlayerProperties = [
    {
     id: 53,
     idTeam: 3,
+    play: false,
      pac: 67,
      pas: 84,
      sho: 74,
@@ -587,6 +640,7 @@ export const PlayerProperties = [
    {
     id: 54,
     idTeam: 3,
+    play: false,
      pac: 67,
      pas: 70,
      sho: 67,
@@ -598,6 +652,7 @@ export const PlayerProperties = [
    {
     id: 55,
     idTeam: 3,
+    play: false,
      pac: 67,
      pas: 80,
      sho: 62,
@@ -609,6 +664,7 @@ export const PlayerProperties = [
    {
     id: 56,
     idTeam: 3,
+    play: false,
      pac: 74,
      pas: 96,
      sho: 68,
@@ -620,6 +676,7 @@ export const PlayerProperties = [
    {
     id: 57,
     idTeam: 3,
+    play: false,
      pac: 67,
      pas: 94,
      sho: 62,
@@ -631,6 +688,7 @@ export const PlayerProperties = [
    {
     id: 58,
     idTeam: 3,
+    play: false,
      pac: 87,
      pas: 70,
      sho: 92,
@@ -642,6 +700,7 @@ export const PlayerProperties = [
    {
     id: 59,
     idTeam: 3,
+    play: false,
      pac: 87,
      pas: 95,
      sho: 52,
@@ -653,6 +712,7 @@ export const PlayerProperties = [
    {
     id: 60,
     idTeam: 3,
+    play: false,
      pac: 87,
      pas: 82,
      sho: 95,
@@ -664,6 +724,7 @@ export const PlayerProperties = [
    {
     id: 61,
     idTeam: 3,
+    play: false,
      pac: 77,
      pas: 80,
      sho: 92,
@@ -675,6 +736,7 @@ export const PlayerProperties = [
    {
     id: 62,
     idTeam: 3,
+    play: false,
      pac: 97,
      pas: 80,
      sho: 92,
@@ -686,6 +748,7 @@ export const PlayerProperties = [
    {
     id: 63,
     idTeam: 3,
+    play: false,
      pac: 67,
      pas: 92,
      sho: 42,
@@ -697,6 +760,7 @@ export const PlayerProperties = [
    {
     id: 64,
     idTeam: 3,
+    play: false,
      pac: 87,
      pas: 90,
      sho: 91,
@@ -708,6 +772,7 @@ export const PlayerProperties = [
    {
     id: 65,
     idTeam: 4,
+    play: false,
      pac: 77,
      pas: 80,
      sho: 52,
@@ -719,6 +784,7 @@ export const PlayerProperties = [
    {
     id: 66,
     idTeam: 4,
+    play: false,
      pac: 87,
      pas: 70,
      sho: 82,
@@ -730,6 +796,7 @@ export const PlayerProperties = [
    {
     id: 67,
     idTeam: 4,
+    play: false,
      pac: 87,
      pas: 80,
      sho: 52,
@@ -741,6 +808,7 @@ export const PlayerProperties = [
    {
     id: 68,
     idTeam: 4,
+    play: false,
      pac: 73,
      pas: 80,
      sho: 52,
@@ -752,6 +820,7 @@ export const PlayerProperties = [
    {
     id: 69,
     idTeam: 4,
+    play: false,
      pac: 78,
      pas: 80,
      sho: 50,
@@ -763,6 +832,7 @@ export const PlayerProperties = [
    {
     id: 70,
     idTeam: 4,
+    play: false,
      pac: 87,
      pas: 74,
      sho: 72,
@@ -774,6 +844,7 @@ export const PlayerProperties = [
    {
     id: 71,
     idTeam: 4,
+    play: false,
      pac: 77,
      pas: 80,
      sho: 48,
@@ -785,6 +856,7 @@ export const PlayerProperties = [
    {
     id: 72,
     idTeam: 4,
+    play: false,
      pac: 74,
      pas: 87,
      sho: 53,
@@ -796,6 +868,7 @@ export const PlayerProperties = [
    {
     id: 73,
     idTeam: 4,
+    play: false,
      pac: 87,
      pas: 92,
      sho: 62,
@@ -807,6 +880,7 @@ export const PlayerProperties = [
    {
     id: 74,
     idTeam: 4,
+    play: false,
      pac: 86,
      pas: 90,
      sho: 52,
@@ -818,6 +892,7 @@ export const PlayerProperties = [
    {
     id: 75,
     idTeam: 4,
+    play: false,
      pac: 87,
      pas: 92,
      sho: 55,
@@ -829,6 +904,7 @@ export const PlayerProperties = [
    {
     id: 76,
     idTeam: 4,
+    play: false,
      pac: 83,
      pas: 95,
      sho: 57,
@@ -840,6 +916,7 @@ export const PlayerProperties = [
    {
     id: 77,
     idTeam: 4,
+    play: false,
      pac: 97,
      pas: 85,
      sho: 92,
@@ -851,6 +928,7 @@ export const PlayerProperties = [
    {
     id: 78,
     idTeam: 4,
+    play: false,
      pac: 97,
      pas: 90,
      sho: 52,
@@ -862,6 +940,7 @@ export const PlayerProperties = [
    {
     id: 79,
     idTeam: 4,
+    play: false,
      pac: 96,
      pas: 83,
      sho: 52,
@@ -873,6 +952,7 @@ export const PlayerProperties = [
    {
     id: 80,
     idTeam: 3,
+    play: false,
      pac: 84,
      pas: 92,
      sho: 52,
@@ -884,6 +964,7 @@ export const PlayerProperties = [
    {
     id: 81,
     idTeam: 4,
+    play: false,
      pac: 84,
      pas: 82,
      sho: 90,
@@ -895,6 +976,7 @@ export const PlayerProperties = [
    {
     id: 82,
     idTeam: 4,
+    play: false,
      pac: 83,
      pas: 79,
      sho: 97,
@@ -906,6 +988,7 @@ export const PlayerProperties = [
    {
     id: 83,
     idTeam: 4,
+    play: false,
      pac: 92,
      pas: 81,
      sho: 90,
@@ -917,6 +1000,7 @@ export const PlayerProperties = [
    {
     id: 84,
     idTeam: 4,
+    play: false,
      pac: 77,
      pas: 85,
      sho: 94,

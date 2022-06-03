@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SidebarData } from '../data/SidebarData';
+import { MatchesData } from '../data/MatchesData';
 import Engine from './engine';
 import '../css/Navbar.css';
 import { IconContext } from 'react-icons';
@@ -18,30 +19,38 @@ function GamePlay() {
           const [player, setPlayer] = useState(JSON.parse(localStorage.getItem('playerData')));
           const [playerPro, setPlayerPro] = useState(JSON.parse(localStorage.getItem('playerPro')));
           const [team, setTeam] = useState(JSON.parse(localStorage.getItem('user')).team);
+          const [matchData, setMatchData] = useState(JSON.parse(localStorage.getItem('matchesData')));
 
-          const [playerPlay, setPlayerPlay] = useState(
-          player.filter(t => t.play===true && t.idTeam==JSON.parse(localStorage.getItem('user')).team).map((data) => data)
+          const [matchId, setMatchId] = useState(matchData
+          .filter(a=> a.round == JSON.parse(localStorage.getItem('round'))
+          && a.idTeam==JSON.parse(localStorage.getItem('user')).team)
+          .map(item=> item.id));
+
+          const [teamOneData, setTeamOneData] = useState(matchData
+          .filter(a => a.idTeam==JSON.parse(localStorage.getItem('user')).team
+          && a.round==JSON.parse(localStorage.getItem('round')))
+          .map(item => item));
+
+          const [teamTwoData, setTeamTwoData] = useState(matchData
+          .filter(a => a.idTeam == matchData
+          .filter(s => s.idTeam != team && s.id==matchId)
+          .map(item => item.idTeam) && a.round==JSON.parse(localStorage.getItem('round')))
+          .map(item => item));
+
+          const [playerPlay, setPlayerPlay] = useState(playerPro
+          .filter(t => t.play===true && t.idTeam==JSON.parse(localStorage.getItem('user')).team)
+          .map((data) => data)
           );
 
           const [playerAwayPlay, setPlayerAwayPlay] = useState(
-          player.filter(t => t.play===true && t.idTeam==JSON.parse(localStorage.getItem('matchesData')).filter(s =>
-          s.idHomeTeam==team && s.round==JSON.parse(localStorage.getItem('round'))).map(tata => tata.idAwayTeam)).map((data) => data)
+          playerPro.filter(t => t.play===true && t.idTeam==matchData.filter(s =>
+          s.idTeam != team && s.id==matchId).map(item => item.idTeam)).map((data) => data)
           );
-
-          const [playerProPlay, setPlayerProPlay] = useState(
-          playerPro.filter(t => t.id === playerPlay.map(s => s)).map((data)=> data)
-          );
-
-
-          const [playerProAwayPlay, setPlayerProAwayPlay] = useState();
-
-
-
-
-
 
           const child = { width: `21em`, height: `100%` };
           const [time, setTime] = useState(0);
+
+
 
                 useEffect(() => {
                   if(time<90){
@@ -52,25 +61,96 @@ function GamePlay() {
                            return () => clearInterval(interval);
                     } }, [time]);
 
+
+
             function engine() {
 
-            console.log(time);
+            //zmienne do konkretnych properties
+            //pierwsza druzyna
+                 var pac1, def1 ,dri1;
+                 var pac11=0, def11=0, dri11=0;
+                    pac1 = playerPlay.map(t => t.pac);
+                    def1 = playerPlay.map(t => t.def);
+                    dri1 = playerPlay.map(t => t.dri);
+                    for(var i=0 ; i<3; i++){
+                     pac11 = pac11+pac1[i];
+                     def11 = def11+def1[i];
+                     dri11 = dri11+dri1[i];
+                    }
+                    //druga druzyna
+                    var pac2, def2 ,dri2;
+                    var pac22=0, def22=0, dri22=0;
+                    pac2 = playerAwayPlay.map(t => t.pac);
+                    def2 = playerAwayPlay.map(t => t.def);
+                    dri2 = playerAwayPlay.map(t => t.dri);
+                   for(var i=0 ; i<3; i++){
+                    pac22 = pac22+pac2[i];
+                    def22 = def22+def2[i];
+                    dri22 = dri22+dri2[i];
+                  }
+
+                 //porownuje obie druzyny z kazdego propertisa dodajac losowa liczbe tak aby czasem wylosowac ta słabsza
+                 //wynik która duzyna lepsza przypisuje do tablicy
+
+                var whoBet = new Array(6);
+                whoBet[0] = condition((pac11+randomNum(0, 100)), (pac22+randomNum(0, 100)));
+                whoBet[1] = condition((def11+randomNum(0, 100)), (def22+randomNum(0, 100)));
+                whoBet[2] = condition((dri11+randomNum(0, 100)), (dri22+randomNum(0, 100)));
+
+
+                // tworze tablice szans dla obu druzyn na poszczegolne wydarzenie np. zolta kartka, gol
+                //sprawdzam ktora druzyna wygrala w danym propertisie i zwiekszam szanse na wylosowanie poszczegolnych wydarzenw meczu w obu duzynach
+                var oneChance = [5,20,10];
+                var twoChance = [10,20,10];
+
+            for(var i=0 ; i<3; i++){
+            //6 mozliwosci
+               if(whoBet[i]==1){
+                oneChance[0] = oneChance[0] + 2;
+                oneChance[1] = oneChance[1] + 8;
+               }}
+
+           for(var i=0 ; i<3; i++){
+             //6 mozliwosci
+               if(whoBet[i]==2){
+               oneChance[0] = oneChance[0] + 4;
+               oneChance[1] = oneChance[1] + 8;
+                }}
+
+
+              //każda szanse sprawdzam czy wystapila jesli tak to przypisuje do state duzyny jej dodatkowy wydarzenie
+
+               var a =  randomNum(0, 100);
+               if(a <= oneChance[0]  ){
+
+                   teamOneData.map(t => t.fouls =  t.fouls + 1 );
+                   setTeamOneData([...teamOneData], teamOneData);
+//               state wsadzam tutaj dane d niego
+               }
+
+               //na koniec zostanie mi wyswietlenie statow
+               //a potem po meczu zapisanie wynikow do druzyn
+
 
             }
 
+            function condition(one, two){
+               if(one >= two){
+               return 1;
+               }else if(one < two){
+                return 2;
+                }
+            }
 
+            function randomNum(min, max) {
+            	return Math.floor(Math.random() * (max - min)) + min;
+            }
 
-
-
-
-
-
-
-
+//{console.log(teamOneData[0].fouls)}
 
   return (
      <>
-     {console.log(playerProPlay)}
+
 
 
 
@@ -117,6 +197,41 @@ function GamePlay() {
                      </div>
 
                      <div className="RightBoxTeam">
+
+                        <thead>
+                          <tr>
+                             <th> Team</th>
+                             <th> score</th>
+                              <th> possession</th>
+                              <th> fouls</th>
+                             <th> shotAtGoal</th>
+                              <th> accurateShots</th>
+                             <th> freeKicks</th>
+                             <th> yellowCards</th>
+                              <th> corners</th>
+                            <th> offsides</th>
+
+                                </tr>
+                         </thead>
+                     <tbody>
+                     {
+                        <tr>
+                       <td>{teamOneData[0].idTeam}</td>
+                        <td>{teamOneData[0].score}</td>
+                        <td>{teamOneData[0].possession}</td>
+                        <td>{teamOneData[0].fouls}</td>
+                       <td>{teamOneData[0].shotAtGoal}</td>
+                        <td>{teamOneData[0].accurateShots}</td>
+                         <td>{teamOneData[0].freeKicks}</td>
+                         <td>{teamOneData[0].yellowCards}</td>
+                         <td>{teamOneData[0].corners}</td>
+                         <td>{teamOneData[0].offsides}</td>
+
+                         </tr>
+                         }
+                      </tbody>
+
+
                      <Engine />
 
 
