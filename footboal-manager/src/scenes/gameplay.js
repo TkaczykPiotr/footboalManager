@@ -67,70 +67,224 @@ function GamePlay() {
 
             //zmienne do konkretnych properties
             //pierwsza druzyna
-                 var pac1, def1 ,dri1;
-                 var pac11=0, def11=0, dri11=0;
+                 var pac1, pas1,sho1,dri1 ,def1, psy1;
+                 var pac11=0, pas11=0, sho11=0, dri11=0, def11=0, psy11=0;
                     pac1 = playerPlay.map(t => t.pac);
-                    def1 = playerPlay.map(t => t.def);
+                    pas1 = playerPlay.map(t => t.pas);
+                    sho1 = playerPlay.map(t => t.sho);
                     dri1 = playerPlay.map(t => t.dri);
-                    for(var i=0 ; i<3; i++){
+                    def1 = playerPlay.map(t => t.def);
+                    psy1 = playerPlay.map(t => t.psy);
+                    for(var i=0 ; i<11; i++){
                      pac11 = pac11+pac1[i];
-                     def11 = def11+def1[i];
+                     pas11 = pas11+pas1[i];
+                     sho11 = sho11+sho1[i];
                      dri11 = dri11+dri1[i];
+                     def11 = def11+def1[i];
+                     psy11 = psy11+psy1[i];
                     }
                     //druga druzyna
-                    var pac2, def2 ,dri2;
-                    var pac22=0, def22=0, dri22=0;
-                    pac2 = playerAwayPlay.map(t => t.pac);
-                    def2 = playerAwayPlay.map(t => t.def);
-                    dri2 = playerAwayPlay.map(t => t.dri);
-                   for(var i=0 ; i<3; i++){
-                    pac22 = pac22+pac2[i];
-                    def22 = def22+def2[i];
-                    dri22 = dri22+dri2[i];
-                  }
+                   var pac2, pas2,sho2,dri2 ,def2, psy2;
+                   var pac22=0, pas22=0, sho22=0, dri22=0, def22=0, psy22=0;
+                   pac2 = playerAwayPlay.map(t => t.pac);
+                   pas2 = playerAwayPlay.map(t => t.pas);
+                   sho2 = playerAwayPlay.map(t => t.sho);
+                   dri2 = playerAwayPlay.map(t => t.dri);
+                   def2 = playerAwayPlay.map(t => t.def);
+                   psy2 = playerAwayPlay.map(t => t.psy);
+
+                   for(var i=0 ; i<11; i++){
+                   pac22 = pac22+pac2[i];
+                   pas22 = pas22+pas2[i];
+                   sho22 = sho22+sho2[i];
+                   dri22 = dri22+dri2[i];
+                   def22 = def22+def2[i];
+                   psy22 = psy22+psy2[i];
+                   }
 
                  //porownuje obie druzyny z kazdego propertisa dodajac losowa liczbe tak aby czasem wylosowac ta słabsza
                  //wynik która duzyna lepsza przypisuje do tablicy
+                 console.log(dri11 + "druga" +dri22);
 
                 var whoBet = new Array(6);
                 whoBet[0] = condition((pac11+randomNum(0, 100)), (pac22+randomNum(0, 100)));
-                whoBet[1] = condition((def11+randomNum(0, 100)), (def22+randomNum(0, 100)));
-                whoBet[2] = condition((dri11+randomNum(0, 100)), (dri22+randomNum(0, 100)));
-
+                whoBet[1] = condition((pas11+randomNum(0, 100)), (pas22+randomNum(0, 100)));
+                whoBet[2] = condition((sho11+randomNum(0, 100)), (sho22+randomNum(0, 100)));
+                whoBet[3] = condition((dri11+randomNum(0, 100)), (dri22+randomNum(0, 100)));
+                whoBet[4] = condition((def11+randomNum(0, 100)), (def22+randomNum(0, 100)));
+                whoBet[5] = condition((psy11+randomNum(0, 100)), (psy22+randomNum(0, 100)));
 
                 // tworze tablice szans dla obu druzyn na poszczegolne wydarzenie np. zolta kartka, gol
                 //sprawdzam ktora druzyna wygrala w danym propertisie i zwiekszam szanse na wylosowanie poszczegolnych wydarzenw meczu w obu duzynach
-                var oneChance = [5,20,10];
-                var twoChance = [10,20,10];
 
-            for(var i=0 ; i<3; i++){
-            //6 mozliwosci
-               if(whoBet[i]==1){
-                oneChance[0] = oneChance[0] + 2;
-                oneChance[1] = oneChance[1] + 8;
-               }}
+                //  goal,strzaly na bramke, celne strzaly,faule,wolne,,kartki,,rozne,spalone
+                var oneChance = [2,12,6,22,27,32,47,52];
+                var twoChance = [2,12,6,22,27,32,47,52];
 
-           for(var i=0 ; i<3; i++){
-             //6 mozliwosci
-               if(whoBet[i]==2){
-               oneChance[0] = oneChance[0] + 4;
-               oneChance[1] = oneChance[1] + 8;
-                }}
-
+//            for(var i=0 ; i<6; i++){}
+               if(whoBet[0]==1){
+                oneChance[0] = oneChance[0] + 1;
+                oneChance[1] = oneChance[1] + 1;
+                oneChance[2] = oneChance[2] + 1;
+                oneChance[6] = oneChance[6] + 1;
+               }
+            if(whoBet[1]==1){
+               oneChance[0] = oneChance[0] + 1;
+               oneChance[1] = oneChance[1] + 1;
+               oneChance[2] = oneChance[2] + 1;
+               oneChance[4] = oneChance[4] + 1;
+             }
+            if(whoBet[2]==1){
+              oneChance[0] = oneChance[0] + 1;
+              oneChance[1] = oneChance[1] + 1;
+              oneChance[2] = oneChance[2] + 1;
+              oneChance[6] = oneChance[6] + 1;
+             }
+           if(whoBet[3]==1){
+             oneChance[0] = oneChance[0] + 1;
+             oneChance[2] = oneChance[2] + 1;
+             oneChance[4] = oneChance[4] + 1;
+             oneChance[7] = oneChance[7] + 1;
+           }
+           if(whoBet[4]==1){
+             oneChance[3] = oneChance[3] + 1;
+             oneChance[4] = oneChance[4] + 1;
+             oneChance[5] = oneChance[5] + 1;
+           }
+           if(whoBet[5]==1){
+             oneChance[3] = oneChance[3] + 1;
+             oneChance[4] = oneChance[4] + 1;
+             oneChance[5] = oneChance[5] + 1;
+             oneChance[6] = oneChance[6] + 1;
+            }
+            //2 duzyna
+                     if(whoBet[0]==2){
+                           twoChance[0] = twoChance[0] + 1;
+                           twoChance[1] = twoChance[1] + 1;
+                           twoChance[2] = twoChance[2] + 1;
+                           twoChance[6] = twoChance[6] + 1;
+                          }
+                       if(whoBet[1]==2){
+                          twoChance[0] = twoChance[0] + 1;
+                          twoChance[1] = twoChance[1] + 1;
+                          twoChance[2] = twoChance[2] + 1;
+                          twoChance[4] = twoChance[4] + 1;
+                        }
+                       if(whoBet[2]==2){
+                         twoChance[0] = twoChance[0] + 1;
+                         twoChance[1] = twoChance[1] + 1;
+                         twoChance[2] = twoChance[2] + 1;
+                         twoChance[6] = twoChance[6] + 1;
+                        }
+                      if(whoBet[3]==2){
+                        twoChance[0] = twoChance[0] + 1;
+                        twoChance[2] = twoChance[2] + 1;
+                        twoChance[4] = twoChance[4] + 1;
+                        twoChance[7] = twoChance[7] + 1;
+                      }
+                      if(whoBet[4]==2){
+                        twoChance[3] = twoChance[3] + 1;
+                        twoChance[4] = twoChance[4] + 1;
+                        twoChance[5] = twoChance[5] + 1;
+                      }
+                      if(whoBet[5]==2){
+                        twoChance[3] = twoChance[3] + 1;
+                        twoChance[4] = twoChance[4] + 1;
+                        twoChance[5] = twoChance[5] + 1;
+                        twoChance[6] = twoChance[6] + 1;
+                       }
 
               //każda szanse sprawdzam czy wystapila jesli tak to przypisuje do state duzyny jej dodatkowy wydarzenie
 
                var a =  randomNum(0, 100);
-               if(a <= oneChance[0]  ){
-
-                   teamOneData.map(t => t.fouls =  t.fouls + 1 );
+               if(a < oneChance[0] ){
+                   teamOneData.map(t => t.score =  t.score + 1 );
                    setTeamOneData([...teamOneData], teamOneData);
-//               state wsadzam tutaj dane d niego
                }
+               if(a < oneChance[1] ){
+                 teamOneData.map(t => t.shotAtGoal =  t.shotAtGoal + 1 );
+                 setTeamOneData([...teamOneData], teamOneData);
+               }
+               if(a < oneChance[2] ){
+                 teamOneData.map(t => t.accurateShots =  t.accurateShots + 1 );
+                 setTeamOneData([...teamOneData], teamOneData);
+              }
+               if(a < oneChance[3] && a>10 ){
+                  teamOneData.map(t => t.fouls =  t.fouls + 1 );
+                  setTeamOneData([...teamOneData], teamOneData);
+               }
+              if(a < oneChance[4] && a>22){
+                 teamOneData.map(t => t.freeKicks =  t.freeKicks + 1 );
+                 setTeamOneData([...teamOneData], teamOneData);
+              }
+              if(a < oneChance[5] && a>27){
+               teamOneData.map(t => t.yellowCards =  t.yellowCards + 1 );
+                setTeamOneData([...teamOneData], teamOneData);
+              }
+              if(a < oneChance[6] && a>35){
+                teamOneData.map(t => t.corners =  t.corners + 1 );
+                setTeamOneData([...teamOneData], teamOneData);
+              }
+             if(a < oneChance[7] && a>47){
+               teamOneData.map(t => t.offsides =  t.offsides + 1 );
+                setTeamOneData([...teamOneData], teamOneData);
+             }
+
+                var b =  randomNum(0, 100);
+                            if(b < twoChance[0] ){
+                                teamTwoData.map(t => t.score =  t.score + 1 );
+                                setTeamTwoData([...teamTwoData], teamTwoData);
+                            }
+                            if(b < twoChance[1] ){
+                              teamTwoData.map(t => t.shotAtGoal =  t.shotAtGoal + 1 );
+                              setTeamTwoData([...teamTwoData], teamTwoData);
+                            }
+                            if(b < twoChance[2] ){
+                              teamTwoData.map(t => t.accurateShots =  t.accurateShots + 1 );
+                              setTeamTwoData([...teamTwoData], teamTwoData);
+                           }
+                            if(b < twoChance[3] && b>10 ){
+                               teamTwoData.map(t => t.fouls =  t.fouls + 1 );
+                               setTeamTwoData([...teamTwoData], teamTwoData);
+                            }
+                           if(b < twoChance[4] && b>22){
+                              teamTwoData.map(t => t.freeKicks =  t.freeKicks + 1 );
+                              setTeamTwoData([...teamTwoData], teamTwoData);
+                           }
+                           if(b < twoChance[5] && b>27){
+                            teamTwoData.map(t => t.yellowCards =  t.yellowCards + 1 );
+                             setTeamTwoData([...teamTwoData], teamTwoData);
+                           }
+                           if(b < twoChance[6] && b>35){
+                             teamTwoData.map(t => t.corners =  t.corners + 1 );
+                             setTeamTwoData([...teamTwoData], teamTwoData);
+                           }
+                          if(b < twoChance[7] && b>47){
+                            teamTwoData.map(t => t.offsides =  t.offsides + 1 );
+                             setTeamTwoData([...teamTwoData], teamTwoData);
+                          }
 
                //na koniec zostanie mi wyswietlenie statow
                //a potem po meczu zapisanie wynikow do druzyn
 
+// //strzaly na bramke
+//                if(i==1){}
+//
+//
+//               //celne strzaly
+//               if(i==2){}
+//
+//
+//               //faule
+//               if(i==3){}
+//               //wolne
+//               if(i==4){}
+//               //kartki
+//               if(i==5){}
+//               //rozne
+//               if(i==6){}
+//               //spalone
+//               if(i==7){}
 
             }
 
@@ -189,10 +343,42 @@ function GamePlay() {
                     <div className="MainBox" style={{marginLeft: '384px'}}>
                     <div className="InfoTopBox">
                         <h2 style={{color: '#fff'}}>{time}:00</h2>
-                         <h2 style={{color: '#fff'}}>0:0</h2>
+                         <h2 style={{color: '#fff'}}>{teamOneData[0].score}:{teamTwoData[0].score}</h2>
                     </div>
 
                     <div className="Field">
+                    <thead>
+                                              <tr>
+                                                 <th> Team</th>
+                                                 <th> score</th>
+                                                  <th> possession</th>
+                                                  <th> fouls</th>
+                                                 <th> shotAtGoal</th>
+                                                  <th> accurateShots</th>
+                                                 <th> freeKicks</th>
+                                                 <th> yellowCards</th>
+                                                  <th> corners</th>
+                                                <th> offsides</th>
+
+                                                    </tr>
+                                             </thead>
+                                         <tbody>
+                                         {
+                                            <tr>
+                                           <td>{teamTwoData[0].idTeam}</td>
+                                            <td>{teamTwoData[0].score}</td>
+                                            <td>{teamTwoData[0].possession}</td>
+                                            <td>{teamTwoData[0].fouls}</td>
+                                           <td>{teamTwoData[0].shotAtGoal}</td>
+                                            <td>{teamTwoData[0].accurateShots}</td>
+                                             <td>{teamTwoData[0].freeKicks}</td>
+                                             <td>{teamTwoData[0].yellowCards}</td>
+                                             <td>{teamTwoData[0].corners}</td>
+                                             <td>{teamTwoData[0].offsides}</td>
+
+                                             </tr>
+                                             }
+                                          </tbody>
 
                      </div>
 

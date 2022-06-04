@@ -4,7 +4,7 @@ export const PlayerData = [
  {
     id: 1,
     idTeam: 1,
-    play: false,
+    play: true,
     name: 'Neto',
     cost: 100000,
     number: 13,
@@ -37,7 +37,7 @@ export const PlayerData = [
   {
     id: 4,
     idTeam: 1,
-    play: true,
+    play: false,
     name: 'Araujo',
     cost: 550000,
     number: 4,
@@ -48,7 +48,7 @@ export const PlayerData = [
   {
    id: 5,
    idTeam: 1,
-   play: false,
+   play: true,
    name: 'Eric Garcia',
    cost: 450000,
    number: 24,
@@ -59,7 +59,7 @@ export const PlayerData = [
   {
      id: 6,
      idTeam: 1,
-     play: false,
+     play: true,
      name: 'Pique',
      cost: 450000,
      number: 3,
@@ -92,7 +92,7 @@ export const PlayerData = [
   {
    id: 9,
    idTeam: 1,
-   play: false,
+   play: true,
    name: 'Busquets',
    cost: 600000,
    number: 5,
@@ -125,7 +125,7 @@ export const PlayerData = [
   {
     id: 12,
     idTeam: 1,
-    play: false,
+    play: true,
     name: 'Gavi',
     cost: 950000,
     number: 30,
@@ -136,7 +136,7 @@ export const PlayerData = [
   {
     id: 13,
     idTeam: 1,
-    play: false,
+    play: true,
     name: 'Nico',
     cost: 800000,
     number: 14,
@@ -180,7 +180,7 @@ export const PlayerData = [
   {
      id: 17,
      idTeam: 1,
-     play: false,
+     play: true,
      name: 'Ferran Torres',
      cost: 1350000,
      number: 19,
@@ -202,7 +202,7 @@ export const PlayerData = [
  {
   id: 19,
   idTeam: 1,
-  play: false,
+  play: true,
   name: 'Adama Traore',
   cost: 850000,
   number: 11,
@@ -213,7 +213,7 @@ export const PlayerData = [
   {
    id: 20,
    idTeam: 1,
-   play: false,
+   play: true,
    name: 'Depay',
    cost: 1850000,
    number: 9,
@@ -224,7 +224,7 @@ export const PlayerData = [
   {
   id: 21,
   idTeam: 1,
-  play: false,
+  play: true,
   name: 'Aubameyang',
   cost: 950000,
   number: 25,
