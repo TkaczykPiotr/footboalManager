@@ -10,6 +10,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import HorizontalScroll from "react-scroll-horizontal";
 import  PlayerChartData  from '../data/PlayerChartData';
 import  MatchesChartData  from '../data/MatchesChartData';
+import ModalMatch  from '../modal/modalMatch';
+import {useNavigate} from "react-router";
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as CgIcons from 'react-icons/cg';
@@ -19,6 +21,7 @@ import * as MdIcons from 'react-icons/md';
 
 
 function GamePlay() {
+          let navigate = useNavigate();
           const [start, setStart] = useState(false);
           const [sidebar, setSidebar] = useState(true);
           const [player, setPlayer] = useState(JSON.parse(localStorage.getItem('playerData')));
@@ -85,8 +88,61 @@ function GamePlay() {
                      width: 10,
                      }, ], },
                     );
+            const sleep = ms => new Promise(res => setTimeout(res, ms));
+            const doSomething = async () => {
+                                  await sleep(1000)
+                                  let oneTeam = {
+                                  id: 1,
+                                  round: 1,
+                                  idTeam: 1,
+                                  score: teamOneData[0].score,
+                                  possession: teamOneData[0].possession,
+                                  shotAtGoal: teamOneData[0].shotAtGoal,
+                                  accurateShots: teamOneData[0].accurateShots,
+                                  fouls: teamOneData[0].fouls,
+                                  freeKicks: teamOneData[0].freeKicks,
+                                  yellowCards: teamOneData[0].yellowCards,
+                                  corners: teamOneData[0].corners,
+                                  changes: teamOneData[0].changes,
+                                  offsides: teamOneData[0].offsides,
+                                  };
+                                  let twoTeam = {
+                                  id: 1,
+                                  round: 1,
+                                  idTeam: 1,
+                                  score: teamTwoData[0].score,
+                                  possession: teamTwoData[0].possession,
+                                  shotAtGoal: teamTwoData[0].shotAtGoal,
+                                  accurateShots: teamTwoData[0].accurateShots,
+                                  fouls: teamTwoData[0].fouls,
+                                  freeKicks: teamTwoData[0].freeKicks,
+                                  yellowCards: teamTwoData[0].yellowCards,
+                                  corners: teamTwoData[0].corners,
+                                  changes: teamTwoData[0].changes,
+                                  offsides: teamTwoData[0].offsides,
+                                  };
 
 
+
+                                     matchData
+                                     .filter(a => a.idTeam==JSON.parse(localStorage.getItem('user')).team
+                                              && a.round==JSON.parse(localStorage.getItem('round')))
+                                              .map(item => item = oneTeam);
+                                       setMatchData([...matchData], matchData);
+
+                                       matchData
+                                                 .filter(a => a.idTeam == matchData
+                                                 .filter(s => s.idTeam != team && s.id==matchId)
+                                                 .map(item => item.idTeam) && a.round==JSON.parse(localStorage.getItem('round')))
+                                                 .map(item => item = twoTeam);
+                                       setMatchData([...matchData], matchData);
+
+                                    localStorage.setItem("matchesData", JSON.stringify(matchData));
+
+
+                                  navigate('/matchModal');
+                                  //do stuff
+                                }
 
 
 
@@ -94,7 +150,7 @@ function GamePlay() {
 
                 useEffect(() => {
                 if(start){
-                  if(time<90){
+                  if(time<20){
                       const interval = setInterval(() => {
                                   setTime(time => time+1);
                                     engine();
@@ -124,7 +180,14 @@ function GamePlay() {
                                     );
                                   }, 1000);
                            return () => clearInterval(interval);
-                    } }}, [time, start]);
+                    }
+                    if(time==20){
+                    doSomething();
+
+                    }
+
+
+                    }}, [time, start]);
 
 
 
@@ -169,7 +232,6 @@ function GamePlay() {
 
                  //porownuje obie druzyny z kazdego propertisa dodajac losowa liczbe tak aby czasem wylosowac ta słabsza
                  //wynik która duzyna lepsza przypisuje do tablicy
-                 console.log(dri11 + "druga" +dri22);
 
                 var whoBet = new Array(6);
                 whoBet[0] = condition((pac11+randomNum(0, 100)), (pac22+randomNum(0, 100)));
@@ -426,9 +488,9 @@ function GamePlay() {
                      background: '#fff',
                      display: 'inline-block',
                      transform:'scale(-1,1)',
-                     webkitTransform:'scale(-1,1)',
-                     mozTransform: 'scale(-1,1)',
-                     oTransform: 'scale(-1,1)'}}>
+                     WebkitTransform:'scale(-1,1)',
+                     MozTransform: 'scale(-1,1)',
+                     OTransform: 'scale(-1,1)'}}>
                      <MatchesChartData chartData={teamTwoMatchesData}  />
                     </div>
 

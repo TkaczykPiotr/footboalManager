@@ -11,6 +11,7 @@ function ModalExit() {
     localStorage.removeItem("system532");
     localStorage.removeItem("table");
     localStorage.removeItem("user");
+    localStorage.removeItem("round");
     }
 
   return (
