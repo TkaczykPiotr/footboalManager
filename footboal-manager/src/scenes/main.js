@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SidebarData } from '../data/SidebarData';
-import { TeamData } from '../data/TeamData';
+
 import ModalExit from '../modal/modalExit';
 import '../css/Navbar.css';
 import BackdropFilter from "react-backdrop-filter";
@@ -12,9 +12,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function Main() {
           const [sidebar, setSidebar] = useState(true);
-
-
           const [team, setTeam] = useState(JSON.parse(localStorage.getItem('user')).team);
+          const [teamData, setTeamData] = useState(JSON.parse(localStorage.getItem('teamData')));
+          const [teamOneData, setTeamOneData] = useState(teamData.filter(a => a.id==team).map(item => item));
+
 
 
 
@@ -44,15 +45,14 @@ function Main() {
                         <div className="LeftBoxMain">
 
                           <h2 style={{color: '#fff'}}>Manager: {JSON.parse(localStorage.getItem('user')).name}</h2>
-                          {TeamData.filter(t => t.id==team)
-                         .map(item =>
-                          <h3 key={item.id} style={{color: '#fff'}}>Club name: {item.name}
-                         <h3 style={{color: '#fff'}}>City: {item.city} </h3>
-                        <h3 style={{color: '#fff'}}>Budged: {item.budget} Euro</h3>
-                       <h3 style={{color: '#fff'}}>Number of Player: {item.numberOfPlayer}</h3>
-                        <img className="ImgCardPlayer" src={item.imageHerb} alt="herb"/>
+
+                          <h3  style={{color: '#fff'}}>Club name: {teamOneData[0].name}
+                         <h3 style={{color: '#fff'}}>City: {teamOneData[0].city} </h3>
+                        <h3 style={{color: '#fff'}}>Budged: {teamOneData[0].budget} Euro</h3>
+                       <h3 style={{color: '#fff'}}>Number of Player: {teamOneData[0].numberOfPlayer}</h3>
+                        <img className="ImgCardPlayer" src={teamOneData[0].imageHerb} alt="herb"/>
                     </h3>
-                   )}
+
 
                         </div>
 

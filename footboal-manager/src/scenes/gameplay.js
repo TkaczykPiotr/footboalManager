@@ -8,23 +8,34 @@ import { IconContext } from 'react-icons';
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import HorizontalScroll from "react-scroll-horizontal";
+import  PlayerChartData  from '../data/PlayerChartData';
+import  MatchesChartData  from '../data/MatchesChartData';
 import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as CgIcons from 'react-icons/cg';
 import * as ImIcons from 'react-icons/im';
+import * as BsIcons from 'react-icons/bs';
+import * as MdIcons from 'react-icons/md';
 
 
 function GamePlay() {
+          const [start, setStart] = useState(false);
           const [sidebar, setSidebar] = useState(true);
           const [player, setPlayer] = useState(JSON.parse(localStorage.getItem('playerData')));
           const [playerPro, setPlayerPro] = useState(JSON.parse(localStorage.getItem('playerPro')));
           const [team, setTeam] = useState(JSON.parse(localStorage.getItem('user')).team);
           const [matchData, setMatchData] = useState(JSON.parse(localStorage.getItem('matchesData')));
+          const [teamData, setTeamData] = useState(JSON.parse(localStorage.getItem('teamData')));
 
           const [matchId, setMatchId] = useState(matchData
           .filter(a=> a.round == JSON.parse(localStorage.getItem('round'))
           && a.idTeam==JSON.parse(localStorage.getItem('user')).team)
           .map(item=> item.id));
+
+          const [teamOneName, setTeamOneName] = useState(teamData.filter(a => a.id==team).map(item => item));
+          const [teamTwoName, setTeamTwoName] = useState(teamData.filter(a => a.id==matchData
+                                                                                              .filter(s => s.idTeam != team && s.id==matchId)
+                                                                                              .map(item => item.idTeam)).map(item => item));
 
           const [teamOneData, setTeamOneData] = useState(matchData
           .filter(a => a.idTeam==JSON.parse(localStorage.getItem('user')).team
@@ -50,16 +61,70 @@ function GamePlay() {
           const child = { width: `21em`, height: `100%` };
           const [time, setTime] = useState(0);
 
+          const [teamOneMatchesData, setTeamOneMatchesData] =  useState({
+                    labels: ['','','','','','','','',''],
+                    datasets: [
+                    {
+                     label: '',
+                     data: [teamOneData[0].score,teamOneData[0].possession,teamOneData[0].fouls,teamOneData[0].shotAtGoal,teamOneData[0].accurateShots,teamOneData[0].freeKicks,teamOneData[0].yellowCards,teamOneData[0].corners,teamOneData[0].offsides],
+                     backgroundColor: ["#0d6efd"],
+                     borderColor: "black",
+                     borderWidth: 2,
+                     width: 10,
+                     }, ], },
+                     );
+          const [teamTwoMatchesData, setTeamTwoMatchesData] =  useState({
+                     labels: ['','','','','','','','',''],
+                     datasets: [
+                     {
+                     label: '',
+                     data: [teamTwoData[0].score,teamTwoData[0].possession,teamTwoData[0].fouls,teamTwoData[0].shotAtGoal,teamTwoData[0].accurateShots,teamTwoData[0].freeKicks,teamTwoData[0].yellowCards,teamTwoData[0].corners,teamTwoData[0].offsides],
+                     backgroundColor: ["#bf1b2e"],
+                     borderColor: "black",
+                     borderWidth: 2,
+                     width: 10,
+                     }, ], },
+                    );
+
+
+
+
+
 
 
                 useEffect(() => {
+                if(start){
                   if(time<90){
                       const interval = setInterval(() => {
                                   setTime(time => time+1);
                                     engine();
+                                    setTeamOneMatchesData({
+                                       labels: ['','','','','','','','',''],
+                                       datasets: [
+                                       {
+                                       label: '',
+                                       data: [teamOneData[0].score,teamOneData[0].possession,teamOneData[0].fouls,teamOneData[0].shotAtGoal,teamOneData[0].accurateShots,teamOneData[0].freeKicks,teamOneData[0].yellowCards,teamOneData[0].corners,teamOneData[0].offsides],
+                                       backgroundColor: ["#0d6efd"],
+                                       borderColor: "black",
+                                       borderWidth: 2,
+                                       width: 10,
+                                       }],}
+                                       );
+                                       setTeamTwoMatchesData({
+                                       labels: ['','','','','','','','',''],
+                                       datasets: [
+                                       {
+                                       label: '',
+                                       data: [teamTwoData[0].score,teamTwoData[0].possession,teamTwoData[0].fouls,teamTwoData[0].shotAtGoal,teamTwoData[0].accurateShots,teamTwoData[0].freeKicks,teamTwoData[0].yellowCards,teamTwoData[0].corners,teamTwoData[0].offsides],
+                                       backgroundColor: ["#bf1b2e"],
+                                       borderColor: "black",
+                                       borderWidth: 2,
+                                       width: 10,
+                                       }],}
+                                    );
                                   }, 1000);
                            return () => clearInterval(interval);
-                    } }, [time]);
+                    } }}, [time, start]);
 
 
 
@@ -267,25 +332,6 @@ function GamePlay() {
                //na koniec zostanie mi wyswietlenie statow
                //a potem po meczu zapisanie wynikow do druzyn
 
-// //strzaly na bramke
-//                if(i==1){}
-//
-//
-//               //celne strzaly
-//               if(i==2){}
-//
-//
-//               //faule
-//               if(i==3){}
-//               //wolne
-//               if(i==4){}
-//               //kartki
-//               if(i==5){}
-//               //rozne
-//               if(i==6){}
-//               //spalone
-//               if(i==7){}
-
             }
 
             function condition(one, two){
@@ -320,11 +366,18 @@ function GamePlay() {
                                </Link>
                              </li>
                              <li  className="nav-text">
-                               <Link to='/main'>
-                               <ImIcons.ImExit />
+                               <Link to='' onClick={()=> setStart(true)}>
+                               <MdIcons.MdNotStarted />
                                 <span>Start</span>
-                                </Link>
+                               </Link>
                              </li>
+
+                              <li  className="nav-text">
+                              <Link to='' onClick={()=> setStart(false)}>
+                              <BsIcons.BsFillStopFill />
+                              <span>Stop</span>
+                              </Link>
+                              </li>
                               <li  className="nav-text">
                                <a style={{color: '#f5f5f5'}}>
                               <ImIcons.ImExit />
@@ -342,83 +395,60 @@ function GamePlay() {
                    </IconContext.Provider>
                     <div className="MainBox" style={{marginLeft: '384px'}}>
                     <div className="InfoTopBox">
+                        <div style={{float: 'left', marginLeft: '30%'}}>
+                        <img className="ImgCardPlayer" src={teamOneName[0].imageHerb} alt="herb"/>
+                        </div>
+                        <div style={{float: 'left', marginLeft: '2%',marginTop: '2%', width: '50px', height: '50px'}}>
                         <h2 style={{color: '#fff'}}>{time}:00</h2>
                          <h2 style={{color: '#fff'}}>{teamOneData[0].score}:{teamTwoData[0].score}</h2>
+                         </div>
+                         <div style={{float: 'left', marginLeft: '2%'}}>
+                          <img className="ImgCardPlayer" src={teamTwoName[0].imageHerb} alt="herb"/>
+                            </div>
                     </div>
 
                     <div className="Field">
-                    <thead>
-                                              <tr>
-                                                 <th> Team</th>
-                                                 <th> score</th>
-                                                  <th> possession</th>
-                                                  <th> fouls</th>
-                                                 <th> shotAtGoal</th>
-                                                  <th> accurateShots</th>
-                                                 <th> freeKicks</th>
-                                                 <th> yellowCards</th>
-                                                  <th> corners</th>
-                                                <th> offsides</th>
 
-                                                    </tr>
-                                             </thead>
-                                         <tbody>
-                                         {
-                                            <tr>
-                                           <td>{teamTwoData[0].idTeam}</td>
-                                            <td>{teamTwoData[0].score}</td>
-                                            <td>{teamTwoData[0].possession}</td>
-                                            <td>{teamTwoData[0].fouls}</td>
-                                           <td>{teamTwoData[0].shotAtGoal}</td>
-                                            <td>{teamTwoData[0].accurateShots}</td>
-                                             <td>{teamTwoData[0].freeKicks}</td>
-                                             <td>{teamTwoData[0].yellowCards}</td>
-                                             <td>{teamTwoData[0].corners}</td>
-                                             <td>{teamTwoData[0].offsides}</td>
-
-                                             </tr>
-                                             }
-                                          </tbody>
 
                      </div>
 
+
                      <div className="RightBoxTeam">
 
-                        <thead>
-                          <tr>
-                             <th> Team</th>
-                             <th> score</th>
-                              <th> possession</th>
-                              <th> fouls</th>
-                             <th> shotAtGoal</th>
-                              <th> accurateShots</th>
-                             <th> freeKicks</th>
-                             <th> yellowCards</th>
-                              <th> corners</th>
-                            <th> offsides</th>
+                        <br/>
+                     <div style={{ width:'100%', height: '10%'}}>
+                     <h2 style={{color: '#fff'}}>{teamTwoName[0].name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{teamOneName[0].name}</h2>
 
-                                </tr>
-                         </thead>
-                     <tbody>
-                     {
-                        <tr>
-                       <td>{teamOneData[0].idTeam}</td>
-                        <td>{teamOneData[0].score}</td>
-                        <td>{teamOneData[0].possession}</td>
-                        <td>{teamOneData[0].fouls}</td>
-                       <td>{teamOneData[0].shotAtGoal}</td>
-                        <td>{teamOneData[0].accurateShots}</td>
-                         <td>{teamOneData[0].freeKicks}</td>
-                         <td>{teamOneData[0].yellowCards}</td>
-                         <td>{teamOneData[0].corners}</td>
-                         <td>{teamOneData[0].offsides}</td>
+                     </div>
+                     <div style={{float:'left',
+                     width: '42%',
+                     height: '70%',
+                     background: '#fff',
+                     display: 'inline-block',
+                     transform:'scale(-1,1)',
+                     webkitTransform:'scale(-1,1)',
+                     mozTransform: 'scale(-1,1)',
+                     oTransform: 'scale(-1,1)'}}>
+                     <MatchesChartData chartData={teamTwoMatchesData}  />
+                    </div>
 
-                         </tr>
-                         }
-                      </tbody>
+                    <div style={{float:'left', width:'100px', height: '70%', background: '#ddf'}}>
+                    <br />
 
+                    <h6 style={{marginTop: '10px'}}>score</h6>
+                    <h6>possession</h6>
+                    <h6>shotAtGoal</h6>
+                    <h6>accurateShots</h6>
+                    <h6>fouls</h6>
+                    <h6>freeKicks</h6>
+                    <h6>yellowCards</h6>
+                    <h6>corners</h6>
+                    <h6>offsides</h6>
+                    </div>
 
-                     <Engine />
+                    <div style={{float:'left', width: '42%', height:'70%', background: '#fff'}}>
+                     <MatchesChartData chartData={teamOneMatchesData} />
+                      </div>
 
 
                      </div>
@@ -427,7 +457,7 @@ function GamePlay() {
 
                      <div className="PlayerBox" style={{background: '#6c757d'}} >
                       <HorizontalScroll>
-                                                       {player.filter(t => t.idTeam==team)
+                                                       {player.filter(t => t.idTeam==team && t.play==true)
                                                         .map(item =>
                                                         <div key={item.id} className="CardPlayer" style={child} >
                                                         <img className="ImgCardPlayer" src={item.image} alt="player"/>

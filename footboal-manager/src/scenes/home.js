@@ -8,6 +8,7 @@ import { PlayerData } from '../data/PlayerData';
 import { TablesTeam } from '../data/TablesTeam';
 import { MatchesData } from '../data/MatchesData';
 import { PlayerProperties } from '../data/PlayerProperties';
+import { TeamData } from '../data/TeamData';
 
 
 function Home() {
@@ -29,6 +30,7 @@ function Home() {
             localStorage.setItem("table", JSON.stringify(TablesTeam));
             localStorage.setItem("matchesData", JSON.stringify(MatchesData));
             localStorage.setItem("playerPro", JSON.stringify(PlayerProperties));
+            localStorage.setItem("teamData", JSON.stringify(TeamData));
             localStorage.setItem("round", JSON.stringify(1));
 
 
