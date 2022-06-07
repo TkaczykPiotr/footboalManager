@@ -9,7 +9,7 @@ function MatchesChartData({chartData}){
 
 
 return (
-<Bar data={chartData} height={300} options={{indexAxis: 'y'}}  />
+<Bar data={chartData} height={300} options={{  indexAxis: 'y', scales: { yAxes:{display: false}, xAxes: {display:false}}    }}  />
 )
 }
 export default MatchesChartData;

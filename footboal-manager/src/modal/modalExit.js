@@ -12,6 +12,9 @@ function ModalExit() {
     localStorage.removeItem("table");
     localStorage.removeItem("user");
     localStorage.removeItem("round");
+    localStorage.removeItem("matchesData");
+    localStorage.removeItem("teamData");
+    localStorage.removeItem("playerPro");
     }
 
   return (

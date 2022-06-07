@@ -29,6 +29,9 @@ function GamePlay() {
           const [team, setTeam] = useState(JSON.parse(localStorage.getItem('user')).team);
           const [matchData, setMatchData] = useState(JSON.parse(localStorage.getItem('matchesData')));
           const [teamData, setTeamData] = useState(JSON.parse(localStorage.getItem('teamData')));
+          const [tableData, setTableData] = useState(JSON.parse(localStorage.getItem('table')))
+
+
 
           const [matchId, setMatchId] = useState(matchData
           .filter(a=> a.round == JSON.parse(localStorage.getItem('round'))
@@ -39,6 +42,10 @@ function GamePlay() {
           const [teamTwoName, setTeamTwoName] = useState(teamData.filter(a => a.id==matchData
                                                                                               .filter(s => s.idTeam != team && s.id==matchId)
                                                                                               .map(item => item.idTeam)).map(item => item));
+           const [teamOneTable, setTeamOneTable] = useState(tableData.filter(a => a.id==team).map(item => item));
+           const [teamTwoTable, setTeamTwoTable] = useState(tableData.filter(a => a.id==matchData
+                                                                                                 .filter(s => s.idTeam != team && s.id==matchId)
+                                                                                                 .map(item => item.idTeam)).map(item => item));
 
           const [teamOneData, setTeamOneData] = useState(matchData
           .filter(a => a.idTeam==JSON.parse(localStorage.getItem('user')).team
@@ -69,7 +76,7 @@ function GamePlay() {
                     datasets: [
                     {
                      label: '',
-                     data: [teamOneData[0].score,teamOneData[0].possession,teamOneData[0].fouls,teamOneData[0].shotAtGoal,teamOneData[0].accurateShots,teamOneData[0].freeKicks,teamOneData[0].yellowCards,teamOneData[0].corners,teamOneData[0].offsides],
+                     data: [teamOneData[0].score,teamOneData[0].possession,teamOneData[0].shotAtGoal,teamOneData[0].accurateShots,teamOneData[0].fouls,teamOneData[0].freeKicks,teamOneData[0].yellowCards,teamOneData[0].corners,teamOneData[0].offsides],
                      backgroundColor: ["#0d6efd"],
                      borderColor: "black",
                      borderWidth: 2,
@@ -81,63 +88,116 @@ function GamePlay() {
                      datasets: [
                      {
                      label: '',
-                     data: [teamTwoData[0].score,teamTwoData[0].possession,teamTwoData[0].fouls,teamTwoData[0].shotAtGoal,teamTwoData[0].accurateShots,teamTwoData[0].freeKicks,teamTwoData[0].yellowCards,teamTwoData[0].corners,teamTwoData[0].offsides],
+                     data: [teamTwoData[0].score,teamTwoData[0].possession,teamTwoData[0].shotAtGoal,teamTwoData[0].accurateShots,teamOneData[0].fouls,teamTwoData[0].freeKicks,teamTwoData[0].yellowCards,teamTwoData[0].corners,teamTwoData[0].offsides],
                      backgroundColor: ["#bf1b2e"],
                      borderColor: "black",
                      borderWidth: 2,
                      width: 10,
                      }, ], },
                     );
+
+             const tableSet = () =>{
+                                     var win1 = 0, lose1 = 0, draw1 = 0, points1=0;
+                                     var win2 = 0, lose2 = 0, draw2 = 0, points2=0;
+
+                                     if(teamOneData[0].score>teamTwoData[0].score){
+                                     points1 = 3;
+                                     win1 = 1;
+                                     lose2 = 1;
+                                     }
+                                     if(teamOneData[0].score==teamTwoData[0].score){
+                                     points1 = 1;
+                                     points2 = 1;
+                                     draw1 = 1;
+                                     draw2 = 1;
+                                     }
+                                     if(teamOneData[0].score<teamTwoData[0].score){
+                                     points2 = 3;
+                                     win2 = 1;
+                                     lose1 = 1;
+                                     }
+
+                                     let oneTeamTable = {
+                                     id: 1,
+                                     name: teamOneName[0].name,
+                                     matches: teamOneTable[0].matches+1,
+                                     win: win1,
+                                     loose: lose1,
+                                     draw: draw1,
+                                     goalScored: teamOneData[0].score,
+                                     goalLoose: teamTwoData[0].score,
+                                     points: points1
+
+                                     }
+                                     tableData.filter(a => a.id==JSON.parse(localStorage.getItem('user')).team).map(item => item = oneTeamTable);
+                                     //setTableData(oneTeamTable);
+                                     console.log(tableData);
+
+                                     localStorage.setItem("table", JSON.stringify(tableData));
+             }
+
             const sleep = ms => new Promise(res => setTimeout(res, ms));
             const doSomething = async () => {
-                                  await sleep(1000)
-                                  let oneTeam = {
-                                  id: 1,
-                                  round: 1,
-                                  idTeam: 1,
-                                  score: teamOneData[0].score,
-                                  possession: teamOneData[0].possession,
-                                  shotAtGoal: teamOneData[0].shotAtGoal,
-                                  accurateShots: teamOneData[0].accurateShots,
-                                  fouls: teamOneData[0].fouls,
-                                  freeKicks: teamOneData[0].freeKicks,
-                                  yellowCards: teamOneData[0].yellowCards,
-                                  corners: teamOneData[0].corners,
-                                  changes: teamOneData[0].changes,
-                                  offsides: teamOneData[0].offsides,
-                                  };
-                                  let twoTeam = {
-                                  id: 1,
-                                  round: 1,
-                                  idTeam: 1,
-                                  score: teamTwoData[0].score,
-                                  possession: teamTwoData[0].possession,
-                                  shotAtGoal: teamTwoData[0].shotAtGoal,
-                                  accurateShots: teamTwoData[0].accurateShots,
-                                  fouls: teamTwoData[0].fouls,
-                                  freeKicks: teamTwoData[0].freeKicks,
-                                  yellowCards: teamTwoData[0].yellowCards,
-                                  corners: teamTwoData[0].corners,
-                                  changes: teamTwoData[0].changes,
-                                  offsides: teamTwoData[0].offsides,
-                                  };
+
+                                     await sleep(1000)
 
 
 
-                                     matchData
-                                     .filter(a => a.idTeam==JSON.parse(localStorage.getItem('user')).team
-                                              && a.round==JSON.parse(localStorage.getItem('round')))
-                                              .map(item => item = oneTeam);
-                                       setMatchData([...matchData], matchData);
+//                                  let oneTeam = {
+//                                  id: 1,
+//                                  round: 1,
+//                                  idTeam: 1,
+//                                  score: teamOneData[0].score,
+//                                  possession: teamOneData[0].possession,
+//                                  shotAtGoal: teamOneData[0].shotAtGoal,
+//                                  accurateShots: teamOneData[0].accurateShots,
+//                                  fouls: teamOneData[0].fouls,
+//                                  freeKicks: teamOneData[0].freeKicks,
+//                                  yellowCards: teamOneData[0].yellowCards,
+//                                  corners: teamOneData[0].corners,
+//                                  changes: teamOneData[0].changes,
+//                                  offsides: teamOneData[0].offsides,
+//                                  };
+//                                  let twoTeam = {
+//                                  id: 1,
+//                                  round: 1,
+//                                  idTeam: 1,
+//                                  score: teamTwoData[0].score,
+//                                  possession: teamTwoData[0].possession,
+//                                  shotAtGoal: teamTwoData[0].shotAtGoal,
+//                                  accurateShots: teamTwoData[0].accurateShots,
+//                                  fouls: teamTwoData[0].fouls,
+//                                  freeKicks: teamTwoData[0].freeKicks,
+//                                  yellowCards: teamTwoData[0].yellowCards,
+//                                  corners: teamTwoData[0].corners,
+//                                  changes: teamTwoData[0].changes,
+//                                  offsides: teamTwoData[0].offsides,
+//                                  };
 
-                                       matchData
-                                                 .filter(a => a.idTeam == matchData
-                                                 .filter(s => s.idTeam != team && s.id==matchId)
-                                                 .map(item => item.idTeam) && a.round==JSON.parse(localStorage.getItem('round')))
-                                                 .map(item => item = twoTeam);
-                                       setMatchData([...matchData], matchData);
 
-                                    localStorage.setItem("matchesData", JSON.stringify(matchData));
+
+//                                     matchData
+//                                     .filter(a => a.idTeam==JSON.parse(localStorage.getItem('user')).team
+//                                              && a.round==JSON.parse(localStorage.getItem('round')))
+//                                              .map(item => item = oneTeam);
+//                                       setMatchData([...matchData], matchData);
+//
+//                                       matchData
+//                                                 .filter(a => a.idTeam == matchData
+//                                                 .filter(s => s.idTeam != team && s.id==matchId)
+//                                                 .map(item => item.idTeam) && a.round==JSON.parse(localStorage.getItem('round')))
+//                                                 .map(item => item = twoTeam);
+//                                       setMatchData([...matchData], matchData);
+
+                                   // localStorage.setItem("matchesData", JSON.stringify(matchData));
+
+                                    console.log(matchData);
+
+
+
+
+
+
 
 
                                   navigate('/matchModal');
@@ -159,7 +219,7 @@ function GamePlay() {
                                        datasets: [
                                        {
                                        label: '',
-                                       data: [teamOneData[0].score,teamOneData[0].possession,teamOneData[0].fouls,teamOneData[0].shotAtGoal,teamOneData[0].accurateShots,teamOneData[0].freeKicks,teamOneData[0].yellowCards,teamOneData[0].corners,teamOneData[0].offsides],
+                                       data: [teamOneData[0].score,teamOneData[0].possession,teamOneData[0].shotAtGoal,teamOneData[0].accurateShots,teamOneData[0].fouls,teamOneData[0].freeKicks,teamOneData[0].yellowCards,teamOneData[0].corners,teamOneData[0].offsides],
                                        backgroundColor: ["#0d6efd"],
                                        borderColor: "black",
                                        borderWidth: 2,
@@ -171,7 +231,7 @@ function GamePlay() {
                                        datasets: [
                                        {
                                        label: '',
-                                       data: [teamTwoData[0].score,teamTwoData[0].possession,teamTwoData[0].fouls,teamTwoData[0].shotAtGoal,teamTwoData[0].accurateShots,teamTwoData[0].freeKicks,teamTwoData[0].yellowCards,teamTwoData[0].corners,teamTwoData[0].offsides],
+                                       data: [teamTwoData[0].score,teamTwoData[0].possession,teamTwoData[0].shotAtGoal,teamTwoData[0].accurateShots,teamOneData[0].fouls,teamTwoData[0].freeKicks,teamTwoData[0].yellowCards,teamTwoData[0].corners,teamTwoData[0].offsides],
                                        backgroundColor: ["#bf1b2e"],
                                        borderColor: "black",
                                        borderWidth: 2,
@@ -182,6 +242,7 @@ function GamePlay() {
                            return () => clearInterval(interval);
                     }
                     if(time==20){
+                    tableSet();
                     doSomething();
 
                     }
@@ -483,9 +544,9 @@ function GamePlay() {
 
                      </div>
                      <div style={{float:'left',
-                     width: '42%',
+                     width: '40%',
                      height: '70%',
-                     background: '#fff',
+
                      display: 'inline-block',
                      transform:'scale(-1,1)',
                      WebkitTransform:'scale(-1,1)',
@@ -494,21 +555,21 @@ function GamePlay() {
                      <MatchesChartData chartData={teamTwoMatchesData}  />
                     </div>
 
-                    <div style={{float:'left', width:'100px', height: '70%', background: '#ddf'}}>
+                    <div style={{float:'left', width:'130px', height: '70%', background: '#ddf'}}>
                     <br />
 
-                    <h6 style={{marginTop: '10px'}}>score</h6>
-                    <h6>possession</h6>
-                    <h6>shotAtGoal</h6>
-                    <h6>accurateShots</h6>
-                    <h6>fouls</h6>
-                    <h6>freeKicks</h6>
-                    <h6>yellowCards</h6>
-                    <h6>corners</h6>
-                    <h6>offsides</h6>
+                    <h6 style={{marginTop: '10px'}}>{teamTwoData[0].score} score {teamOneData[0].score}</h6>
+                    <h6>{teamTwoData[0].possession} possession  {teamOneData[0].possession}</h6>
+                    <h6>{teamTwoData[0].shotAtGoal} shotAtGoal {teamOneData[0].shotAtGoal}</h6>
+                    <h6>{teamTwoData[0].accurateShots} accurateShots {teamOneData[0].accurateShots}</h6>
+                    <h6>{teamTwoData[0].fouls} fouls {teamOneData[0].fouls}</h6>
+                    <h6>{teamTwoData[0].freeKicks} freeKicks {teamOneData[0].freeKicks}</h6>
+                    <h6>{teamTwoData[0].yellowCards} yellowCards {teamOneData[0].yellowCards}</h6>
+                    <h6>{teamTwoData[0].corners} corners {teamOneData[0].corners}</h6>
+                    <h6>{teamTwoData[0].offsides} offsides {teamOneData[0].offsides}</h6>
                     </div>
 
-                    <div style={{float:'left', width: '42%', height:'70%', background: '#fff'}}>
+                    <div style={{float:'left', width: '40%', height:'70%'}}>
                      <MatchesChartData chartData={teamOneMatchesData} />
                       </div>
 
