@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SidebarData } from '../data/SidebarData';
 import { MatchesData } from '../data/MatchesData';
-import EngineOtherTeam from './engineOtherTeam';
+
 import '../css/Navbar.css';
 import { IconContext } from 'react-icons';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -142,6 +142,7 @@ function GamePlay() {
 
             const sleep = ms => new Promise(res => setTimeout(res, ms));
             const doSomething = async () => {
+
                                   await sleep(1000)
                                   localStorage.setItem("matchesData", JSON.stringify(matchData));
                                   localStorage.setItem("table", JSON.stringify(tableData));
@@ -154,6 +155,7 @@ function GamePlay() {
 
 
                 useEffect(() => {
+
                 if(start){
                   if(time<20){
                       const interval = setInterval(() => {
@@ -406,7 +408,9 @@ function GamePlay() {
 
 
 
+
      <div>
+
               <IconContext.Provider value={{ color: '#fff' }}>
                      <nav className={sidebar ? 'nav-menu active' : 'nav-menu'} style={{width: '20%'}}>
                        <ul className='nav-menu-items' >
