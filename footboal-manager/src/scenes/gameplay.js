@@ -30,8 +30,10 @@ function GamePlay() {
           const [matchData, setMatchData] = useState(JSON.parse(localStorage.getItem('matchesData')));
           const [teamData, setTeamData] = useState(JSON.parse(localStorage.getItem('teamData')));
           const [tableData, setTableData] = useState(JSON.parse(localStorage.getItem('table')))
-
-
+          const itemRowsEnemy = [];
+          const itemRowsTeam = [];
+          const [systemEnemy, setSystemEnemy] = useState(JSON.parse(localStorage.getItem('systemEnemy')));
+          const [systemTeam, setSystemTeam] = useState(JSON.parse(localStorage.getItem('systemTeam')));
 
           const [matchId, setMatchId] = useState(matchData
           .filter(a=> a.round == JSON.parse(localStorage.getItem('round'))
@@ -403,6 +405,25 @@ function GamePlay() {
             	return Math.floor(Math.random() * (max - min)) + min;
             }
 
+        for(let i of Object.values(systemEnemy)){
+                            const grid = [
+                            <div className="fields"  key={i}>
+                            {i.visible && (
+                            <button id="white" className="circleField" style={{background: '#0d6efd'}}>{i.number}</button>)}
+                            </div>
+                            ];
+                             itemRowsEnemy.push(grid);
+                            }
+         for(let i of Object.values(systemTeam)){
+                            const grid = [
+                            <div className="fields"  key={i}>
+                            {i.visible && (
+                            <button className="circleField" >{i.number}</button>)}
+                            </div>
+                            ];
+                             itemRowsTeam.push(grid);
+                            }
+
 //{console.log(teamOneData[0].fouls)}
 
   return (
@@ -467,6 +488,13 @@ function GamePlay() {
                     </div>
 
                     <div className="Field">
+                    <div style={{float: 'left',width: '50%', height: '100%'}}>
+                    {itemRowsTeam}
+                    </div>
+                    <div style={{float: 'left',width: '50%', height: '100%'}}>
+                    {itemRowsEnemy}
+                    </div>
+
 
 
                      </div>
@@ -514,7 +542,7 @@ function GamePlay() {
 
 
 
-                     <div className="PlayerBox" style={{background: '#6c757d'}} >
+                     <div className="PlayerBox" >
                       <HorizontalScroll>
                                                        {player.filter(t => t.idTeam==team && t.play==true)
                                                         .map(item =>

@@ -73,56 +73,57 @@ function Team() {
            ],});
 
           useEffect(() => {
-              setPlayerPropertiesData({
+          setPlayerPropertiesData({
 
-                                                labels: player.filter(t => t.id===playerId && t.idTeam==JSON.parse(localStorage.getItem('user')).team).map((data) => data.name),
-                                                datasets: [
-                                                {
-                                                label: "pace",
-                                                data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.pac),
-                                                backgroundColor: ["rgba(75,192,192,1)"],
-                                                borderColor: "black",
-                                                borderWidth: 2,
-                                                },
-                                                {
-                                                label: "passing",
-                                                data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.pas),
-                                                backgroundColor: ["rgba(32,43,165,16)"],
-                                                borderColor: "black",
-                                                borderWidth: 2,
-                                                },
-                                                {
-                                                label: "shotting",
-                                                data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.sho),
-                                                backgroundColor: ["#bf1b2e"],
-                                                borderColor: "black",
-                                                borderWidth: 2,
-                                                },
-                                                {
-                                                label: "dribbling",
-                                                data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.dri),
-                                                backgroundColor: ["rgba(75,123,165,1)"],
-                                                borderColor: "black",
-                                                borderWidth: 2,
-                                                },
-                                                {
-                                                label: "defending",
-                                                data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.def),
-                                                backgroundColor: ["#50AF95"],
-                                                borderColor: "black",
-                                                borderWidth: 2,
-                                                },
-                                                {
-                                                label: "physical",
-                                                data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.psy),
-                                                backgroundColor: ["#80530a"],
-                                                borderColor: "black",
-                                                borderWidth: 2,
-                                                },
+           labels: player.filter(t => t.id===playerId && t.idTeam==JSON.parse(localStorage.getItem('user')).team).map((data) => data.name),
+           datasets: [
+           {
+           label: "pace",
+           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.pac),
+           backgroundColor: ["rgba(75,192,192,1)"],
+           borderColor: "black",
+           borderWidth: 2,
+           },
+           {
+           label: "passing",
+           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.pas),
+           backgroundColor: ["rgba(32,43,165,16)"],
+           borderColor: "black",
+           borderWidth: 2,
+           },
+           {
+           label: "shotting",
+           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.sho),
+           backgroundColor: ["#bf1b2e"],
+           borderColor: "black",
+           borderWidth: 2,
+           },
+           {
+           label: "dribbling",
+           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.dri),
+           backgroundColor: ["rgba(75,123,165,1)"],
+           borderColor: "black",
+           borderWidth: 2,
+           },
+           {
+           label: "defending",
+           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.def),
+           backgroundColor: ["#50AF95"],
+           borderColor: "black",
+           borderWidth: 2,
+           },
+           {
+           label: "physical",
+           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.psy),
+           backgroundColor: ["#80530a"],
+           borderColor: "black",
+           borderWidth: 2,
+           },
 
-                                                ],
-                                                });
-              }, [playerId]);
+           ],
+           });
+
+           }, [playerId]);
 
 
           const [sidebar, setSidebar] = useState(true);
@@ -284,17 +285,3 @@ function Team() {
 
 export default Team;
 
-//<h2>Hello {JSON.parse(localStorage.getItem('user')).name}</h2>
-//                    <h2>{JSON.parse(localStorage.getItem('user')).team}</h2>
-//                    <h2>{team}</h2>
-//                    {TeamData.filter(t => t.id==team)
-//                    .map(item =>
-//                            <ul key={item.id}>{item.name}
-//                            <h3>{item.city}</h3>
-//                            <h3>{item.budget}</h3>
-//                            <h3>{item.numberOfPlayer}</h3>
-//                            </ul>
-//            )}
-
-// <HorizontalScroll style={{marginRight: '5%'}}>
-// </HorizontalScroll>

@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import "./modal.css";
 import { Link } from 'react-router-dom';
 import EngineOtherTeam from '../scenes/engineOtherTeam';
+import {useNavigate} from "react-router";
 function ModalMatch() {
-
+        let navigate = useNavigate();
          const [team, setTeam] = useState(JSON.parse(localStorage.getItem('user')).team);
          const [playerData, setPlayerData] = useState(JSON.parse(localStorage.getItem('playerData')));
          const [matchData, setMatchData] = useState(JSON.parse(localStorage.getItem('matchesData')));
@@ -36,6 +37,7 @@ function ModalMatch() {
         playerPayment();
         engine();
         localStorage.setItem("round", JSON.stringify(round+1));
+
     }
 
     function engine() {
@@ -148,11 +150,17 @@ function ModalMatch() {
      <p>Press ok to start next round!</p>
      </div>
      <div className="footer">
-
+     {round<3 && (
       <Link to='/main' ><button onClick={() => nextRound()}>OK</button></Link>
+      )}
+      {round==3 && (
+            <Link to='/liga' ><button>OK</button></Link>
+        )}
+
      </div>
      </div>
      </div>
+
      </>
 )
 }
