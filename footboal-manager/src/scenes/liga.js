@@ -55,12 +55,14 @@ function Liga() {
                                   </thead>
                                  <tbody>
                                   {
-                                  table.map((item, index)=>
+                                  table
+                                  .sort((a,b) => a.points < b.points ? 1:-1)
+                                  .map((item, index)=>
                                    <tr key={index}>
                                      <td>{index+1}</td>
                                      <td>{item.name}</td>
-                                     <td>{item.win}</td>
                                      <td>{item.matches}</td>
+                                     <td>{item.win}</td>
                                      <td>{item.draw}</td>
                                      <td>{item.loose}</td>
                                      <td>{item.goalScored}:{item.goalLoose}</td>

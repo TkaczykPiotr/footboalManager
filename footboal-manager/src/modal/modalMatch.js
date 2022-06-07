@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function ModalMatch() {
 
     const [round, setRound] = useState(JSON.parse(localStorage.getItem('round')));
-    const [matchData, setMatchData] = useState(JSON.parse(localStorage.getItem('matchesData')));
+   // const [matchData, setMatchData] = useState(JSON.parse(localStorage.getItem('matchesData')));
 
     const nextRound = () => {
         //setRound(round+1);

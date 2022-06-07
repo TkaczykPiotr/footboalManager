@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SidebarData } from '../data/SidebarData';
 import { MatchesData } from '../data/MatchesData';
-import Engine from './engine';
+import EngineOtherTeam from './engineOtherTeam';
 import '../css/Navbar.css';
 import { IconContext } from 'react-icons';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -57,6 +57,8 @@ function GamePlay() {
           .filter(s => s.idTeam != team && s.id==matchId)
           .map(item => item.idTeam) && a.round==JSON.parse(localStorage.getItem('round')))
           .map(item => item));
+
+
 
           const [playerPlay, setPlayerPlay] = useState(playerPro
           .filter(t => t.play===true && t.idTeam==JSON.parse(localStorage.getItem('user')).team)
@@ -117,91 +119,34 @@ function GamePlay() {
                                      lose1 = 1;
                                      }
 
-                                     let oneTeamTable = {
-                                     id: 1,
-                                     name: teamOneName[0].name,
-                                     matches: teamOneTable[0].matches+1,
-                                     win: win1,
-                                     loose: lose1,
-                                     draw: draw1,
-                                     goalScored: teamOneData[0].score,
-                                     goalLoose: teamTwoData[0].score,
-                                     points: points1
 
-                                     }
-                                     tableData.filter(a => a.id==JSON.parse(localStorage.getItem('user')).team).map(item => item = oneTeamTable);
-                                     //setTableData(oneTeamTable);
-                                     console.log(tableData);
+                                     teamOneTable.map(item => item.goalScored = teamOneData[0].score + teamOneTable[0].goalScored);
+                                     teamOneTable.map(item => item.goalLoose =   teamOneTable[0].goalLoose + teamTwoData[0].score);
+                                     teamOneTable.map(item => item.matches = teamOneTable[0].matches+1);
+                                     teamOneTable.map(item => item.win = teamOneTable[0].win + win1);
+                                     teamOneTable.map(item => item.loose = teamOneTable[0].loose + lose1);
+                                     teamOneTable.map(item => item.draw = teamOneTable[0].draw + draw1);
+                                     teamOneTable.map(item => item.points = teamOneTable[0].points+points1);
 
-                                     localStorage.setItem("table", JSON.stringify(tableData));
+                                     teamTwoTable.map(item => item.goalScored =  teamTwoTable[0].goalScored + teamTwoData[0].score);
+                                     teamTwoTable.map(item => item.goalLoose =  teamTwoTable[0].goalLoose + teamOneData[0].score);
+                                     teamTwoTable.map(item => item.matches = teamTwoTable[0].matches+1);
+                                     teamTwoTable.map(item => item.win = teamTwoTable[0].win + win2);
+                                     teamTwoTable.map(item => item.loose = teamTwoTable[0].loose + lose2);
+                                     teamTwoTable.map(item => item.draw = teamTwoTable[0].draw + draw2);
+                                     teamTwoTable.map(item => item.points = teamTwoTable[0].points+points2);
+
+
+
              }
 
             const sleep = ms => new Promise(res => setTimeout(res, ms));
             const doSomething = async () => {
-
-                                     await sleep(1000)
-
-
-
-//                                  let oneTeam = {
-//                                  id: 1,
-//                                  round: 1,
-//                                  idTeam: 1,
-//                                  score: teamOneData[0].score,
-//                                  possession: teamOneData[0].possession,
-//                                  shotAtGoal: teamOneData[0].shotAtGoal,
-//                                  accurateShots: teamOneData[0].accurateShots,
-//                                  fouls: teamOneData[0].fouls,
-//                                  freeKicks: teamOneData[0].freeKicks,
-//                                  yellowCards: teamOneData[0].yellowCards,
-//                                  corners: teamOneData[0].corners,
-//                                  changes: teamOneData[0].changes,
-//                                  offsides: teamOneData[0].offsides,
-//                                  };
-//                                  let twoTeam = {
-//                                  id: 1,
-//                                  round: 1,
-//                                  idTeam: 1,
-//                                  score: teamTwoData[0].score,
-//                                  possession: teamTwoData[0].possession,
-//                                  shotAtGoal: teamTwoData[0].shotAtGoal,
-//                                  accurateShots: teamTwoData[0].accurateShots,
-//                                  fouls: teamTwoData[0].fouls,
-//                                  freeKicks: teamTwoData[0].freeKicks,
-//                                  yellowCards: teamTwoData[0].yellowCards,
-//                                  corners: teamTwoData[0].corners,
-//                                  changes: teamTwoData[0].changes,
-//                                  offsides: teamTwoData[0].offsides,
-//                                  };
-
-
-
-//                                     matchData
-//                                     .filter(a => a.idTeam==JSON.parse(localStorage.getItem('user')).team
-//                                              && a.round==JSON.parse(localStorage.getItem('round')))
-//                                              .map(item => item = oneTeam);
-//                                       setMatchData([...matchData], matchData);
-//
-//                                       matchData
-//                                                 .filter(a => a.idTeam == matchData
-//                                                 .filter(s => s.idTeam != team && s.id==matchId)
-//                                                 .map(item => item.idTeam) && a.round==JSON.parse(localStorage.getItem('round')))
-//                                                 .map(item => item = twoTeam);
-//                                       setMatchData([...matchData], matchData);
-
-                                   // localStorage.setItem("matchesData", JSON.stringify(matchData));
-
-                                    console.log(matchData);
-
-
-
-
-
-
-
-
+                                  await sleep(1000)
+                                  localStorage.setItem("matchesData", JSON.stringify(matchData));
+                                  localStorage.setItem("table", JSON.stringify(tableData));
                                   navigate('/matchModal');
-                                  //do stuff
+
                                 }
 
 
@@ -387,69 +332,53 @@ function GamePlay() {
                var a =  randomNum(0, 100);
                if(a < oneChance[0] ){
                    teamOneData.map(t => t.score =  t.score + 1 );
-                   setTeamOneData([...teamOneData], teamOneData);
                }
                if(a < oneChance[1] ){
                  teamOneData.map(t => t.shotAtGoal =  t.shotAtGoal + 1 );
-                 setTeamOneData([...teamOneData], teamOneData);
                }
                if(a < oneChance[2] ){
                  teamOneData.map(t => t.accurateShots =  t.accurateShots + 1 );
-                 setTeamOneData([...teamOneData], teamOneData);
               }
                if(a < oneChance[3] && a>10 ){
                   teamOneData.map(t => t.fouls =  t.fouls + 1 );
-                  setTeamOneData([...teamOneData], teamOneData);
                }
               if(a < oneChance[4] && a>22){
                  teamOneData.map(t => t.freeKicks =  t.freeKicks + 1 );
-                 setTeamOneData([...teamOneData], teamOneData);
               }
               if(a < oneChance[5] && a>27){
                teamOneData.map(t => t.yellowCards =  t.yellowCards + 1 );
-                setTeamOneData([...teamOneData], teamOneData);
               }
               if(a < oneChance[6] && a>35){
                 teamOneData.map(t => t.corners =  t.corners + 1 );
-                setTeamOneData([...teamOneData], teamOneData);
               }
              if(a < oneChance[7] && a>47){
                teamOneData.map(t => t.offsides =  t.offsides + 1 );
-                setTeamOneData([...teamOneData], teamOneData);
              }
 
                 var b =  randomNum(0, 100);
-                            if(b < twoChance[0] ){
-                                teamTwoData.map(t => t.score =  t.score + 1 );
-                                setTeamTwoData([...teamTwoData], teamTwoData);
-                            }
-                            if(b < twoChance[1] ){
-                              teamTwoData.map(t => t.shotAtGoal =  t.shotAtGoal + 1 );
-                              setTeamTwoData([...teamTwoData], teamTwoData);
-                            }
+                 if(b < twoChance[0] ){
+                     teamTwoData.map(t => t.score =  t.score + 1 );
+                  }
+                 if(b < twoChance[1] ){
+                     teamTwoData.map(t => t.shotAtGoal =  t.shotAtGoal + 1 );
+                 }
                             if(b < twoChance[2] ){
                               teamTwoData.map(t => t.accurateShots =  t.accurateShots + 1 );
-                              setTeamTwoData([...teamTwoData], teamTwoData);
                            }
                             if(b < twoChance[3] && b>10 ){
                                teamTwoData.map(t => t.fouls =  t.fouls + 1 );
-                               setTeamTwoData([...teamTwoData], teamTwoData);
                             }
                            if(b < twoChance[4] && b>22){
                               teamTwoData.map(t => t.freeKicks =  t.freeKicks + 1 );
-                              setTeamTwoData([...teamTwoData], teamTwoData);
                            }
                            if(b < twoChance[5] && b>27){
                             teamTwoData.map(t => t.yellowCards =  t.yellowCards + 1 );
-                             setTeamTwoData([...teamTwoData], teamTwoData);
                            }
                            if(b < twoChance[6] && b>35){
                              teamTwoData.map(t => t.corners =  t.corners + 1 );
-                             setTeamTwoData([...teamTwoData], teamTwoData);
                            }
                           if(b < twoChance[7] && b>47){
                             teamTwoData.map(t => t.offsides =  t.offsides + 1 );
-                             setTeamTwoData([...teamTwoData], teamTwoData);
                           }
 
                //na koniec zostanie mi wyswietlenie statow
