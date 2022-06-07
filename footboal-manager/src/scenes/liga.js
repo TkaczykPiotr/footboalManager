@@ -35,11 +35,11 @@ function Liga() {
                      </nav>
                    </IconContext.Provider>
                     <div className="MainBox" >
-                    <div style={{background: '#afccc2', borderRadius: '10px' , marginBottom: '20%'}}>
-                                     <h2 className="text-center">Tables</h2>
+                    <div id="white" style={{background: '#afccc2', borderRadius: '10px' , marginBottom: '20%', margin: '5%'}}>
+                                     <h2 className="text-center">Table</h2>
                                         <br></br>
                                           <div className = "row" style={{width: '1200px', marginLeft:'10%'}} >
-                                          <table className = "table table-striped table-bordered" style={{borderColor: 'black'}}>
+                                          <table  className = "table table-striped table-bordered" style={{borderColor: 'black'}}>
                                           <thead>
                                            <tr>
                                            <th> Lp.</th>

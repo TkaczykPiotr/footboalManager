@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 
-function Profile() {
+function Transfer() {
           const [sidebar, setSidebar] = useState(true);
 
 
@@ -59,4 +59,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default Transfer;

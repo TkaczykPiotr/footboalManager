@@ -103,17 +103,20 @@ function GamePlay() {
                                      var win2 = 0, lose2 = 0, draw2 = 0, points2=0;
 
                                      if(teamOneData[0].score>teamTwoData[0].score){
+                                     localStorage.setItem("result", JSON.stringify("Win"));
                                      points1 = 3;
                                      win1 = 1;
                                      lose2 = 1;
                                      }
                                      if(teamOneData[0].score==teamTwoData[0].score){
+                                     localStorage.setItem("result", JSON.stringify("Draw"));
                                      points1 = 1;
                                      points2 = 1;
                                      draw1 = 1;
                                      draw2 = 1;
                                      }
                                      if(teamOneData[0].score<teamTwoData[0].score){
+                                     localStorage.setItem("result", JSON.stringify("Loose"));
                                      points2 = 3;
                                      win2 = 1;
                                      lose1 = 1;
@@ -455,8 +458,8 @@ function GamePlay() {
                         <img className="ImgCardPlayer" src={teamOneName[0].imageHerb} alt="herb"/>
                         </div>
                         <div style={{float: 'left', marginLeft: '2%',marginTop: '2%', width: '50px', height: '50px'}}>
-                        <h2 style={{color: '#fff'}}>{time}:00</h2>
-                         <h2 style={{color: '#fff'}}>{teamOneData[0].score}:{teamTwoData[0].score}</h2>
+                        <h2 id="white">{time}:00</h2>
+                         <h2 id="white">{teamOneData[0].score}:{teamTwoData[0].score}</h2>
                          </div>
                          <div style={{float: 'left', marginLeft: '2%'}}>
                           <img className="ImgCardPlayer" src={teamTwoName[0].imageHerb} alt="herb"/>
@@ -473,7 +476,7 @@ function GamePlay() {
 
                         <br/>
                      <div style={{ width:'100%', height: '10%'}}>
-                     <h2 style={{color: '#fff'}}>{teamTwoName[0].name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{teamOneName[0].name}</h2>
+                     <h2 id="white">{teamTwoName[0].name}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{teamOneName[0].name}</h2>
 
                      </div>
                      <div style={{float:'left',
@@ -488,18 +491,18 @@ function GamePlay() {
                      <MatchesChartData chartData={teamTwoMatchesData}  />
                     </div>
 
-                    <div style={{float:'left', width:'130px', height: '70%', background: '#ddf'}}>
+                    <div style={{float:'left', width:'130px', height: '70%'}}>
                     <br />
 
-                    <h6 style={{marginTop: '10px'}}>{teamTwoData[0].score} score {teamOneData[0].score}</h6>
-                    <h6>{teamTwoData[0].possession} possession  {teamOneData[0].possession}</h6>
-                    <h6>{teamTwoData[0].shotAtGoal} shotAtGoal {teamOneData[0].shotAtGoal}</h6>
-                    <h6>{teamTwoData[0].accurateShots} accurateShots {teamOneData[0].accurateShots}</h6>
-                    <h6>{teamTwoData[0].fouls} fouls {teamOneData[0].fouls}</h6>
-                    <h6>{teamTwoData[0].freeKicks} freeKicks {teamOneData[0].freeKicks}</h6>
-                    <h6>{teamTwoData[0].yellowCards} yellowCards {teamOneData[0].yellowCards}</h6>
-                    <h6>{teamTwoData[0].corners} corners {teamOneData[0].corners}</h6>
-                    <h6>{teamTwoData[0].offsides} offsides {teamOneData[0].offsides}</h6>
+                    <h6 id="white" style={{marginTop: '10px'}}>{teamTwoData[0].score} score {teamOneData[0].score}</h6>
+                    <h6 id="white">{teamTwoData[0].possession} possession  {teamOneData[0].possession}</h6>
+                    <h6 id="white"> {teamTwoData[0].shotAtGoal} shotAtGoal {teamOneData[0].shotAtGoal}</h6>
+                    <h6 id="white">{teamTwoData[0].accurateShots} accurateShots {teamOneData[0].accurateShots}</h6>
+                    <h6 id="white">{teamTwoData[0].fouls} fouls {teamOneData[0].fouls}</h6>
+                    <h6 id="white">{teamTwoData[0].freeKicks} freeKicks {teamOneData[0].freeKicks}</h6>
+                    <h6 id="white">{teamTwoData[0].yellowCards} yellowCards {teamOneData[0].yellowCards}</h6>
+                    <h6 id="white">{teamTwoData[0].corners} corners {teamOneData[0].corners}</h6>
+                    <h6 id="white">{teamTwoData[0].offsides} offsides {teamOneData[0].offsides}</h6>
                     </div>
 
                     <div style={{float:'left', width: '40%', height:'70%'}}>
@@ -518,7 +521,7 @@ function GamePlay() {
                                                         <div key={item.id} className="CardPlayer" style={child} >
                                                         <img className="ImgCardPlayer" src={item.image} alt="player"/>
                                                         <div style={{float: 'left',margin:'0 auto'}}>
-                                                         <h3 style={{color: '#fff' }}>{item.name}
+                                                         <h3 id="white">{item.name}
                                                          <button className="circle" style={{margin:'0 auto'}} >{item.number}</button>
 
                                                          </h3>

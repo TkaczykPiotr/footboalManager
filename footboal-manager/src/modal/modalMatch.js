@@ -4,14 +4,17 @@ import { Link } from 'react-router-dom';
 import EngineOtherTeam from '../scenes/engineOtherTeam';
 function ModalMatch() {
 
-          const [team, setTeam] = useState(JSON.parse(localStorage.getItem('user')).team);
+         const [team, setTeam] = useState(JSON.parse(localStorage.getItem('user')).team);
+         const [playerData, setPlayerData] = useState(JSON.parse(localStorage.getItem('playerData')));
          const [matchData, setMatchData] = useState(JSON.parse(localStorage.getItem('matchesData')));
          const [tableData, setTableData] = useState(JSON.parse(localStorage.getItem('table')))
+         const [teamData, setTeamData] = useState(JSON.parse(localStorage.getItem('teamData')))
          const [round, setRound] = useState(JSON.parse(localStorage.getItem('round')));
          const [matchId, setMatchId] = useState(matchData
                    .filter(a=> a.round == round
                   && a.id != matchData.filter(a => a.idTeam==team && a.round==round).map(item => item.id))
                    .map(item=> item.id));
+
 
          const [idTeam, setIdTeam] = useState(matchData
                                                .filter(a=> a.round == round&& a.id != matchData.filter(a => a.idTeam==team && a.round==round).map(item => item.id))
@@ -30,11 +33,7 @@ function ModalMatch() {
 
 
     const nextRound = () => {
-    console.log(idTeam[0]);
-    console.log(idTeam[1]);
-    console.log(teamOneTable);
-
-        console.log(matchData);
+        playerPayment();
         engine();
         localStorage.setItem("round", JSON.stringify(round+1));
     }
@@ -45,8 +44,24 @@ function ModalMatch() {
 
     localStorage.setItem("matchesData", JSON.stringify(matchData));
     localStorage.setItem("table", JSON.stringify(tableData));
+    }
+
+    const playerPayment = () => {
+    let pay=0;
+    playerData.filter(a => a.idTeam == team).map(item =>  item.payment);
+    for(var i=0 ; i<82;i++){
+    if(playerData[i].idTeam==team){
+        pay = pay + playerData[i].payment;
+        }
+    }
+
+    teamData.filter(a => a.id == team).map(item =>  item.budget = item.budget - pay);
+    localStorage.setItem("teamData", JSON.stringify(teamData));
+
+
 
     }
+
         const teamProSet = () => {
 
         teamOneData[0].score = randomNum(0, 5);
@@ -82,6 +97,7 @@ function ModalMatch() {
          var win2 = 0, lose2 = 0, draw2 = 0, points2=0;
 
          if(teamOneData[0].score>teamTwoData[0].score){
+
             points1 = 3;
             win1 = 1;
             lose2 = 1;
@@ -126,7 +142,7 @@ function ModalMatch() {
      <div className="modalContainer">
 
      <div className="title">
-     <h1>End Match</h1>
+     <h1>You {JSON.parse(localStorage.getItem('result'))}</h1>
      </div>
      <div className="body">
      <p>Press ok to start next round!</p>

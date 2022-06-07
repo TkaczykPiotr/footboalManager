@@ -31,7 +31,7 @@ function ModalExit() {
      <h1>Are You Sure You Want To Leave?</h1>
      </div>
      <div className="body">
-     <p>If you leave you end game!</p>
+     <p>If you leave the website, you will end the game!</p>
      </div>
      <div className="footer">
      <Link to='/' ><button onClick={()=> removeItem()} id="cancelBtn" >Yes</button></Link>

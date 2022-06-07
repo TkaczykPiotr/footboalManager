@@ -31,14 +31,14 @@ height: 100vh;
     margin: 2%;
     background: #487a82;
     width: 45%;
-    height: 100vh;
+    height: 90vh;
 }
 .RightBoxMain{
     float: left;
     margin: 2%;
     background: #487a82;
     width: 45%;
-    height: 100vh;
+    height: 90vh;
 
 }
 
@@ -47,6 +47,10 @@ height: 100vh;
  height: 20%;
 
 
+}
+
+#white{
+color: #fff;
 }
 
 .Field{

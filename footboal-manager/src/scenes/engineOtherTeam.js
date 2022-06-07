@@ -17,11 +17,11 @@ function EngineOtherTeam(){
                                                .filter(a=> a.round == round&& a.id != matchData.filter(a => a.idTeam==team && a.round==round).map(item => item.id))
                                                 .map(item=> item.idTeam));
          const [teamOneData, setTeamOneData] = useState(matchData
-                  .filter(a => a.id=matchId[0] && a.idTeam == idTeam[0] && a.round==round)
+                  .filter(a => a.id==matchId[0] && a.idTeam == idTeam[0] && a.round==round)
                   .map(item => item));
 
          const [teamTwoData, setTeamTwoData] = useState(matchData
-                  .filter(a => a.id=matchId[0] && a.idTeam == idTeam[1] && a.round==round)
+                  .filter(a => a.id==matchId[0] && a.idTeam == idTeam[1] && a.round==round)
                   .map(item => item));
 
          const [teamOneTable, setTeamOneTable] = useState(tableData.filter(a => a.id == idTeam[0] ).map(item => item));
