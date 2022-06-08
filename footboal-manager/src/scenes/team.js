@@ -265,7 +265,7 @@ function Team() {
 
 
                         </div>
-                        <div style={{marginLeft: '2%',float:'left', width: '60%', height: '60%', background: '#fff', borderRadius: '10%'}}>
+                        <div style={{marginLeft: '2%',float:'left', width: '60%', height: '50%', background: '#fff'}}>
                         <PlayerChartData chartData={playerPropertiesData} />
                         </div>
 
