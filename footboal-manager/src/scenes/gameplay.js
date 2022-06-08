@@ -183,7 +183,7 @@ function GamePlay() {
                                        datasets: [
                                        {
                                        label: '',
-                                       data: [teamTwoData[0].score,teamTwoData[0].possession,teamTwoData[0].shotAtGoal,teamTwoData[0].accurateShots,teamOneData[0].fouls,teamTwoData[0].freeKicks,teamTwoData[0].yellowCards,teamTwoData[0].corners,teamTwoData[0].offsides],
+                                       data: [teamTwoData[0].score,teamTwoData[0].possession,teamTwoData[0].shotAtGoal,teamTwoData[0].accurateShots,teamTwoData[0].fouls,teamTwoData[0].freeKicks,teamTwoData[0].yellowCards,teamTwoData[0].corners,teamTwoData[0].offsides],
                                        backgroundColor: ["#bf1b2e"],
                                        borderColor: "black",
                                        borderWidth: 2,
