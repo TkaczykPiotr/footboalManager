@@ -33,7 +33,9 @@ function GamePlay() {
           const itemRowsEnemy = [];
           const itemRowsTeam = [];
           const [systemEnemy, setSystemEnemy] = useState(JSON.parse(localStorage.getItem('systemEnemy')));
-          const [systemTeam, setSystemTeam] = useState(JSON.parse(localStorage.getItem('systemTeam')));
+          const [systemTeam, setSystemTeam] = useState(JSON.parse(localStorage.getItem('systemTeam442')));
+          const [selectedValue, setSelectedValue] = useState(1);
+          const [copySuccess, setCopySuccess] = useState('');
 
           const [matchId, setMatchId] = useState(matchData
           .filter(a=> a.round == JSON.parse(localStorage.getItem('round'))
@@ -261,7 +263,6 @@ function GamePlay() {
                 var oneChance = [2,12,6,22,27,32,47,52];
                 var twoChance = [2,12,6,22,27,32,47,52];
 
-//            for(var i=0 ; i<6; i++){}
                if(whoBet[0]==1){
                 oneChance[0] = oneChance[0] + 1;
                 oneChance[1] = oneChance[1] + 1;
@@ -298,97 +299,66 @@ function GamePlay() {
              oneChance[6] = oneChance[6] + 1;
             }
             //2 duzyna
-                     if(whoBet[0]==2){
-                           twoChance[0] = twoChance[0] + 1;
-                           twoChance[1] = twoChance[1] + 1;
-                           twoChance[2] = twoChance[2] + 1;
-                           twoChance[6] = twoChance[6] + 1;
-                          }
-                       if(whoBet[1]==2){
-                          twoChance[0] = twoChance[0] + 1;
-                          twoChance[1] = twoChance[1] + 1;
-                          twoChance[2] = twoChance[2] + 1;
-                          twoChance[4] = twoChance[4] + 1;
-                        }
-                       if(whoBet[2]==2){
-                         twoChance[0] = twoChance[0] + 1;
-                         twoChance[1] = twoChance[1] + 1;
-                         twoChance[2] = twoChance[2] + 1;
-                         twoChance[6] = twoChance[6] + 1;
-                        }
-                      if(whoBet[3]==2){
-                        twoChance[0] = twoChance[0] + 1;
-                        twoChance[2] = twoChance[2] + 1;
-                        twoChance[4] = twoChance[4] + 1;
-                        twoChance[7] = twoChance[7] + 1;
-                      }
-                      if(whoBet[4]==2){
-                        twoChance[3] = twoChance[3] + 1;
-                        twoChance[4] = twoChance[4] + 1;
-                        twoChance[5] = twoChance[5] + 1;
-                      }
-                      if(whoBet[5]==2){
-                        twoChance[3] = twoChance[3] + 1;
-                        twoChance[4] = twoChance[4] + 1;
-                        twoChance[5] = twoChance[5] + 1;
-                        twoChance[6] = twoChance[6] + 1;
-                       }
+            if(whoBet[0]==2){
+            twoChance[0] = twoChance[0] + 1;
+            twoChance[1] = twoChance[1] + 1;
+            twoChance[2] = twoChance[2] + 1;
+            twoChance[6] = twoChance[6] + 1;
+            }
+            if(whoBet[1]==2){
+            twoChance[0] = twoChance[0] + 1;
+            twoChance[1] = twoChance[1] + 1;
+            twoChance[2] = twoChance[2] + 1;
+            twoChance[4] = twoChance[4] + 1;
+            }
+            if(whoBet[2]==2){
+            twoChance[0] = twoChance[0] + 1;
+            twoChance[1] = twoChance[1] + 1;
+            twoChance[2] = twoChance[2] + 1;
+            twoChance[6] = twoChance[6] + 1;
+            }
+            if(whoBet[3]==2){
+            twoChance[0] = twoChance[0] + 1;
+            twoChance[2] = twoChance[2] + 1;
+            twoChance[4] = twoChance[4] + 1;
+            twoChance[7] = twoChance[7] + 1;
+            }
+            if(whoBet[4]==2){
+            twoChance[3] = twoChance[3] + 1;
+            twoChance[4] = twoChance[4] + 1;
+            twoChance[5] = twoChance[5] + 1;
+            }
+            if(whoBet[5]==2){
+            twoChance[3] = twoChance[3] + 1;
+            twoChance[4] = twoChance[4] + 1;
+            twoChance[5] = twoChance[5] + 1;
+            twoChance[6] = twoChance[6] + 1;
+            }
 
               //każda szanse sprawdzam czy wystapila jesli tak to przypisuje do state duzyny jej dodatkowy wydarzenie
 
                var a =  randomNum(0, 100);
-               if(a < oneChance[0] ){
-                   teamOneData.map(t => t.score =  t.score + 1 );
-               }
-               if(a < oneChance[1] ){
-                 teamOneData.map(t => t.shotAtGoal =  t.shotAtGoal + 1 );
-               }
-               if(a < oneChance[2] ){
-                 teamOneData.map(t => t.accurateShots =  t.accurateShots + 1 );
-              }
-               if(a < oneChance[3] && a>10 ){
-                  teamOneData.map(t => t.fouls =  t.fouls + 1 );
-               }
-              if(a < oneChance[4] && a>22){
-                 teamOneData.map(t => t.freeKicks =  t.freeKicks + 1 );
-              }
-              if(a < oneChance[5] && a>27){
-               teamOneData.map(t => t.yellowCards =  t.yellowCards + 1 );
-              }
-              if(a < oneChance[6] && a>35){
-                teamOneData.map(t => t.corners =  t.corners + 1 );
-              }
-             if(a < oneChance[7] && a>47){
-               teamOneData.map(t => t.offsides =  t.offsides + 1 );
-             }
+               if(a < oneChance[0] ){teamOneData.map(t => t.score =  t.score + 1 );}
+               if(a < oneChance[1] ){teamOneData.map(t => t.shotAtGoal =  t.shotAtGoal + 1 );}
+               if(a < oneChance[2] ){teamOneData.map(t => t.accurateShots =  t.accurateShots + 1 );}
+               if(a < oneChance[3] && a>10){teamOneData.map(t => t.fouls =  t.fouls + 1 );}
+               if(a < oneChance[4] && a>22){teamOneData.map(t => t.freeKicks =  t.freeKicks + 1 );}
+               if(a < oneChance[5] && a>27){teamOneData.map(t => t.yellowCards =  t.yellowCards + 1 );}
+               if(a < oneChance[6] && a>35){teamOneData.map(t => t.corners =  t.corners + 1 );}
+               if(a < oneChance[7] && a>47){teamOneData.map(t => t.offsides =  t.offsides + 1 );}
 
                 var b =  randomNum(0, 100);
-                 if(b < twoChance[0] ){
-                     teamTwoData.map(t => t.score =  t.score + 1 );
-                  }
-                 if(b < twoChance[1] ){
-                     teamTwoData.map(t => t.shotAtGoal =  t.shotAtGoal + 1 );
-                 }
-                            if(b < twoChance[2] ){
-                              teamTwoData.map(t => t.accurateShots =  t.accurateShots + 1 );
-                           }
-                            if(b < twoChance[3] && b>10 ){
-                               teamTwoData.map(t => t.fouls =  t.fouls + 1 );
-                            }
-                           if(b < twoChance[4] && b>22){
-                              teamTwoData.map(t => t.freeKicks =  t.freeKicks + 1 );
-                           }
-                           if(b < twoChance[5] && b>27){
-                            teamTwoData.map(t => t.yellowCards =  t.yellowCards + 1 );
-                           }
-                           if(b < twoChance[6] && b>35){
-                             teamTwoData.map(t => t.corners =  t.corners + 1 );
-                           }
-                          if(b < twoChance[7] && b>47){
-                            teamTwoData.map(t => t.offsides =  t.offsides + 1 );
-                          }
+                 if(b < twoChance[0] ){teamTwoData.map(t => t.score =  t.score + 1 );}
+                 if(b < twoChance[1] ){teamTwoData.map(t => t.shotAtGoal =  t.shotAtGoal + 1 );}
+                 if(b < twoChance[2] ){teamTwoData.map(t => t.accurateShots =  t.accurateShots + 1 );}
+                 if(b < twoChance[3] && b>10 ){ teamTwoData.map(t => t.fouls =  t.fouls + 1 );}
+                 if(b < twoChance[4] && b>22){teamTwoData.map(t => t.freeKicks =  t.freeKicks + 1 );}
+                 if(b < twoChance[5] && b>27){teamTwoData.map(t => t.yellowCards =  t.yellowCards + 1 );}
+                 if(b < twoChance[6] && b>35){teamTwoData.map(t => t.corners =  t.corners + 1 );}
+                 if(b < twoChance[7] && b>47){teamTwoData.map(t => t.offsides =  t.offsides + 1 );
+}
 
-               //na koniec zostanie mi wyswietlenie statow
+               //na koniec wyswietlanie statow
                //a potem po meczu zapisanie wynikow do druzyn
 
             }
@@ -400,10 +370,30 @@ function GamePlay() {
                 return 2;
                 }
             }
-
             function randomNum(min, max) {
-            	return Math.floor(Math.random() * (max - min)) + min;
-            }
+                       	return Math.floor(Math.random() * (max - min)) + min;
+                       }
+
+             const copyToClipBoard = (copyMe)  => {
+                 navigator.clipboard.writeText(copyMe);
+                  setCopySuccess(copyMe);
+               };
+
+
+                const onPaste = (numberl)  =>{
+                 systemTeam.map(t => t.number == numberl && (t.number = copySuccess));
+                 setSystemTeam([...systemTeam], systemTeam);
+                }
+
+
+            const swapSystem = e =>{
+               setSelectedValue(e.target.value);
+               if(e.target.value==1){setSystemTeam(JSON.parse(localStorage.getItem('systemTeam442')));}
+               if(e.target.value==2){setSystemTeam(JSON.parse(localStorage.getItem('systemTeam343')));}
+               if(e.target.value==3){ setSystemTeam(JSON.parse(localStorage.getItem('systemTeam531')));}
+               }
+
+
 
         for(let i of Object.values(systemEnemy)){
                             const grid = [
@@ -418,23 +408,17 @@ function GamePlay() {
                             const grid = [
                             <div className="fields"  key={i}>
                             {i.visible && (
-                            <button className="circleField" >{i.number}</button>)}
+                            <button className="circleField" onClick={() => onPaste(i.number)}>{i.number}</button>)}
                             </div>
                             ];
                              itemRowsTeam.push(grid);
                             }
 
-//{console.log(teamOneData[0].fouls)}
+
 
   return (
      <>
-
-
-
-
-
      <div>
-
               <IconContext.Provider value={{ color: '#fff' }}>
                      <nav className={sidebar ? 'nav-menu active' : 'nav-menu'} style={{width: '20%'}}>
                        <ul className='nav-menu-items' >
@@ -462,7 +446,7 @@ function GamePlay() {
                                <a style={{color: '#f5f5f5'}}>
                               <ImIcons.ImExit />
                               <span>System </span>
-                                   <select  style={{width: '50%', marginLeft: '10%'}} >
+                                   <select defaultValue={selectedValue}  style={{width: '50%', marginLeft: '10%'}} onChange={swapSystem} >
                                    <option value={1}>4-4-2</option>
                                    <option value={2}>3-4-3</option>
                                    <option value={3}>5-3-1</option>
@@ -494,12 +478,7 @@ function GamePlay() {
                     <div style={{float: 'left',width: '50%', height: '100%'}}>
                     {itemRowsEnemy}
                     </div>
-
-
-
                      </div>
-
-
                      <div className="RightBoxTeam">
 
                         <br/>
@@ -537,34 +516,24 @@ function GamePlay() {
                      <MatchesChartData chartData={teamOneMatchesData} />
                       </div>
 
-
                      </div>
-
-
-
                      <div className="PlayerBox" >
                       <HorizontalScroll>
-                                                       {player.filter(t => t.idTeam==team && t.play==true)
-                                                        .map(item =>
-                                                        <div key={item.id} className="CardPlayer" style={child} >
-                                                        <img className="ImgCardPlayer" src={item.image} alt="player"/>
-                                                        <div style={{float: 'left',margin:'0 auto'}}>
-                                                         <h3 id="white">{item.name}
-                                                         <button className="circle" style={{margin:'0 auto'}} >{item.number}</button>
-
-                                                         </h3>
-                                                         </div>
-                                                         </div>
-                                                      )}
+                        {player.filter(t => t.idTeam==team && t.play==true)
+                         .map(item =>
+                         <div key={item.id} className="CardPlayer" style={child} >
+                         <img className="ImgCardPlayer" src={item.image} alt="player"/>
+                         <div style={{float: 'left',margin:'0 auto'}}>
+                         <h3 id="white">{item.name}
+                         <button className="circle" style={{margin:'0 auto'}} onClick={() => copyToClipBoard(item.number)}>{item.number}</button>
+                        </h3>
+                        </div>
+                        </div>
+                       )}
                       </HorizontalScroll>
                      </div>
 
-
-
-
-
                     </div>
-
 
         </div>
        </>
