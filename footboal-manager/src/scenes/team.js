@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SidebarData } from '../data/SidebarData';
-import { TeamData } from '../data/TeamData';
-import { PlayerData } from '../data/PlayerData';
 import { PlayerProperties } from '../data/PlayerProperties';
 import  PlayerChartData  from '../data/PlayerChartData';
 import '../css/Navbar.css';

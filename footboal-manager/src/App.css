@@ -83,6 +83,46 @@ margin: 1%;
 
 }
 
+.CardPlayerTr{
+   display: flex;
+   margin: 0 auto;
+
+}
+
+.CardPlayerTr:hover{
+    border: solid;
+
+}
+
+.PlayerInfoSl{
+margin: 1%;
+float: left;
+background: #ff76;
+ height: 60vh;
+ width: 172vh;
+
+
+}
+
+.PlayerInfoTr{
+margin: 1%;
+float: left;
+background: #ff76;
+ height: 60vh;
+ width: 100vh;
+
+
+}
+.PlayerInfoTrPro{
+margin: 1%;
+float: left;
+background: #487a82;
+ height: 60vh;
+ width: 70vh;
+
+
+}
+
 .ImgCardPlayer{
 width: 20vh;
 height: 20vh;

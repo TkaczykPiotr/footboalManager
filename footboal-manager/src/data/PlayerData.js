@@ -10,6 +10,7 @@ export const PlayerData = [
     number: 13,
     position: 'goalkeeper',
     payment: 5000,
+    age: 32,
     image: 'https://img.a.transfermarkt.technology/portrait/big/111819-1448463847.jpg?lm=1'
   },
   {
@@ -21,6 +22,7 @@ export const PlayerData = [
     number: 1,
     position: 'goalkeeper',
     payment: 10000,
+    age: 32,
     image: 'https://img.a.transfermarkt.technology/portrait/big/74857-1599987750.jpg?lm=1'
   },
   {
@@ -32,6 +34,7 @@ export const PlayerData = [
     number: 18,
     position: 'left-back',
     payment: 12000,
+    age: 34,
     image: 'https://img.a.transfermarkt.technology/portrait/big/69751-1653039085.jpg?lm=1'
   },
   {
@@ -43,6 +46,7 @@ export const PlayerData = [
     number: 4,
     position: 'centre-back',
     payment: 15000,
+    age: 22,
     image: 'https://img.a.transfermarkt.technology/portrait/big/480267-1558943409.png?lm=1'
   },
   {
@@ -54,6 +58,7 @@ export const PlayerData = [
    number: 24,
    position: 'centre-back',
    payment: 15000,
+   age: 24,
    image: 'https://img.a.transfermarkt.technology/portrait/big/466794-1629107322.jpg?lm=1'
   },
   {
@@ -65,6 +70,7 @@ export const PlayerData = [
      number: 3,
      position: 'centre-back',
      payment: 25000,
+     age: 33,
      image: 'https://img.a.transfermarkt.technology/portrait/big/18944-1629107097.jpg?lm=1'
   },
   {
@@ -76,6 +82,7 @@ export const PlayerData = [
    number: 2,
    position: 'right-back',
    payment: 11000,
+   age: 23,
    image: 'https://img.a.transfermarkt.technology/portrait/big/361104-1581956984.jpg?lm=1'
    },
   {
@@ -87,6 +94,7 @@ export const PlayerData = [
    number: 8,
    position: 'right-back',
    payment: 8000,
+   age: 38,
    image: 'https://img.a.transfermarkt.technology/portrait/big/15951-1635327520.jpg?lm=1'
    },
   {
@@ -98,6 +106,7 @@ export const PlayerData = [
    number: 5,
    position: 'defensive-midfield',
    payment: 34000,
+   age: 33,
    image: 'https://img.a.transfermarkt.technology/portrait/big/65230-1453896822.jpg?lm=1'
   },
   {
@@ -109,6 +118,7 @@ export const PlayerData = [
   number: 16,
   position: 'central-midfield',
   payment: 45000,
+  age: 17,
   image: 'https://img.a.transfermarkt.technology/portrait/big/683840-1620304992.jpg?lm=1'
   },
   {
@@ -120,6 +130,7 @@ export const PlayerData = [
     number: 21,
     position: 'central-midfield',
     payment: 67000,
+    age: 27,
     image: 'https://img.a.transfermarkt.technology/portrait/big/326330-1599987876.jpg?lm=1'
   },
   {
@@ -131,6 +142,7 @@ export const PlayerData = [
     number: 30,
     position: 'central-midfield',
     payment: 23000,
+    age: 19,
     image: 'https://img.a.transfermarkt.technology/portrait/big/646740-1653039221.jpg?lm=1'
   },
   {
@@ -142,6 +154,7 @@ export const PlayerData = [
     number: 14,
     position: 'central-midfield',
     payment: 35000,
+    age: 21,
     image: 'https://img.a.transfermarkt.technology/portrait/big/466805-1629106819.jpg?lm=1'
     },
   {
@@ -153,6 +166,7 @@ export const PlayerData = [
   number: 20,
   position: 'central-midfield',
   payment: 32000,
+  age: 32,
   image: 'https://img.a.transfermarkt.technology/portrait/big/85370-1489053148.jpg?lm=1'
  },
  {
@@ -164,6 +178,7 @@ export const PlayerData = [
    number: 6,
    position: 'central-midfield',
    payment: 26000,
+   age: 27,
    image: 'https://img.a.transfermarkt.technology/portrait/big/331511-1540212821.jpg?lm=1'
   },
   {
@@ -175,6 +190,7 @@ export const PlayerData = [
     number: 10,
     position: 'left-winger',
     payment: 35000,
+    age: 18,
     image: 'https://img.a.transfermarkt.technology/portrait/big/466810-1560761660.jpg?lm=1'
    },
   {
@@ -186,6 +202,7 @@ export const PlayerData = [
      number: 19,
      position: 'left-winger',
      payment: 52000,
+     age: 24,
      image: 'https://img.a.transfermarkt.technology/portrait/big/398184-1620308050.jpg?lm=1'
     },
   {
@@ -197,6 +214,7 @@ export const PlayerData = [
    number: 7,
    position: 'right-winger',
    payment: 87000,
+   age: 27,
    image: 'https://img.a.transfermarkt.technology/portrait/big/288230-1637951239.jpg?lm=1'
   },
  {
@@ -208,6 +226,7 @@ export const PlayerData = [
   number: 11,
   position: 'right-winger',
   payment: 45000,
+  age: 28,
   image: 'https://img.a.transfermarkt.technology/portrait/big/204103-1570000875.jpg?lm=1'
   },
   {
@@ -219,6 +238,7 @@ export const PlayerData = [
    number: 9,
    position: 'central-forward',
    payment: 56000,
+   age: 29,
    image: 'https://img.a.transfermarkt.technology/portrait/big/167850-1597927069.jpg?lm=1'
     },
   {
@@ -230,6 +250,7 @@ export const PlayerData = [
   number: 25,
   position: 'central-forward',
   payment: 51000,
+  age: 34,
   image: 'https://img.a.transfermarkt.technology/portrait/big/58864-1545407105.jpg?lm=1'
  },
 {
@@ -987,6 +1008,44 @@ export const PlayerData = [
    age: 26,
    payment: 23000,
    image: 'https://img.a.transfermarkt.technology/portrait/big/223725-1499759927.jpg?lm=1'
-}
+},
+{
+   id: 85,
+   idTeam: 0,
+   play: false,
+   name: 'Lewandowski',
+   cost: 2200000,
+   number: 9,
+   position: 'Centre-Forward',
+   age: 34,
+   payment: 123000,
+   image: 'https://img.a.transfermarkt.technology/portrait/big/38253-1642434304.jpg?lm=1'
+},
+{
+   id: 86,
+   idTeam: 0,
+   play: false,
+   name: 'Mendy',
+   cost: 900000,
+   number: 9,
+   position: 'GoalKeeper',
+   age: 30,
+   payment: 87000,
+   image: 'https://img.a.transfermarkt.technology/portrait/big/442531-1600951863.jpg?lm=1'
+},
+{
+   id: 87,
+   idTeam: 0,
+   play: false,
+   name: 'Werner',
+   cost: 1200000,
+   number: 11,
+   position: 'Centre-Forward',
+   age: 26,
+   payment: 117000,
+   image: 'https://img.a.transfermarkt.technology/portrait/big/170527-1648480995.jpg?lm=1'
+},
+
+
 
 ];
