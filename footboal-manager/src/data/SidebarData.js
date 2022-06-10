@@ -3,6 +3,7 @@ import * as AiIcons from 'react-icons/ai';
 import * as IoIcons from 'react-icons/io';
 import * as CgIcons from 'react-icons/cg';
 import * as ImIcons from 'react-icons/im';
+import * as BsIcons from 'react-icons/bs';
 export const SidebarData = [
  {
     title: 'Exit',
@@ -29,6 +30,13 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
+      title: 'Training',
+      path: '/training',
+      icon: <BsIcons.BsBullseye />,
+      cName: 'nav-text'
+     // BsChevronDoubleUp
+    },
+  {
     title: 'Liga',
     path: '/liga',
      icon: <IoIcons.IoMdFootball />,
@@ -40,6 +48,7 @@ export const SidebarData = [
     icon: <IoIcons.IoIosStats />,
     cName: 'nav-text'
   },
+
   {
     title: 'Support',
     path: '/support',

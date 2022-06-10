@@ -82,7 +82,7 @@ function GamePlay() {
                     datasets: [
                     {
                      label: '',
-                     data: [teamOneData[0].score,teamOneData[0].possession,teamOneData[0].shotAtGoal,teamOneData[0].accurateShots,teamOneData[0].fouls,teamOneData[0].freeKicks,teamOneData[0].yellowCards,teamOneData[0].corners,teamOneData[0].offsides],
+                     data: [teamOneData[0].score,0,teamOneData[0].shotAtGoal,teamOneData[0].accurateShots,teamOneData[0].fouls,teamOneData[0].freeKicks,teamOneData[0].yellowCards,teamOneData[0].corners,teamOneData[0].offsides],
                      backgroundColor: ["#0d6efd"],
                      borderColor: "black",
                      borderWidth: 2,
@@ -94,7 +94,7 @@ function GamePlay() {
                      datasets: [
                      {
                      label: '',
-                     data: [teamTwoData[0].score,teamTwoData[0].possession,teamTwoData[0].shotAtGoal,teamTwoData[0].accurateShots,teamOneData[0].fouls,teamTwoData[0].freeKicks,teamTwoData[0].yellowCards,teamTwoData[0].corners,teamTwoData[0].offsides],
+                     data: [teamTwoData[0].score,0,teamTwoData[0].shotAtGoal,teamTwoData[0].accurateShots,teamOneData[0].fouls,teamTwoData[0].freeKicks,teamTwoData[0].yellowCards,teamTwoData[0].corners,teamTwoData[0].offsides],
                      backgroundColor: ["#bf1b2e"],
                      borderColor: "black",
                      borderWidth: 2,
@@ -173,7 +173,7 @@ function GamePlay() {
                                        datasets: [
                                        {
                                        label: '',
-                                       data: [teamOneData[0].score,teamOneData[0].possession,teamOneData[0].shotAtGoal,teamOneData[0].accurateShots,teamOneData[0].fouls,teamOneData[0].freeKicks,teamOneData[0].yellowCards,teamOneData[0].corners,teamOneData[0].offsides],
+                                       data: [teamOneData[0].score,0,teamOneData[0].shotAtGoal,teamOneData[0].accurateShots,teamOneData[0].fouls,teamOneData[0].freeKicks,teamOneData[0].yellowCards,teamOneData[0].corners,teamOneData[0].offsides],
                                        backgroundColor: ["#0d6efd"],
                                        borderColor: "black",
                                        borderWidth: 2,
@@ -185,7 +185,7 @@ function GamePlay() {
                                        datasets: [
                                        {
                                        label: '',
-                                       data: [teamTwoData[0].score,teamTwoData[0].possession,teamTwoData[0].shotAtGoal,teamTwoData[0].accurateShots,teamTwoData[0].fouls,teamTwoData[0].freeKicks,teamTwoData[0].yellowCards,teamTwoData[0].corners,teamTwoData[0].offsides],
+                                       data: [teamTwoData[0].score,0,teamTwoData[0].shotAtGoal,teamTwoData[0].accurateShots,teamTwoData[0].fouls,teamTwoData[0].freeKicks,teamTwoData[0].yellowCards,teamTwoData[0].corners,teamTwoData[0].offsides],
                                        backgroundColor: ["#bf1b2e"],
                                        borderColor: "black",
                                        borderWidth: 2,
@@ -346,6 +346,13 @@ function GamePlay() {
                if(a < oneChance[5] && a>27){teamOneData.map(t => t.yellowCards =  t.yellowCards + 1 );}
                if(a < oneChance[6] && a>35){teamOneData.map(t => t.corners =  t.corners + 1 );}
                if(a < oneChance[7] && a>47){teamOneData.map(t => t.offsides =  t.offsides + 1 );}
+               if(a < 50){
+               teamOneData.map(t => t.possession =  t.possession + 1 );
+               teamTwoData.map(t => t.possession =  t.possession - 1 );
+               }else{
+               teamTwoData.map(t => t.possession =  t.possession + 1 );
+               teamOneData.map(t => t.possession =  t.possession - 1 );
+               }
 
                 var b =  randomNum(0, 100);
                  if(b < twoChance[0] ){teamTwoData.map(t => t.score =  t.score + 1 );}
@@ -502,7 +509,7 @@ function GamePlay() {
                     <br />
 
                     <h6 id="white" style={{marginTop: '10px'}}>{teamTwoData[0].score} score {teamOneData[0].score}</h6>
-                    <h6 id="white">{teamTwoData[0].possession} possession  {teamOneData[0].possession}</h6>
+                    <h6 id="white">{teamTwoData[0].possession} possession {teamOneData[0].possession}</h6>
                     <h6 id="white"> {teamTwoData[0].shotAtGoal} shotAtGoal {teamOneData[0].shotAtGoal}</h6>
                     <h6 id="white">{teamTwoData[0].accurateShots} accurateShots {teamOneData[0].accurateShots}</h6>
                     <h6 id="white">{teamTwoData[0].fouls} fouls {teamOneData[0].fouls}</h6>

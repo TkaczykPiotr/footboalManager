@@ -8,6 +8,7 @@ import Transfer from "./scenes/transfer.js"
 import Liga from "./scenes/liga.js"
 import Statistic from "./scenes/statistic.js"
 import GamePlay from "./scenes/gameplay.js"
+import Training from "./scenes/training.js"
 import ExitModal from "./modal/modalExit.js"
 import MatchModal from "./modal/modalMatch.js"
 
@@ -26,6 +27,7 @@ function App() {
         <Route path="/gameplay" element={<GamePlay />} />
         <Route path="/exitModal" element={<ExitModal />} />
         <Route path="/matchModal" element={<MatchModal />} />
+        <Route path="/training" element={<Training />} />
       </Routes>
 
 
