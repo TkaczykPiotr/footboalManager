@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { SidebarData } from '../data/SidebarData';
-import { PlayerProperties } from '../data/PlayerProperties';
+
 import  PlayerChartData  from '../data/PlayerChartData';
 import '../css/Navbar.css';
 import { IconContext } from 'react-icons';
@@ -16,10 +16,14 @@ function Team() {
 
           const [team, setTeam] = useState(JSON.parse(localStorage.getItem('user')).team);
           const [player, setPlayer] = useState(JSON.parse(localStorage.getItem('playerData')));
+          const [playerProperties, setPlayerProperties] = useState(JSON.parse(localStorage.getItem('playerPro')));
           const [system, setSystem] = useState(JSON.parse(localStorage.getItem('system442')));
+
           const [copySuccess, setCopySuccess] = useState('');
           const [selectedValue, setSelectedValue] = useState(1);
           const [playerId, setPlayerId] = useState(1);
+
+
 
 
 
@@ -28,42 +32,42 @@ function Team() {
           datasets: [
           {
            label: "pace",
-           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.pac),
+           data: playerProperties.filter(t => t.id===playerId).map((data) => data.pac),
            backgroundColor: ["rgba(75,192,192,1)"],
            borderColor: "black",
            borderWidth: 2,
            },
            {
            label: "passing",
-           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.pas),
+           data: playerProperties.filter(t => t.id===playerId).map((data) => data.pas),
            backgroundColor: ["rgba(32,43,165,16)"],
            borderColor: "black",
            borderWidth: 2,
            },
            {
            label: "shotting",
-           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.sho),
+           data: playerProperties.filter(t => t.id===playerId).map((data) => data.sho),
            backgroundColor: ["#bf1b2e"],
            borderColor: "black",
            borderWidth: 2,
            },
            {
            label: "dribbling",
-           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.dri),
+           data: playerProperties.filter(t => t.id===playerId).map((data) => data.dri),
            backgroundColor: ["rgba(75,123,165,1)"],
            borderColor: "black",
            borderWidth: 2,
            },
            {
            label: "defending",
-           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.def),
+           data: playerProperties.filter(t => t.id===playerId).map((data) => data.def),
            backgroundColor: ["#50AF95"],
            borderColor: "black",
            borderWidth: 2,
            },
            {
            label: "physical",
-           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.psy),
+           data: playerProperties.filter(t => t.id===playerId).map((data) => data.psy),
            backgroundColor: ["#80530a"],
            borderColor: "black",
            borderWidth: 2,
@@ -77,42 +81,42 @@ function Team() {
            datasets: [
            {
            label: "pace",
-           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.pac),
+           data: playerProperties.filter(t => t.id===playerId).map((data) => data.pac),
            backgroundColor: ["rgba(75,192,192,1)"],
            borderColor: "black",
            borderWidth: 2,
            },
            {
            label: "passing",
-           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.pas),
+           data: playerProperties.filter(t => t.id===playerId).map((data) => data.pas),
            backgroundColor: ["rgba(32,43,165,16)"],
            borderColor: "black",
            borderWidth: 2,
            },
            {
            label: "shotting",
-           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.sho),
+           data: playerProperties.filter(t => t.id===playerId).map((data) => data.sho),
            backgroundColor: ["#bf1b2e"],
            borderColor: "black",
            borderWidth: 2,
            },
            {
            label: "dribbling",
-           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.dri),
+           data: playerProperties.filter(t => t.id===playerId).map((data) => data.dri),
            backgroundColor: ["rgba(75,123,165,1)"],
            borderColor: "black",
            borderWidth: 2,
            },
            {
            label: "defending",
-           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.def),
+           data: playerProperties.filter(t => t.id===playerId).map((data) => data.def),
            backgroundColor: ["#50AF95"],
            borderColor: "black",
            borderWidth: 2,
            },
            {
            label: "physical",
-           data: PlayerProperties.filter(t => t.id===playerId).map((data) => data.psy),
+           data: playerProperties.filter(t => t.id===playerId).map((data) => data.psy),
            backgroundColor: ["#80530a"],
            borderColor: "black",
            borderWidth: 2,
@@ -121,8 +125,10 @@ function Team() {
            ],
            });
 
-           }, [playerId]);
 
+
+           }, [playerId]);
+           useEffect(() => {}, [system]);
 
           const [sidebar, setSidebar] = useState(true);
 

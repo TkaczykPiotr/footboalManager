@@ -7,6 +7,7 @@ import Team from "./scenes/team.js"
 import Transfer from "./scenes/transfer.js"
 import Liga from "./scenes/liga.js"
 import Statistic from "./scenes/statistic.js"
+import Support from "./scenes/support.js"
 import GamePlay from "./scenes/gameplay.js"
 import Training from "./scenes/training.js"
 import ExitModal from "./modal/modalExit.js"
@@ -23,6 +24,7 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="/transfer" element={<Transfer />} />
         <Route path="/liga" element={<Liga />} />
+        <Route path="/support" element={<Support />} />
         <Route path="/statistic" element={<Statistic />} />
         <Route path="/gameplay" element={<GamePlay />} />
         <Route path="/exitModal" element={<ExitModal />} />
