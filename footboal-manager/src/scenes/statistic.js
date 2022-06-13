@@ -121,7 +121,7 @@ function Statistic() {
                     )}
                     </div>
 
-                    <div style={{float: 'left'}}>
+                    <div style={{float: 'left', marginLeft: '20%'}}>
                     <h2 id="white">Best Player</h2>
                     <div style={{float:'left', width: '100%', height: '80%'}}>
                       {player.filter(t => t.id==playerId[0])
