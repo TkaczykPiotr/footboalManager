@@ -18,7 +18,7 @@ import * as CgIcons from 'react-icons/cg';
 import * as ImIcons from 'react-icons/im';
 import * as BsIcons from 'react-icons/bs';
 import * as MdIcons from 'react-icons/md';
-
+import { useToasts } from "react-toast-notifications";
 
 function GamePlay() {
           let navigate = useNavigate();
@@ -36,6 +36,8 @@ function GamePlay() {
           const [systemTeam, setSystemTeam] = useState(JSON.parse(localStorage.getItem('systemTeam442')));
           const [selectedValue, setSelectedValue] = useState(1);
           const [copySuccess, setCopySuccess] = useState('');
+           const { addToast } = useToasts();
+
 
           const [matchId, setMatchId] = useState(matchData
           .filter(a=> a.round == JSON.parse(localStorage.getItem('round'))
@@ -388,6 +390,10 @@ function GamePlay() {
 
 
                 const onPaste = (numberl)  =>{
+                addToast("You have replaced player number " + numberl + " with " + copySuccess, {
+                                              appearance: "success",
+                                              autoDismiss: true
+                                            });
                  systemTeam.map(t => t.number == numberl && (t.number = copySuccess));
                  setSystemTeam([...systemTeam], systemTeam);
                 }
@@ -395,9 +401,24 @@ function GamePlay() {
 
             const swapSystem = e =>{
                setSelectedValue(e.target.value);
-               if(e.target.value==1){setSystemTeam(JSON.parse(localStorage.getItem('systemTeam442')));}
-               if(e.target.value==2){setSystemTeam(JSON.parse(localStorage.getItem('systemTeam343')));}
-               if(e.target.value==3){ setSystemTeam(JSON.parse(localStorage.getItem('systemTeam531')));}
+               if(e.target.value==1){
+               addToast("You swap system to 4-4-2" , {
+                            appearance: "success",
+                            autoDismiss: true
+                            });
+               setSystemTeam(JSON.parse(localStorage.getItem('systemTeam442')));}
+               if(e.target.value==2){
+               addToast("You swap system to 3-4-3" , {
+                            appearance: "success",
+                            autoDismiss: true
+                            });
+               setSystemTeam(JSON.parse(localStorage.getItem('systemTeam343')));}
+               if(e.target.value==3){
+                addToast("You swap system to 5-3-2" , {
+                             appearance: "success",
+                             autoDismiss: true
+                             });
+                setSystemTeam(JSON.parse(localStorage.getItem('systemTeam531')));}
                }
 
 
@@ -456,7 +477,7 @@ function GamePlay() {
                                    <select defaultValue={selectedValue}  style={{width: '50%', marginLeft: '10%'}} onChange={swapSystem} >
                                    <option value={1}>4-4-2</option>
                                    <option value={2}>3-4-3</option>
-                                   <option value={3}>5-3-1</option>
+                                   <option value={3}>5-3-2</option>
                                    </select>
                               </a>
 

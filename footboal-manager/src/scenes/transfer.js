@@ -8,7 +8,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import HorizontalScroll from "react-scroll-horizontal";
 import  PlayerChartData  from '../data/PlayerChartData';
 import {useNavigate} from "react-router";
-
+import { useToasts } from "react-toast-notifications";
 
 function Transfer() {
           let navigate = useNavigate();
@@ -22,6 +22,7 @@ function Transfer() {
           const [playerId, setPlayerId] = useState();
           const [amount, setAmount] = useState(0);
           const [cost, setCost] = useState(0);
+          const { addToast } = useToasts();
 
 
           const [playerPropertiesData, setPlayerPropertiesData] =  useState({
@@ -66,6 +67,10 @@ function Transfer() {
                      }, [playerId]);
 
         const buyPlayer = (id) =>{
+        addToast("You bought the player for " + player.filter(a => a.id==id).map(item => item.cost) + " Euro", {
+                  appearance: "success",
+                  autoDismiss: true
+                });
         player.filter(a => a.id==id).map(item => item.idTeam=team);
         teamData.filter(a => a.id==team).map(item => item.budget = (item.budget - cost) )
         teamData.filter(a => a.id==team).map(item => item.numberOfPlayer = (item.numberOfPlayer + 1) )
@@ -76,8 +81,13 @@ function Transfer() {
         }
 
         const sellPlayer = (id) =>{
+
                 player.filter(a => a.id==id).map(item => item.idTeam=0);
                 player.filter(a => a.id==id).map(item => item.cost=amount);
+                addToast("You sold the player for " + player.filter(a => a.id==id).map(item => item.cost) + " Euro", {
+                                          appearance: "success",
+                                          autoDismiss: true
+                                        });
                // teamData.filter(a => a.id==team).map(item => item.budget = (item.budget + amount) )
                teamData.filter(a => a.id==team).map(item => item.numberOfPlayer = (item.numberOfPlayer - 1) )
                 localStorage.setItem("teamData", JSON.stringify(teamData));

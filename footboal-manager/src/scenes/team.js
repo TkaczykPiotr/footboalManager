@@ -9,7 +9,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import HorizontalScroll from "react-scroll-horizontal";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-
+import { useToasts } from "react-toast-notifications";
 
 
 function Team() {
@@ -22,6 +22,7 @@ function Team() {
           const [copySuccess, setCopySuccess] = useState('');
           const [selectedValue, setSelectedValue] = useState(1);
           const [playerId, setPlayerId] = useState(1);
+          const { addToast } = useToasts();
 
 
 
@@ -146,6 +147,10 @@ function Team() {
                     };
 
             const onPaste = (numberl)  =>{
+            addToast("You have replaced player number " + numberl + " with " + copySuccess, {
+                              appearance: "success",
+                              autoDismiss: true
+                            });
              system.map(t => t.number == numberl && (t.number = copySuccess));
              setSystem([...system], system);
             }
@@ -164,13 +169,26 @@ function Team() {
             }
 
             const saveSystem = () =>{
+
              if(selectedValue==1){
+             addToast("You save system 4-4-2" , {
+             appearance: "success",
+             autoDismiss: true
+             });
               localStorage.setItem("system442", JSON.stringify(system));
             }
             if(selectedValue==2){
+            addToast("You save system 3-4-3" , {
+            appearance: "success",
+            autoDismiss: true
+            });
            localStorage.setItem("system343", JSON.stringify(system));
             }
             if(selectedValue==3){
+            addToast("You save system 5-3-2" , {
+                        appearance: "success",
+                        autoDismiss: true
+                        });
              localStorage.setItem("system532", JSON.stringify(system));
              }
              }
@@ -245,7 +263,7 @@ function Team() {
                                     <select defaultValue={selectedValue} style={{width: '50%'}} onChange={swapSystem}>
                                       <option value={1}>4-4-2</option>
                                       <option value={2}>3-4-3</option>
-                                      <option value={3}>5-3-1</option>
+                                      <option value={3}>5-3-2</option>
 
                                     </select>
 

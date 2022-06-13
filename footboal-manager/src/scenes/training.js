@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SidebarData } from '../data/SidebarData';
-
+import { useToasts } from "react-toast-notifications";
 import ModalExit from '../modal/modalExit';
 import '../css/Navbar.css';
 import BackdropFilter from "react-backdrop-filter";
@@ -12,6 +12,7 @@ import HorizontalScroll from "react-scroll-horizontal";
 import {useNavigate} from "react-router";
 
 
+
 function Training() {
           let navigate = useNavigate();
           const [sidebar, setSidebar] = useState(true);
@@ -20,9 +21,14 @@ function Training() {
           const [player, setPlayer] = useState(JSON.parse(localStorage.getItem('playerData')));
           const [playerProperties, setPlayerProperties] = useState(JSON.parse(localStorage.getItem('playerPro')));
           const [playerId, setPlayerId] = useState();
+          const { addToast } = useToasts();
           const child = { width: `22em`, height: `100%` };
 
           const addPace = (id) => {
+        addToast("Add Pace", {
+          appearance: "success",
+          autoDismiss: true
+        });
           if(playerProperties.filter(a => a.id==id).map(item => item.pac) < 100 && teamData.filter(a => a.id==team).map(item => item.budget) > 95000){
           playerProperties.filter(a => a.id==id).map(item => item.pac = item.pac + 1);
           teamData.filter(a => a.id==team).map(item => item.budget = item.budget - 95000)
@@ -31,6 +37,10 @@ function Training() {
           navigate('/training');
           }}
           const addPas = (id) => {
+           addToast("Add Passing", {
+                    appearance: "success",
+                    autoDismiss: true
+                  });
           if(playerProperties.filter(a => a.id==id).map(item => item.pas) < 100 && teamData.filter(a => a.id==team).map(item => item.budget) > 55000){
           playerProperties.filter(a => a.id==id).map(item => item.pas = item.pas + 1);
           teamData.filter(a => a.id==team).map(item => item.budget = item.budget - 55000)
@@ -39,6 +49,10 @@ function Training() {
           navigate('/training');
           }}
           const addSho = (id) => {
+           addToast("Add Shotting", {
+                    appearance: "success",
+                    autoDismiss: true
+                  });
           if(playerProperties.filter(a => a.id==id).map(item => item.sho) < 100 && teamData.filter(a => a.id==team).map(item => item.budget) > 250000){
           playerProperties.filter(a => a.id==id).map(item => item.sho = item.sho + 1);
           teamData.filter(a => a.id==team).map(item => item.budget = item.budget - 250000)
@@ -47,6 +61,10 @@ function Training() {
           navigate('/training');
           }}
           const addDri = (id) => {
+           addToast("Add Dribbling", {
+                    appearance: "success",
+                    autoDismiss: true
+                  });
            if(playerProperties.filter(a => a.id==id).map(item => item.dri) < 100 && teamData.filter(a => a.id==team).map(item => item.budget) > 120000){
            playerProperties.filter(a => a.id==id).map(item => item.dri = item.dri + 1);
            teamData.filter(a => a.id==team).map(item => item.budget = item.budget - 120000)
@@ -55,6 +73,10 @@ function Training() {
            navigate('/training');
            }}
          const addDef = (id) => {
+          addToast("Add Defending", {
+                   appearance: "success",
+                   autoDismiss: true
+                 });
            if(playerProperties.filter(a => a.id==id).map(item => item.def) < 100 && teamData.filter(a => a.id==team).map(item => item.budget) > 80000){
            playerProperties.filter(a => a.id==id).map(item => item.def = item.def + 1);
            teamData.filter(a => a.id==team).map(item => item.budget = item.budget - 80000)
@@ -63,6 +85,10 @@ function Training() {
            navigate('/training');
            }}
         const addPsy = (id) => {
+         addToast("Add Physic", {
+                  appearance: "success",
+                  autoDismiss: true
+                });
            if(playerProperties.filter(a => a.id==id).map(item => item.psy) < 100 && teamData.filter(a => a.id==team).map(item => item.budget) > 160000){
            playerProperties.filter(a => a.id==id).map(item => item.psy = item.psy + 1);
            teamData.filter(a => a.id==team).map(item => item.budget = item.budget - 160000)

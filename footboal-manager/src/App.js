@@ -33,8 +33,6 @@ function App() {
         <Route path="/modalEnd" element={<EndModal />} />
         <Route path="/training" element={<Training />} />
       </Routes>
-
-
     </div>
   );
 }
