@@ -30,7 +30,7 @@ function ModalEnd() {
                                                <div className = "row" style={{width: '20%', marginLeft:'10%'}} >
                                                <table  className = "table table-striped table-bordered" style={{borderColor: 'black'}}>
                                                <thead>
-                                                <tr>
+                                                <tr style={{background: '#fff'}}>
                                                 <th> Lp.</th>
                                         <th> Team</th>
                                        <th> Points</th>
@@ -41,7 +41,7 @@ function ModalEnd() {
                                        table
                                        .sort((a,b) => a.points < b.points ? 1:-1)
                                        .map((item, index)=>
-                                        <tr key={index}>
+                                        <tr key={index} style={{background: item.id==team ?  '#20c997' : '#fff'}}>
                                           <td>{index+1}</td>
                                           <td>{item.name}</td>
                                           <td>{item.points}</td>
