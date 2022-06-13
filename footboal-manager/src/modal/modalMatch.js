@@ -154,7 +154,7 @@ function ModalMatch() {
       <Link to='/main' ><button onClick={() => nextRound()}>OK</button></Link>
       )}
       {round==3 && (
-            <Link to='/liga' ><button>OK</button></Link>
+            <Link to='/modalEnd' ><button>OK</button></Link>
         )}
 
      </div>

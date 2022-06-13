@@ -12,6 +12,7 @@ import GamePlay from "./scenes/gameplay.js"
 import Training from "./scenes/training.js"
 import ExitModal from "./modal/modalExit.js"
 import MatchModal from "./modal/modalMatch.js"
+import EndModal from "./modal/modalEnd.js"
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/gameplay" element={<GamePlay />} />
         <Route path="/exitModal" element={<ExitModal />} />
         <Route path="/matchModal" element={<MatchModal />} />
+        <Route path="/modalEnd" element={<EndModal />} />
         <Route path="/training" element={<Training />} />
       </Routes>
 

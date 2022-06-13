@@ -68,6 +68,7 @@ function Transfer() {
         const buyPlayer = (id) =>{
         player.filter(a => a.id==id).map(item => item.idTeam=team);
         teamData.filter(a => a.id==team).map(item => item.budget = (item.budget - cost) )
+        teamData.filter(a => a.id==team).map(item => item.numberOfPlayer = (item.numberOfPlayer + 1) )
         localStorage.setItem("teamData", JSON.stringify(teamData));
         localStorage.setItem("playerData", JSON.stringify(player));
         navigate('/transfer');
@@ -78,6 +79,7 @@ function Transfer() {
                 player.filter(a => a.id==id).map(item => item.idTeam=0);
                 player.filter(a => a.id==id).map(item => item.cost=amount);
                // teamData.filter(a => a.id==team).map(item => item.budget = (item.budget + amount) )
+               teamData.filter(a => a.id==team).map(item => item.numberOfPlayer = (item.numberOfPlayer - 1) )
                 localStorage.setItem("teamData", JSON.stringify(teamData));
                 localStorage.setItem("playerData", JSON.stringify(player));
                 navigate('/transfer');

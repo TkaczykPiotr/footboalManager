@@ -1044,5 +1044,53 @@ export const PlayerProperties = [
      def: 70,
      psy: 69,
      max: 100
+    },
+  {
+     id: 88,
+     idTeam: 0,
+     play: false,
+     pac: 76,
+     pas: 87,
+     sho: 67,
+     dri: 36,
+     def: 92,
+     psy: 93,
+     max: 100
+    },
+  {
+     id: 89,
+     idTeam: 0,
+     play: false,
+     pac: 87,
+     pas: 69,
+     sho: 83,
+     dri: 69,
+     def: 84,
+     psy: 69,
+     max: 100
+    },
+  {
+     id: 90,
+     idTeam: 0,
+     play: false,
+     pac: 96,
+     pas: 63,
+     sho: 79,
+     dri: 84,
+     def: 74,
+     psy: 84,
+     max: 100
+    },
+  {
+     id: 91,
+     idTeam: 0,
+     play: false,
+     pac: 94,
+     pas: 79,
+     sho: 77,
+     dri: 69,
+     def: 83,
+     psy: 85,
+     max: 100
     }
 ];
