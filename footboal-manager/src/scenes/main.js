@@ -69,7 +69,12 @@ function Main() {
                         </div>
 
                         <div className="RightBoxMain">
+
+                        <h2  id="white">Timetable</h2>
                         <h3  id="white">Next Match: {teamEnemyData[0].name}  </h3>
+                        <img className="ImgCardPlayer" src={teamEnemyData[0].imageHerb} alt="herb"/>
+
+
 
 
 
