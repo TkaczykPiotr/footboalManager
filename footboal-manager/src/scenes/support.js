@@ -43,7 +43,7 @@ function Support() {
 
                     <HorizontalScroll style={{float: 'left'}}>
                     {imgData.map(item =>
-                    <div style={{margin: '1%'}}>
+                    <div style={{margin: '1%', textAlign: 'center'}}>
                     <h2 id="white">{item.title}</h2>
                     <img  src={item.image} alt="sup" style={{width: '100vh'}}/>
 

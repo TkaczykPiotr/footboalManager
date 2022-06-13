@@ -394,6 +394,7 @@ function GamePlay() {
                                               appearance: "success",
                                               autoDismiss: true
                                             });
+
                  systemTeam.map(t => t.number == numberl && (t.number = copySuccess));
                  setSystemTeam([...systemTeam], systemTeam);
                 }
@@ -458,14 +459,20 @@ function GamePlay() {
                                </Link>
                              </li>
                              <li  className="nav-text">
-                               <Link to='' onClick={()=> setStart(true)}>
+                               <Link to='' onClick={()=> setStart(true) ||  addToast("You Start the Match" , {
+                                                                             appearance: "info",
+                                                                             autoDismiss: true
+                                                                             })}>
                                <MdIcons.MdNotStarted />
                                 <span>Start</span>
                                </Link>
                              </li>
 
                               <li  className="nav-text">
-                              <Link to='' onClick={()=> setStart(false)}>
+                              <Link to='' onClick={()=> setStart(false) ||  addToast("You Stop the Match" , {
+                                                                             appearance: "info",
+                                                                            autoDismiss: true
+                                                                            })}>
                               <BsIcons.BsFillStopFill />
                               <span>Stop</span>
                               </Link>

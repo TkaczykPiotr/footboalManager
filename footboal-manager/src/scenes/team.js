@@ -151,6 +151,7 @@ function Team() {
                               appearance: "success",
                               autoDismiss: true
                             });
+
              system.map(t => t.number == numberl && (t.number = copySuccess));
              setSystem([...system], system);
             }
@@ -236,7 +237,7 @@ function Team() {
                         <div className="PlayerBox">
 
                         <HorizontalScroll>
-                                  {player.filter(t => t.idTeam==team)
+                                  {player.filter(t => t.idTeam==team )
                                    .map(item =>
                                    <div key={item.id} className="CardPlayer" style={child} onClick={() => takeId(item.id)}>
                                    <img className="ImgCardPlayer" src={item.image} alt="player"/>
@@ -272,6 +273,7 @@ function Team() {
                             </div>
                             <br/>
                             <br/>
+                            <br/>
                         <div style={{float:'left', width: '30%', height: '60%'}}>
                         {player.filter(t => t.id==playerId && t.idTeam==JSON.parse(localStorage.getItem('user')).team)
                          .map(item =>
@@ -287,7 +289,7 @@ function Team() {
 
 
                         </div>
-                        <div style={{marginLeft: '2%',float:'left', width: '60%', height: '50%', background: '#fff'}}>
+                        <div style={{marginLeft: '2%',float:'left', width: '60%', height: '50%'}}>
                         <PlayerChartData chartData={playerPropertiesData} />
                         </div>
 

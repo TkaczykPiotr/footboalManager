@@ -6,7 +6,7 @@ function PlayerChartData({chartData}){
 
 
 return (
-<Bar data={chartData} style={{border: 'solid', borderColor: "black", borderWidth: 2}}/>
+<Bar data={chartData} style={{border: 'solid', borderColor: "black", borderWidth: 2, background: '#fff'}}/>
 )
 }
 export default PlayerChartData;

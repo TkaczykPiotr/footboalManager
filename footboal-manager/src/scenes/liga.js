@@ -11,7 +11,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 function Liga() {
           const [sidebar, setSidebar] = useState(true);
           const [table, setTable] = useState(JSON.parse(localStorage.getItem('table')));
-
+          const [team, setTeam] = useState(JSON.parse(localStorage.getItem('user')).team);
 
 
 
@@ -41,7 +41,7 @@ function Liga() {
                                           <div className = "row" style={{width: '1200px', marginLeft:'10%'}} >
                                           <table  className = "table table-striped table-bordered" style={{borderColor: 'black'}}>
                                           <thead>
-                                           <tr>
+                                           <tr style={{background: '#fff'}}>
                                            <th> Lp.</th>
                                    <th> Team</th>
                                    <th> Matches</th>
@@ -58,7 +58,8 @@ function Liga() {
                                   table
                                   .sort((a,b) => a.points < b.points ? 1:-1)
                                   .map((item, index)=>
-                                   <tr key={index}>
+                                   <tr key={index} style={{background: item.id==team ?  '#20c997' : '#fff'}}>
+
                                      <td>{index+1}</td>
                                      <td>{item.name}</td>
                                      <td>{item.matches}</td>

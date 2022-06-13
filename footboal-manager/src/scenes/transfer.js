@@ -156,7 +156,7 @@ function Transfer() {
                         <h3 style={{color: '#fff' }}>Name: {item.name}</h3>
                         <h3 style={{color: '#fff' }}>Position: {item.position}</h3>
                         <h3 style={{color: '#fff' }}>Cost: {item.cost} Euro</h3>
-                        <h3 style={{color: '#fff' }}>Payment: {item.payment} Euro For Game</h3>
+                        <h3 style={{color: '#fff' }}>Payment: {item.payment} Euro</h3>
                         <h3 style={{color: '#fff' }}>Number: {item.number} </h3>
                         <h3 style={{color: '#fff' }}>Age: {item.age} </h3>
                         <br/>

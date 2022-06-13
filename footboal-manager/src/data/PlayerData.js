@@ -254,42 +254,6 @@ export const PlayerData = [
   image: 'https://img.a.transfermarkt.technology/portrait/big/58864-1545407105.jpg?lm=1'
  },
 {
-  id: 100,
-  idTeam: 1,
-  play: false,
-  name: '',
-  cost: 0,
-  number: 0,
-  position: '',
-  payment: 0,
-  age: 0,
-  image: ''
- },
-{
-  id: 101,
-  idTeam: 1,
-  play: false,
-  name: '',
-  cost: 0,
-  number: 0,
-  position: '',
-  payment: 0,
-  age: 0,
-  image: ''
- },
-{
-  id: 102,
-  idTeam: 1,
-  play: false,
-  name: '',
-  cost: 0,
-  number: 0,
-  position: '',
-  payment: 0,
-  age: 0,
-  image: ''
- },
-{
    id: 22,
    idTeam: 2,
    play: true,
@@ -541,42 +505,6 @@ export const PlayerData = [
    payment: 67000,
    image: 'https://img.a.transfermarkt.technology/portrait/big/257462-1533115178.jpg?lm=1'
 },
-{
-  id: 103,
-  idTeam: 2,
-  play: false,
-  name: '',
-  cost: 0,
-  number: 0,
-  position: '',
-  payment: 0,
-  age: 0,
-  image: ''
- },
-{
-  id: 104,
-  idTeam: 2,
-  play: false,
-  name: '',
-  cost: 0,
-  number: 0,
-  position: '',
-  payment: 0,
-  age: 0,
-  image: ''
- },
-{
-  id: 105,
-  idTeam: 2,
-  play: false,
-  name: '',
-  cost: 0,
-  number: 0,
-  position: '',
-  payment: 0,
-  age: 0,
-  image: ''
- },
 {
    id: 43,
    idTeam: 3,
@@ -830,7 +758,7 @@ export const PlayerData = [
    image: 'https://img.a.transfermarkt.technology/portrait/big/517894-1599989718.jpg?lm=1'
 },
 {
-   id: 64,
+   id: 164,
    idTeam: 3,
    play: false,
    name: 'Suárez',
@@ -841,42 +769,6 @@ export const PlayerData = [
    payment: 30000,
    image: 'https://img.a.transfermarkt.technology/portrait/big/44352-1453896733.jpg?lm=1'
 },
-{
-  id: 106,
-  idTeam: 3,
-  play: false,
-  name: '',
-  cost: 0,
-  number: 0,
-  position: '',
-  payment: 0,
-  age: 0,
-  image: ''
- },
-{
-  id: 107,
-  idTeam: 3,
-  play: false,
-  name: '',
-  cost: 0,
-  number: 0,
-  position: '',
-  payment: 0,
-  age: 0,
-  image: ''
- },
-{
-  id: 108,
-  idTeam: 3,
-  play: false,
-  name: '',
-  cost: 0,
-  number: 0,
-  position: '',
-  payment: 0,
-  age: 0,
-  image: ''
- },
 {
    id: 65,
    idTeam: 4,
@@ -1118,42 +1010,6 @@ export const PlayerData = [
    image: 'https://img.a.transfermarkt.technology/portrait/big/223725-1499759927.jpg?lm=1'
 },
 {
-  id: 109,
-  idTeam: 4,
-  play: false,
-  name: '',
-  cost: 0,
-  number: 0,
-  position: '',
-  payment: 0,
-  age: 0,
-  image: ''
- },
-{
-  id: 111,
-  idTeam: 4,
-  play: false,
-  name: '',
-  cost: 0,
-  number: 0,
-  position: '',
-  payment: 0,
-  age: 0,
-  image: ''
- },
-{
-  id: 112,
-  idTeam: 4,
-  play: false,
-  name: '',
-  cost: 0,
-  number: 0,
-  position: '',
-  payment: 0,
-  age: 0,
-  image: ''
- },
-{
    id: 85,
    idTeam: 0,
    play: false,
@@ -1237,43 +1093,6 @@ export const PlayerData = [
    payment: 70000,
    image: 'https://img.a.transfermarkt.technology/portrait/big/340950-1633340107.jpg?lm=1'
 },
-{
-  id: 113,
-  idTeam: 0,
-  play: false,
-  name: '',
-  cost: 0,
-  number: 0,
-  position: '',
-  payment: 0,
-  age: 0,
-  image: ''
- },
- {
-   id: 114,
-   idTeam: 0,
-   play: false,
-   name: '',
-   cost: 0,
-   number: 0,
-   position: '',
-   payment: 0,
-   age: 0,
-   image: ''
-  },
-{
-  id: 115,
-  idTeam: 0,
-  play: false,
-  name: '',
-  cost: 0,
-  number: 0,
-  position: '',
-  payment: 0,
-  age: 0,
-  image: ''
- },
-
 
 
 ];

@@ -28,19 +28,5 @@ export const SupportData = [
         image: require('../img/gameplay.gif'),
         text: 'Tutaj gramy w mecz, możemy zmieniać ustawienia i zawodników, startować mecz oraz go zatrzymaywać'
         },
-{
-        title: '',
-        image: require('../img/GradientBackground3.png'),
-        text: ''
-        },
-{
-        title: '',
-        image: '',
-        text: ''
-        },
-{
-        title: '',
-        image: '',
-        text: ''
-        },
+
  ];

@@ -56,7 +56,7 @@ function Main() {
 
                         <div className="LeftBoxMain">
                             <img className="ImgCardPlayer" src={teamOneData[0].imageHerb} alt="herb"/>
-                          <h2 id="white">Manager: {JSON.parse(localStorage.getItem('user')).name}</h2>
+                        <h2 id="white">Manager: {JSON.parse(localStorage.getItem('user')).name}</h2>
 
                           <h3 id="white">Club name: {teamOneData[0].name}
                          <h3 >City: {teamOneData[0].city} </h3>
