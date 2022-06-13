@@ -254,6 +254,42 @@ export const PlayerData = [
   image: 'https://img.a.transfermarkt.technology/portrait/big/58864-1545407105.jpg?lm=1'
  },
 {
+  id: 100,
+  idTeam: 1,
+  play: false,
+  name: '',
+  cost: 0,
+  number: 0,
+  position: '',
+  payment: 0,
+  age: 0,
+  image: ''
+ },
+{
+  id: 101,
+  idTeam: 1,
+  play: false,
+  name: '',
+  cost: 0,
+  number: 0,
+  position: '',
+  payment: 0,
+  age: 0,
+  image: ''
+ },
+{
+  id: 102,
+  idTeam: 1,
+  play: false,
+  name: '',
+  cost: 0,
+  number: 0,
+  position: '',
+  payment: 0,
+  age: 0,
+  image: ''
+ },
+{
    id: 22,
    idTeam: 2,
    play: true,
@@ -316,7 +352,7 @@ export const PlayerData = [
 {
    id: 27,
    idTeam: 2,
-   play: false,
+   play: true,
    name: 'Mendy',
    cost: 700000,
    number: 23,
@@ -352,7 +388,7 @@ export const PlayerData = [
 {
    id: 30,
    idTeam: 2,
-   play: false,
+   play: true,
    name: 'Vázquez',
    cost: 500000,
    number: 17,
@@ -364,7 +400,7 @@ export const PlayerData = [
 {
    id: 31,
    idTeam: 2,
-   play: false,
+   play: true,
    name: 'Casemiro',
    cost: 800000,
    number: 14,
@@ -388,7 +424,7 @@ export const PlayerData = [
 {
    id: 33,
    idTeam: 2,
-   play: false,
+   play: true,
    name: 'Camavinga',
    cost: 620000,
    number: 25,
@@ -400,7 +436,7 @@ export const PlayerData = [
 {
    id: 34,
    idTeam: 2,
-   play: false,
+   play: true,
    name: 'Kroos',
    cost: 400000,
    number: 8,
@@ -436,7 +472,7 @@ export const PlayerData = [
 {
    id: 37,
    idTeam: 2,
-   play: false,
+   play: true,
    name: 'Junior',
    cost: 700000,
    number: 20,
@@ -460,7 +496,7 @@ export const PlayerData = [
 {
    id: 39,
    idTeam: 2,
-   play: false,
+   play: true,
    name: 'Rodrygo',
    cost: 560000,
    number: 21,
@@ -484,7 +520,7 @@ export const PlayerData = [
 {
    id: 41,
    idTeam: 2,
-   play: false,
+   play: true,
    name: 'Benzema',
    cost: 450000,
    number: 9,
@@ -506,9 +542,45 @@ export const PlayerData = [
    image: 'https://img.a.transfermarkt.technology/portrait/big/257462-1533115178.jpg?lm=1'
 },
 {
+  id: 103,
+  idTeam: 2,
+  play: false,
+  name: '',
+  cost: 0,
+  number: 0,
+  position: '',
+  payment: 0,
+  age: 0,
+  image: ''
+ },
+{
+  id: 104,
+  idTeam: 2,
+  play: false,
+  name: '',
+  cost: 0,
+  number: 0,
+  position: '',
+  payment: 0,
+  age: 0,
+  image: ''
+ },
+{
+  id: 105,
+  idTeam: 2,
+  play: false,
+  name: '',
+  cost: 0,
+  number: 0,
+  position: '',
+  payment: 0,
+  age: 0,
+  image: ''
+ },
+{
    id: 43,
    idTeam: 3,
-   play: false,
+   play: true,
    name: 'Oblak',
    cost: 780000,
    number: 13,
@@ -532,7 +604,7 @@ export const PlayerData = [
 {
    id: 45,
    idTeam: 3,
-   play: false,
+   play: true,
    name: 'Giménez',
    cost: 780000,
    number: 2,
@@ -556,7 +628,7 @@ export const PlayerData = [
 {
    id: 47,
    idTeam: 3,
-   play: false,
+   play: true,
    name: 'Savic',
    cost: 670000,
    number: 15,
@@ -580,7 +652,7 @@ export const PlayerData = [
 {
    id: 49,
    idTeam: 3,
-   play: false,
+   play: true,
    name: 'Lodi',
    cost: 820000,
    number: 12,
@@ -616,7 +688,7 @@ export const PlayerData = [
 {
    id: 52,
    idTeam: 3,
-   play: false,
+   play: true,
    name: 'Kondogbia',
    cost: 340000,
    number: 4,
@@ -640,7 +712,7 @@ export const PlayerData = [
 {
    id: 54,
    idTeam: 3,
-   play: false,
+   play: true,
    name: 'de Paul',
    cost: 1870000,
    number: 5,
@@ -652,7 +724,7 @@ export const PlayerData = [
 {
    id: 55,
    idTeam: 3,
-   play: false,
+   play: true,
    name: 'Koke',
    cost: 350000,
    number: 6,
@@ -688,7 +760,7 @@ export const PlayerData = [
 {
    id: 58,
    idTeam: 3,
-   play: false,
+   play: true,
    name: 'Lemar',
    cost: 600000,
    number: 11,
@@ -712,7 +784,7 @@ export const PlayerData = [
 {
    id: 60,
    idTeam: 3,
-   play: false,
+   play: true,
    name: 'Félix',
    cost: 800000,
    number: 7,
@@ -724,7 +796,7 @@ export const PlayerData = [
 {
    id: 61,
    idTeam: 3,
-   play: false,
+   play: true,
    name: 'Griezmann',
    cost: 640000,
    number: 8,
@@ -748,7 +820,7 @@ export const PlayerData = [
 {
    id: 63,
    idTeam: 3,
-   play: false,
+   play: true,
    name: 'Cunha',
    cost: 730000,
    number: 19,
@@ -770,9 +842,45 @@ export const PlayerData = [
    image: 'https://img.a.transfermarkt.technology/portrait/big/44352-1453896733.jpg?lm=1'
 },
 {
+  id: 106,
+  idTeam: 3,
+  play: false,
+  name: '',
+  cost: 0,
+  number: 0,
+  position: '',
+  payment: 0,
+  age: 0,
+  image: ''
+ },
+{
+  id: 107,
+  idTeam: 3,
+  play: false,
+  name: '',
+  cost: 0,
+  number: 0,
+  position: '',
+  payment: 0,
+  age: 0,
+  image: ''
+ },
+{
+  id: 108,
+  idTeam: 3,
+  play: false,
+  name: '',
+  cost: 0,
+  number: 0,
+  position: '',
+  payment: 0,
+  age: 0,
+  image: ''
+ },
+{
    id: 65,
    idTeam: 4,
-   play: false,
+   play: true,
    name: 'Bono',
    cost: 570000,
    number: 13,
@@ -796,7 +904,7 @@ export const PlayerData = [
 {
    id: 67,
    idTeam: 4,
-   play: false,
+   play: true,
    name: ' Carlos',
    cost: 600000,
    number: 20,
@@ -820,7 +928,7 @@ export const PlayerData = [
 {
    id: 69,
    idTeam: 4,
-   play: false,
+   play: true,
    name: 'Acuña',
    cost: 670000,
    number: 19,
@@ -844,7 +952,7 @@ export const PlayerData = [
 {
    id: 71,
    idTeam: 4,
-   play: false,
+   play: true,
    name: 'Delaney',
    cost: 600000,
    number: 18,
@@ -868,7 +976,7 @@ export const PlayerData = [
 {
    id: 73,
    idTeam: 4,
-   play: false,
+   play: true,
    name: 'Fernando',
    cost: 540000,
    number: 25,
@@ -904,7 +1012,7 @@ export const PlayerData = [
 {
    id: 76,
    idTeam: 4,
-   play: false,
+   play: true,
    name: 'Rakitic',
    cost: 780000,
    number: 10,
@@ -928,7 +1036,7 @@ export const PlayerData = [
 {
    id: 78,
    idTeam: 4,
-   play: false,
+   play: true,
    name: 'Ocampos',
    cost: 730000,
    number: 5,
@@ -940,7 +1048,7 @@ export const PlayerData = [
 {
    id: 79,
    idTeam: 4,
-   play: false,
+   play: true,
    name: 'Lamela',
    cost: 450000,
    number: 17,
@@ -964,7 +1072,7 @@ export const PlayerData = [
 {
    id: 81,
    idTeam: 4,
-   play: false,
+   play: true,
    name: 'En-Nesyri',
    cost: 630000,
    number: 15,
@@ -988,7 +1096,7 @@ export const PlayerData = [
 {
    id: 83,
    idTeam: 4,
-   play: false,
+   play: true,
    name: 'Mir',
    cost: 400000,
    number: 12,
@@ -1000,7 +1108,7 @@ export const PlayerData = [
 {
    id: 84,
    idTeam: 4,
-   play: false,
+   play: true,
    name: 'El Haddadi',
    cost: 200000,
    number: 11,
@@ -1009,6 +1117,42 @@ export const PlayerData = [
    payment: 23000,
    image: 'https://img.a.transfermarkt.technology/portrait/big/223725-1499759927.jpg?lm=1'
 },
+{
+  id: 109,
+  idTeam: 4,
+  play: false,
+  name: '',
+  cost: 0,
+  number: 0,
+  position: '',
+  payment: 0,
+  age: 0,
+  image: ''
+ },
+{
+  id: 111,
+  idTeam: 4,
+  play: false,
+  name: '',
+  cost: 0,
+  number: 0,
+  position: '',
+  payment: 0,
+  age: 0,
+  image: ''
+ },
+{
+  id: 112,
+  idTeam: 4,
+  play: false,
+  name: '',
+  cost: 0,
+  number: 0,
+  position: '',
+  payment: 0,
+  age: 0,
+  image: ''
+ },
 {
    id: 85,
    idTeam: 0,
@@ -1045,6 +1189,90 @@ export const PlayerData = [
    payment: 117000,
    image: 'https://img.a.transfermarkt.technology/portrait/big/170527-1648480995.jpg?lm=1'
 },
+{
+   id: 88,
+   idTeam: 0,
+   play: false,
+   name: 'John Stone',
+   cost: 1200000,
+   number: 5,
+   position: 'Centre-Back',
+   age: 27,
+   payment: 75000,
+   image: 'https://img.a.transfermarkt.technology/portrait/big/186590-1583400326.jpg?lm=1'
+},
+{
+   id: 89,
+   idTeam: 0,
+   play: false,
+   name: 'Foden',
+   cost: 1500000,
+   number: 47,
+   position: 'Centre-Midfielder',
+   age: 23,
+   payment: 90000,
+   image: 'https://img.a.transfermarkt.technology/portrait/big/406635-1594986905.jpg?lm=1'
+},
+{
+   id: 90,
+   idTeam: 0,
+   play: false,
+   name: 'Robertson',
+   cost: 950000,
+   number: 26,
+   position: 'Left-Back',
+   age: 26,
+   payment: 100000,
+   image: 'https://img.a.transfermarkt.technology/portrait/big/234803-1559827085.jpg?lm=1'
+},
+{
+   id: 91,
+   idTeam: 0,
+   play: false,
+   name: 'Diego Jota',
+   cost: 750000,
+   number: 20,
+   position: 'Centre-Forward',
+   age: 28,
+   payment: 70000,
+   image: 'https://img.a.transfermarkt.technology/portrait/big/340950-1633340107.jpg?lm=1'
+},
+{
+  id: 113,
+  idTeam: 0,
+  play: false,
+  name: '',
+  cost: 0,
+  number: 0,
+  position: '',
+  payment: 0,
+  age: 0,
+  image: ''
+ },
+ {
+   id: 114,
+   idTeam: 0,
+   play: false,
+   name: '',
+   cost: 0,
+   number: 0,
+   position: '',
+   payment: 0,
+   age: 0,
+   image: ''
+  },
+{
+  id: 115,
+  idTeam: 0,
+  play: false,
+  name: '',
+  cost: 0,
+  number: 0,
+  position: '',
+  payment: 0,
+  age: 0,
+  image: ''
+ },
 
 
 

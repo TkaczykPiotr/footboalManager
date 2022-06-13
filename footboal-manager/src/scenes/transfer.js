@@ -118,7 +118,7 @@ function Transfer() {
 
 
                     {buy && (
-                    <div>
+
                     <div className="PlayerBox" >
                      <HorizontalScroll>
                      {player.filter(t => t.idTeam==0)
@@ -132,7 +132,7 @@ function Transfer() {
                        </div>
                        )}
                      </HorizontalScroll>
-                     </div>
+
 
                      <div className="PlayerInfoTr">
                      <div style={{float:'left', width: '100%', height: '80%'}}>
@@ -166,7 +166,7 @@ function Transfer() {
                     </div>
                     )}
                     {!buy && (
-                    <div>
+
                     <div className="PlayerBox" >
                     <HorizontalScroll>
                      {player.filter(t => t.idTeam==team)
@@ -180,7 +180,7 @@ function Transfer() {
                      </div>
                      )}
                      </HorizontalScroll>
-                    </div>
+
 
                     <div className="PlayerInfoSl">
                     <div style={{float:'left', width: '100%', height: '80%'}}>

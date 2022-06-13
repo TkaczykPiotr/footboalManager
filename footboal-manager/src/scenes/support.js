@@ -40,8 +40,8 @@ function Support() {
                      </nav>
                    </IconContext.Provider>
                     <div className="MainBox" >
-                     <div className="aaa" style={{width: '170vh',marginTop: '5%'}}>
-                    <HorizontalScroll>
+
+                    <HorizontalScroll style={{float: 'left'}}>
                     {imgData.map(item =>
                     <div style={{margin: '1%'}}>
                     <h2 id="white">{item.title}</h2>
@@ -54,7 +54,7 @@ function Support() {
 
                     )}
                     </HorizontalScroll>
-                     </div>
+
 
 
 

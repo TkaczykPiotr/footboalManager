@@ -526,7 +526,7 @@ function GamePlay() {
                      </div>
                      <div className="PlayerBox" >
                       <HorizontalScroll>
-                        {player.filter(t => t.idTeam==team && t.play==true)
+                        {player.filter(t => t.idTeam==team && t.play==false)
                          .map(item =>
                          <div key={item.id} className="CardPlayer" style={child} >
                          <img className="ImgCardPlayer" src={item.image} alt="player"/>

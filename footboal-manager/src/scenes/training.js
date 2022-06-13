@@ -91,7 +91,7 @@ function Training() {
                      </nav>
                    </IconContext.Provider>
                     <div className="MainBox" >
-                    <div>
+
                     <div className="PlayerBox" >
                     <HorizontalScroll>
                     {player.filter(t => t.idTeam==team)
@@ -106,7 +106,7 @@ function Training() {
                     )}
                     </HorizontalScroll>
                    </div>
-                   </div>
+
 
                     <div className="PlayerInfoSl" style={{background: '#487a82'}}>
                      <div style={{float:'left', width: '100%', height: '80%'}}>
