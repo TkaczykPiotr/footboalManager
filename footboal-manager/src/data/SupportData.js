@@ -26,7 +26,7 @@ export const SupportData = [
     {
         title: 'Gameplay',
         image: require('../img/gameplay.gif'),
-        text: 'Tutaj gramy w mecz, możemy zmieniać ustawienia i zawodników, startować mecz oraz go zatrzymaywać'
+        text: 'Tutaj gramy w mecz, możemy zmieniać ustawienia i zawodników, startować mecz oraz go zatrzymywać'
         },
 
  ];

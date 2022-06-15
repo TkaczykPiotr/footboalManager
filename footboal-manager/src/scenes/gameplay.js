@@ -533,7 +533,7 @@ function GamePlay() {
                      <MatchesChartData chartData={teamTwoMatchesData}  />
                     </div>
 
-                    <div style={{float:'left', width:'130px', height: '70%'}}>
+                    <div style={{float:'left', width:'130px', height: '70%', textAlign: 'center'}}>
                     <br />
 
                     <h6 id="white" style={{marginTop: '10px'}}>{teamTwoData[0].score} score {teamOneData[0].score}</h6>
