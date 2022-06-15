@@ -57,7 +57,7 @@ export const SidebarData = [
   },
     {
       title: 'Play',
-      path: '/gameplay',
+      path: '/modalStartMatch',
       icon: <AiIcons.AiOutlinePlayCircle />,
       cName: 'nav-text'
     }
